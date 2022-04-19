@@ -9,9 +9,13 @@ export default function Signin() {
     return (
         <div className='signin-container'>
             <Row className='m-0 p-0'>
-                <Col md={4} sm={12}>
+                <Col md={1}></Col>
+                <Col md={5}>
+                    <h1 className='one-click'>One-Click students reports generator</h1>
+                    <p className='about'>Creating high quality and accurate reports.</p>
+                    <button className='start-btn'>Get Started</button>
                 </Col>
-                <Col md={4} sm={12} className='text-center'>
+                <Col md={4} className='text-center'>
                     <h1 className='brand-name'>sRecord</h1>
                     <Card className='signin-card shadow text-center p-5'>
                         <div className="input-group">
@@ -41,9 +45,8 @@ export default function Signin() {
                         <p className='dont-have-account'>Don't have an account? | <span className='signup' onClick={() => navigate('/sign-up')}>Sign up</span></p>
                     </Card>
                     <Button className='login-btn'>SIGN IN</Button>
-
                 </Col>
-                <Col md={4}></Col>
+                <Col md={2}></Col>
             </Row>
         </div>
     )

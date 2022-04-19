@@ -12,9 +12,12 @@ export default function Signup() {
     return (
         <div className='signin-container'>
             <Row className='m-0 p-0'>
-                <Col md={4} sm={12}>
+                <Col md={1}></Col>
+                <Col md={5}>
+                <h1 className='one-click'>One-Click students reports generator</h1>
+                    <p className='about'>Creating high quality and accurate reports.</p>
                 </Col>
-                <Col md={4} sm={12} className='text-center'>
+                <Col md={4} className='text-center'>
                     <h1 className='brand-name'>sRecord</h1>
                     <Card className='signin-card shadow text-center p-5'>
                         <div className="input-group">
@@ -57,7 +60,7 @@ export default function Signup() {
                     <Button className='login-btn'>SIGN UP</Button>
 
                 </Col>
-                <Col md={4}></Col>
+                <Col md={2}></Col>
             </Row>
         </div>
     )
