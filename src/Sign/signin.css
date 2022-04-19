@@ -39,7 +39,7 @@
     font-weight: bold;
     color: white;
     font-size: 50px;
-    margin-top: 25%;
+    margin-top: 5%;
 }
 
 .span-icon {
@@ -96,4 +96,10 @@ input[type=email]{
 ::placeholder{
     color: white;
     padding-left: 5px;
+}
+
+.g-t-a{
+    font-size: 18px;
+    margin-top: 20px;
+    color: white; 
 }

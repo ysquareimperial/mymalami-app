@@ -1,19 +1,22 @@
 import { Button } from 'reactstrap'
 import React from 'react'
-import { Row, Col, Card, InputGroup, Input, InputGroupAddon } from 'reactstrap'
+import { Row, Col, Card } from 'reactstrap'
 import './signin.css'
-import { Unlock, User } from 'react-feather'
+import { Mail, Unlock } from 'react-feather'
+import { useNavigate } from 'react-router-dom'
 export default function Signin() {
+    const navigate = useNavigate()
     return (
         <div className='signin-container'>
             <Row className='m-0 p-0'>
-                <Col md={4}></Col>
-                <Col md={4} className='text-center'>
+                <Col md={4} sm={12}>
+                </Col>
+                <Col md={4} sm={12} className='text-center'>
                     <h1 className='brand-name'>sRecord</h1>
                     <Card className='signin-card shadow text-center p-5'>
                         <div className="input-group">
                             <div className="input-group-prepend">
-                                <span className="input-group-text span-icon" id=""><User /></span>
+                                <span className="input-group-text span-icon" id=""><Mail /></span>
                             </div>
                             <input type="email" className="" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" />
                         </div>
@@ -35,9 +38,10 @@ export default function Signin() {
                             </Col>
                         </Row>
                         <hr></hr>
-                        <p className='dont-have-account'>Don't have an account? | <span className='signup'>Sign up</span></p>
+                        <p className='dont-have-account'>Don't have an account? | <span className='signup' onClick={() => navigate('/sign-up')}>Sign up</span></p>
                     </Card>
                     <Button className='login-btn'>SIGN IN</Button>
+
                 </Col>
                 <Col md={4}></Col>
             </Row>

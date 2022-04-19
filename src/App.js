@@ -1,14 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Signin from './Sign/Signin';
-
+import AppNavigation from './Routes/AppNavigation';
 function App() {
   return (
     <div>
-      <Signin/>
+      <AppNavigation />
     </div>
   );
 }
-
 export default App;
