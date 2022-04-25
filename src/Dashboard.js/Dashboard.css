@@ -1,0 +1,80 @@
+:root {
+    --primaryColor: #08351f;
+    --secondaryColor: #105031;
+    --hoverColor: #56a07c;
+}
+
+
+.home-container { 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: var(--secondaryColor);
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    background-color: var(--primaryColor);
+
+    height: 100vh;
+}
+
+.sidebar-row {
+    margin: 0;
+    padding: 0;
+}
+
+.index-card {
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: white;
+    border: 0;
+}
+
+.index-card:hover {
+    cursor: pointer;
+    border: 1px #1B7B4D solid;
+}
+
+.item-name {
+    /* color: white; */
+    color: var(--secondaryColor);
+    /* font-weight: lighter; */
+    font-size: 150%;
+}
+
+.item-icon {
+    /* color: white; */
+    color: white;
+    /* background-color: #1B7B4D; */
+
+}
+
+.item-total {
+    /* color: white; */
+    color: var(--secondaryColor);
+    font-weight: bolder;
+    font-size: 300%;
+}
+.sidebar-items{
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+li{
+    color: white;
+    /* background-color: aqua; */
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+li:hover{
+    background-color: var(--hoverColor);
+    border-radius: 5px;
+    cursor: pointer;
+}
