@@ -9,7 +9,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
     const toggle = () => {
         setOpen(!open);
-    };
+    }
     return (
         <div>
             <Row className='navbar-main'>
@@ -20,9 +20,7 @@ export default function Navbar() {
                     </p>
                 </Col>
                 <Col md={6}>
-                    <Row className='topics'
-                    // style={{color: 'white', padding: 15, fontWeight: 'bolder'}}
-                    >
+                    <Row style={{color: 'white', padding: 15, fontWeight: 'bolder'}}>
                         <Col md={3}/>
                         <Col>HOME</Col>
                         <Col>FEATURES</Col>
@@ -35,10 +33,10 @@ export default function Navbar() {
                     <div style={{float: 'right', marginTop: 10, marginRight: 25}}>  
                     <Row>
                         <Col>
-                            <Button className='btn'>LOGIN</Button>
+                            <Button style={{backgroundColor:'white', color: '#1B7B4D', fontWeight: 'bold', borderRadius: 20, width: 125}}>LOGIN</Button>
                         </Col>
                         <Col>
-                            <Button className='btn'>SIGNUP</Button>
+                            <Button style={{backgroundColor:'white', color: '#1B7B4D', fontWeight: 'bold', borderRadius: 20, width: 125}}>SIGNUP</Button>
                         </Col>
                     </Row>  
                     </div>
