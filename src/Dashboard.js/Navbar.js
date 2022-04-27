@@ -10,17 +10,32 @@ export default function Navbar() {
     const toggle = () => {
         setOpen(!open);
     }
+
+    const btnStyle = {
+        backgroundColor:'white', 
+        color: '#1B7B4D', 
+        fontWeight: 'bold', 
+        borderRadius: 20, 
+        width: 125
+    }
+
+    const navTopic = {
+        color: 'white',
+        padding: 15, 
+        fontWeight: 'bolder'
+    }
+
     return (
         <div>
             <Row className='navbar-main'>
                 <Col md={3}>
                     <p className='logo'>
-                        {/* <Circle color='white' size='2.7em' style={{ backgroundColor: 'white', borderRadius: 20 }} /> */}
+                      {/* <Circle color='white' size='2.7em' style={{ backgroundColor: 'white', borderRadius: 20 }} /> */}
                         <img src={logo} alt='logo' style={{ width: 100, height: 45 }} />
                     </p>
                 </Col>
                 <Col md={6}>
-                    <Row style={{color: 'white', padding: 15, fontWeight: 'bolder'}}>
+                    <Row style={navTopic}>
                         <Col md={3}/>
                         <Col>HOME</Col>
                         <Col>FEATURES</Col>
@@ -33,10 +48,10 @@ export default function Navbar() {
                     <div style={{float: 'right', marginTop: 10, marginRight: 25}}>  
                     <Row>
                         <Col>
-                            <Button style={{backgroundColor:'white', color: '#1B7B4D', fontWeight: 'bold', borderRadius: 20, width: 125}}>LOGIN</Button>
+                            <Button style={btnStyle}>LOGIN</Button>
                         </Col>
                         <Col>
-                            <Button style={{backgroundColor:'white', color: '#1B7B4D', fontWeight: 'bold', borderRadius: 20, width: 125}}>SIGNUP</Button>
+                            <Button style={btnStyle}>SIGNUP</Button>
                         </Col>
                     </Row>  
                     </div>
