@@ -1,13 +1,10 @@
-import React from 'react'
-import { Col, Row } from 'reactstrap'
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
-import './Dashboard.css'
-import Home from './Home'
-import { Route, Routes } from 'react-router-dom'
-import Classes from './Classes'
-export default function Index() {
-
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { Col, Row } from "reactstrap";
+import Navbar from "../Dashboard/Navbar";
+import Sidebar from "../Dashboard/Sidebar";
+import '../Dashboard/Dashboard.css'
+export default function AppIndex() {
     return (
         <div className='home-container'>
             <Row className='navbar'>
@@ -21,12 +18,9 @@ export default function Index() {
                     <Sidebar />
                 </Col>
                 <Col lg={10} md={10} sm={12} xs={12} className="index-container">
-                    <Routes>
-                        <Route path='/' element={<Home />} />
-                        <Route path='/classes' element={<Classes />} />
-                    </Routes>
+                    <Outlet />
                 </Col>
             </Row>
         </div>
-    )
+    );
 }

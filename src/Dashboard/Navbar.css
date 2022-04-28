@@ -1,9 +1,14 @@
-:root {
+/* :root {
     --primaryColor: #08351f;
     --secondaryColor: #105031;
     --hoverColor: #56a07c;
-}
+} */
 
+:root {
+    --primaryColor: rgb(37 37 38);
+    --secondaryColor: rgb(45 45 45);
+    --hoverColor: rgb(75, 75, 75);
+}
 .logo {
     margin-top: 1%;
     padding-top: 1%;
@@ -39,7 +44,7 @@
     background-color: var(--primaryColor);
     border: none;
     padding: 10px;
-    margin-top: 1%;
+    margin-top: 2%;
     margin-bottom: 0;
     padding-top: 1%;
     padding-bottom: 1%;
@@ -48,13 +53,13 @@
 }
 
 .drop-down:hover {
-    background-color: #83b69d;
+    background-color: var(--hoverColor);
 
 }
 
 .drop-down-menu {
-    background-color: #56a07c;
-    border: #56a07c;
+    background-color: var(--secondaryColor);
+    border: var(--hoverColor) solid 1px;
     width: 35%;
     margin-top: 19px;
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ArrowDownCircle, Circle} from 'react-feather'
 import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap'
 import './Navbar.css'
-import blackhijab from '../images/blackhijab.jpg'
+import ysquare from '../images/ysquareimperial.png'
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const toggle = () => {
@@ -31,8 +31,8 @@ export default function Navbar() {
                         </DropdownMenu>
                     </Dropdown>
                     <h1 className='dp-name'>
-                        <img src={blackhijab} alt='profile' style={{ width: 38, height: 38, borderRadius: 50 }} />{" "}
-                        Ms. Msmsms  
+                        <img src={ysquare} alt='profile' style={{ width: 38, height: 38, borderRadius: 50 }} />{" "}
+                        Mr. Yasir Ado Hassan  
                     </h1>
                 </Col>
             </Row>
