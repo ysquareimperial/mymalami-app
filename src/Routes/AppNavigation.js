@@ -10,6 +10,7 @@ import Report from "../Dashboard/Report/Report";
 import AppIndex from "./AppIndex";
 import CreateClass from "../Dashboard/Class/CreateClass";
 import CreateSubject from "../Dashboard/Subject/CreateSubject";
+import CreateStudent from "../Dashboard/Student/CreateStudent";
 
 function AppNavigation() {
     let element = useRoutes([
@@ -53,6 +54,10 @@ function AppNavigation() {
                 {
                     path: '/create-subject',
                     element: <CreateSubject />
+                },
+                {
+                    path: '/create-student',
+                    element: <CreateStudent />
                 }
             ]
         }

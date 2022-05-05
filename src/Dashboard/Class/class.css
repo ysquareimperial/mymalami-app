@@ -85,3 +85,35 @@ input {
     color: white;
     border: 1px var(--hoverColor) solid;
 }
+
+ .modal-body{
+    background-color: var(--secondaryColor);
+    color: white;
+}
+
+.dlt-details{
+    margin:0;
+    padding: 0;
+    margin-left: 10px;
+    font-size: 13px;
+}
+.dlt-modal-footer{
+    background-color: var(--secondaryColor);
+}
+.modal-btn{
+    border: 1px var(--hoverColor) solid;
+    border-radius: 5px;
+    background-color: var(--secondaryColor);
+    padding: 5px;
+    color: white;
+    margin-right: 10px;
+}
+
+.modal-btn:hover{
+    border: 1px var(--hoverColor) solid;
+    border-radius: 5px;
+    background-color: var(--hoverColor);
+    /* padding: 8px; */
+    color: white;
+    border: 1px var(--hoverColor) solid;
+}
