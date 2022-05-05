@@ -38,13 +38,13 @@ export default function Navbar() {
                         <DropdownMenu className='drop-down-menu'>
                             {/* <DropdownItem header>Settings & Privacy</DropdownItem> */}
                             {/* <DropdownItem disabled>Action</DropdownItem> */}
-                            <DropdownItem className='drop-down-item'>Settings & Privacy</DropdownItem>
+                            <DropdownItem className='drop-down-item' onClick={()=>navigate('/settings')}>Settings</DropdownItem>
                             <DropdownItem className='drop-down-item'>Help & Support</DropdownItem >
                             <DropdownItem className='drop-down-item' divider />
                             <DropdownItem className='drop-down-item'>Sign Out</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
-                    <h1 className='dp-name'>
+                    <h1 className='dp-name' onClick={()=>navigate('/profile')}>
                         <img src={ysquare} alt='profile' style={{ width: 38, height: 38, borderRadius: 50 }} />{" "}
                         Mr. Yasir Ado Hassan
                     </h1>

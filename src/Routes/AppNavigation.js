@@ -11,6 +11,11 @@ import AppIndex from "./AppIndex";
 import CreateClass from "../Dashboard/Class/CreateClass";
 import CreateSubject from "../Dashboard/Subject/CreateSubject";
 import CreateStudent from "../Dashboard/Student/CreateStudent";
+import EditClass from "../Dashboard/Class/EditClass";
+import EditSubject from "../Dashboard/Subject/EditSubject";
+import EditStudent from "../Dashboard/Student/EditStudent";
+import Settings from "../Dashboard/UserSettings/Settings";
+import Profile from "../Profile/Profile";
 
 function AppNavigation() {
     let element = useRoutes([
@@ -36,29 +41,52 @@ function AppNavigation() {
                     element: <Class />
                 },
                 {
+                    path: '/create-class',
+                    element: <CreateClass />
+                },
+                {
+                    path: '/edit-class',
+                    element: <EditClass />
+                },
+                {
                     path: '/student',
                     element: <Student />
+                },
+                {
+                    path: '/create-student',
+                    element: <CreateStudent />
+                },
+                {
+                    path: '/edit-student',
+                    element: <EditStudent />
                 },
                 {
                     path: '/subject',
                     element: <Subject />
                 },
                 {
+                    path: '/create-subject',
+                    element: <CreateSubject />
+                }, {
+                    path: '/edit-subject',
+                    element: <EditSubject />
+                },
+                {
                     path: '/report',
                     element: <Report />
                 },
                 {
-                    path: '/create-class',
-                    element: <CreateClass />
-                },
-                {
-                    path: '/create-subject',
-                    element: <CreateSubject />
-                },
-                {
                     path: '/create-student',
                     element: <CreateStudent />
-                }
+                },
+                {
+                    path: '/settings',
+                    element: <Settings />
+                } ,
+                {
+                    path: '/profile',
+                    element: <Profile />
+                },
             ]
         }
     ]);
