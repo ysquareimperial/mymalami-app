@@ -16,9 +16,9 @@ export default function Sidebar() {
                 <Col>
                     <ul className='sidebar-items'>
                         <li onClick={() => navigate('/home')}><img style={{ width: 25, height: 25, marginRight: 5, marginBottom: 5 }} src={home} alt='h' />Home</li>
-                        <li onClick={() => navigate('/class')}><img style={{ width: 25, height: 25, marginRight: 5, marginBottom: 5 }} src={classs} alt='h' />Classes</li>
                         <li onClick={() => navigate('/subject')}><img style={{ width: 25, height: 25, marginRight: 5, marginBottom: 5 }} src={book} alt='h' />Subjects/Courses</li>
                         <li onClick={() => navigate('/student')}><img style={{ width: 25, height: 25, marginRight: 5, marginBottom: 5 }} src={student} alt='h' />Students</li>
+                        <li onClick={() => navigate('/class')}><img style={{ width: 25, height: 25, marginRight: 5, marginBottom: 5 }} src={classs} alt='h' />Classes</li>
                         <li onClick={() => navigate('/report')}><img style={{ width: 25, height: 25, marginRight: 5, marginBottom: 5 }} src={report} alt='h' />Reports</li>
                     </ul>
                 </Col>

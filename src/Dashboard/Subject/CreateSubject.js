@@ -17,8 +17,8 @@ export default function CreateSubject() {
         <Row>
           <Col md={6} className='mt-3'>
             <input placeholder='Subject Name' type='text' />
-            <input placeholder='Teacher Name' type='text' />
-            <input placeholder='No of Students' type='number' />
+            {/* <input placeholder='Teacher Name' type='text' />
+            <input placeholder='No of Students' type='number' /> */}
             <div>
               <button className='create-btn'>Create</button>
               <button className='create-btn'>Cancel</button>

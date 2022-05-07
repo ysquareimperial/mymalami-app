@@ -27,7 +27,7 @@ export default function Classes() {
       sn: '1',
       name: 'Quavo Huncho',
       teacherName: 'Future Hndrxx',
-      students: '30',
+      students: '30'
     },
     {
       sn: '2',
@@ -70,7 +70,7 @@ export default function Classes() {
               <tr>
                 <th>S/N</th>
                 <th>Class Name</th>
-                <th>Class Teacher Name</th>
+                {/* <th>Class Teacher Name</th> */}
                 <th>Subjects</th>
                 <th>No of Students</th>
                 <th className='d-flex justify-content-end'>Actions</th>
@@ -82,12 +82,12 @@ export default function Classes() {
                   <th className='text-white' scope="row">{item.sn}</th>
                   <td className='text-white'>{item.name}</td>
                   <td className='text-white'>{item.teacherName}</td>
-                  <td className='text-white'><img src={view} alt='' className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="view subjects/courses" style={{ width: 35, height: 35 }} onClick={toggle1}/></td>
+                  {/* <td className='text-white'><img src={view} alt='' className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="view subjects/courses" style={{ width: 35, height: 35 }} onClick={toggle1}/></td> */}
                   {/* <td className='text-white'>{item.students}</td> */}
                   <td className='text-white' ata-toggle="tooltip" data-placement="bottom" title="click to view students" ><span style={{ cursor: 'pointer' }} onClick={toggle2}>{item.students}</span></td>
 
                   <td className='text-white d-flex justify-content-end'>
-                    <img className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="edit class" style={{ width: 35, height: 35 }} src={edit} alt='s' onClick={()=>navigate('/edit-class')}/>
+                    <img className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="edit class" style={{ width: 35, height: 35 }} src={edit} alt='s' onClick={() => navigate('/edit-class')} />
                     <img className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="delete class" style={{ width: 35, height: 35 }} src={dlt} alt='s' onClick={toggle} />
                   </td>
                 </tr>
@@ -112,7 +112,7 @@ export default function Classes() {
       </Modal>
       <Modal isOpen={open1} toggle={toggle1} className='dlt-modal'>
         <ModalBody className='modal-body' style={{ borderRadius: '' }}>
-        <img src={book} alt='' style={{ width: 40, height: 40 }} /><p style={{ display: 'inline-block' }}>Subjects/Courses</p>
+          <img src={book} alt='' style={{ width: 40, height: 40 }} /><p style={{ display: 'inline-block' }}>Subjects/Courses</p>
           <div>
             <p className='dlt-details'>Class Name: <span>JSS One</span></p>
             <br></br>

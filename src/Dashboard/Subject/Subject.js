@@ -62,7 +62,7 @@ export default function Subject() {
               <tr>
                 <th>S/N</th>
                 <th>Subject Name</th>
-                <th>Teacher Name</th>
+                {/* <th>Teacher Name</th> */}
                 <th>No of Students</th>
                 <th className='d-flex justify-content-end'>Actions</th>
               </tr>
@@ -72,7 +72,7 @@ export default function Subject() {
                 <tr>
                   <th className='text-white' scope="row">{item.sn}</th>
                   <td className='text-white'>{item.name}</td>
-                  <td className='text-white'>{item.teacherName}</td>
+                  {/* <td className='text-white'>{item.teacherName}</td> */}
                   <td className='text-white' ata-toggle="tooltip" data-placement="bottom" title="click to view students" ><span style={{ cursor: 'pointer' }} onClick={toggle1}>{item.students}</span></td>
                   <td className='d-flex justify-content-end'>
                     {/* <img className='' data-toggle="tooltip" data-placement="bottom" title="view" style={{ width: 30, height: 30 }} src={eye} alt='s' /> */}
@@ -90,7 +90,7 @@ export default function Subject() {
           <img src={dlt} style={{ width: 40, height: 40 }} /><p style={{ display: 'inline-block' }}>Are you sure you want to delete this Subject/Course?</p>
           <div>
             <p className='dlt-details'>Subject Name: <span>JSS One</span></p>
-            <p className='dlt-details'>Teacher Name: <span>Quavo Hunchox</span></p>
+            {/* <p className='dlt-details'>Teacher Name: <span>Quavo Hunchox</span></p> */}
             <p className='dlt-details'>Number of Students: <span>30</span></p>
           </div>
           <div className='' style={{ float: 'right' }}>

@@ -18,8 +18,11 @@ export default function CreateClass() {
                 <Row>
                     <Col md={6} className='mt-3'>
                         <input placeholder='Class Name' type='text' />
-                        <input placeholder='Teacher Name' type='text' />
-                        <input placeholder='No of Students' type='number' />
+                        {/* <input placeholder='Teacher Name' type='text' />
+                        <input placeholder='No of Students' type='number' /> */}
+                        <br></br>
+                        select subjects
+                        select students
                         <div>
                             <button className='create-btn'>Create</button>
                             <button className='create-btn'>Cancel</button>

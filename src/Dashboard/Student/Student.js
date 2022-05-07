@@ -47,8 +47,6 @@ export default function Student() {
 
   return (
     <div>
-
-
       <Card className='classes-card shadow py-3 px-4 mt-3'>
         <Row>
           <Col md={6}>
@@ -67,7 +65,7 @@ export default function Student() {
                 <th>S/N</th>
                 <th>Student Name</th>
                 <th>Class Name</th>
-                <th>Class Teacher Name</th>
+                {/* <th>Class Teacher Name</th> */}
                 <th>Subjects/Courses</th>
                 <th className='d-flex justify-content-end'>Actions</th>
               </tr>
@@ -78,7 +76,7 @@ export default function Student() {
                   <th className='text-white' scope="row">{item.sn}</th>
                   <td className='text-white'>{item.name}</td>
                   <td className='text-white'>{item.className}</td>
-                  <td className='text-white'>{item.teacherName}</td>
+                  {/* <td className='text-white'>{item.teacherName}</td> */}
                   <td className='text-white'><img src={view} alt='' className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="view subjects/courses" style={{ width: 35, height: 35 }} onClick={toggle1} /></td>
                   {/* <td className='text-white'>20</td> */}
                   <td className='d-flex justify-content-end'>

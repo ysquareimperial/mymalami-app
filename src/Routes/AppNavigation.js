@@ -16,6 +16,8 @@ import EditSubject from "../Dashboard/Subject/EditSubject";
 import EditStudent from "../Dashboard/Student/EditStudent";
 import Settings from "../Dashboard/UserSettings/Settings";
 import Profile from "../Profile/Profile";
+import EditUserInfo from "../Profile/EditUserInfo";
+import EditSchoolInfo from "../Profile/EditSchoolInfo";
 
 function AppNavigation() {
     let element = useRoutes([
@@ -86,6 +88,14 @@ function AppNavigation() {
                 {
                     path: '/profile',
                     element: <Profile />
+                },
+                {
+                    path: '/edit-user-info',
+                    element: <EditUserInfo />
+                },
+                {
+                    path: '/edit-school-info',
+                    element: <EditSchoolInfo />
                 },
             ]
         }

@@ -1,0 +1,59 @@
+:root {
+    --primaryColor: rgb(37 37 38);
+    --secondaryColor: rgb(45 45 45);
+    --hoverColor: rgb(75, 75, 75);
+}
+
+.settings-card {
+    border-radius: 30px;
+    border: 1px solid var(--hoverColor);
+    /* border: none; */
+    height: 50vh;
+    background-color: var(--secondaryColor);
+    color: white;
+}
+
+input[type=email] {
+    background-color: var(--hoverColor);
+    border: var(--primaryColor) solid 1px;
+    border-radius: 5px;
+}
+
+input[type=password] {
+    background-color: var(--hoverColor);
+    border: var(--primaryColor) solid 1px;
+    border-radius: 5px;
+}
+
+.change-email-btn {
+    border: 1px solid var(--hoverColor);
+    background-color: var(--secondaryColor);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    width: 50%;
+}
+
+.change-email-btn:hover {
+    background-color: var(--hoverColor);
+}
+
+.change-password-btn {
+    border: 1px solid var(--hoverColor);
+    background-color: var(--secondaryColor);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    width: 60%;
+}
+
+.change-password-btn:hover {
+    background-color: var(--hoverColor);
+}
+.dlt-acnt-btn{
+    background-color: rgb(206, 41, 41);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding:7px;
+}

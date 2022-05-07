@@ -12,13 +12,6 @@ export default function Home() {
     const navigate = useNavigate()
     const indexActions = [
         {
-            // icon: <classs size='4rem' style={{backgroundColor:'#1B7B4D', padding:14, borderRadius:50}} />,
-            img: <img alt='a' src={classs} />,
-            name: 'Classes',
-            total: '3',
-            url: '/class'
-        },
-        {
             // icon: <book size='4rem' style={{backgroundColor:'#1B7B4D', padding:14, borderRadius:50}} />,
             img: <img alt='a' src={book} />,
             name: 'Subjects',
@@ -31,6 +24,13 @@ export default function Home() {
             name: 'Students',
             total: '12',
             url: '/student'
+        },
+        {
+            // icon: <classs size='4rem' style={{backgroundColor:'#1B7B4D', padding:14, borderRadius:50}} />,
+            img: <img alt='a' src={classs} />,
+            name: 'Classes',
+            total: '3',
+            url: '/class'
         },
         {
             // icon: <report size='4rem' style={{backgroundColor:'#1B7B4D', padding:14, borderRadius:50}} />,

@@ -27,8 +27,10 @@ export default function CreateStudent() {
                 <Row>
                     <Col md={6} className='mt-3'>
                         <input placeholder='Student Name' type='text' />
-                        <input placeholder='Class Name' type='text' />
-                        <input placeholder='Class Teacher Name' type='text' />
+                        <br></br>
+                        select subjects
+                        {/* <input placeholder='Class Name' type='text' />
+                        <input placeholder='Class Teacher Name' type='text' /> */}
 
                         <div>
                             <button className='create-btn'>Create</button>
