@@ -1,0 +1,24 @@
+:root {
+    --primaryColor: #08351f;
+    --secondaryColor: #105031;
+    --hoverColor: #56a07c;
+}
+
+.report-card {
+    border-radius: 30px;
+    border: 1px solid var(--primaryColor);
+    /* border: none; */
+    height: 80vh;
+
+}
+
+.heading {
+    font-weight: bold;
+    color: var(--primaryColor);
+}
+
+.img {
+    width: 48;
+    height: 48;
+    margin-bottom: 4px;
+}

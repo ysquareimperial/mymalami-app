@@ -1,0 +1,119 @@
+/* :root {
+    --primaryColor: #08351f;
+    --secondaryColor: #105031;
+    --hoverColor: #56a07c;
+} */
+:root {
+    --primaryColor: rgb(37 37 38);
+    --secondaryColor: rgb(45 45 45);
+    --hoverColor: rgb(75, 75, 75);
+}
+
+.classes-card {
+    border-radius: 30px;
+    border: 1px solid var(--hoverColor);
+    /* border: none; */
+    height: 80vh;
+    background-color: var(--secondaryColor);
+    color: white;
+}
+
+.action-img {
+    margin-right: 5px;
+}
+
+.action-img:hover {
+    padding: 2px;
+    background-color: var(--hoverColor);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.action-img-1:hover {
+    padding: 2px;
+    background-color: var(--hoverColor);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.table {
+    color: white;
+    border-radius: 20px;
+}
+
+.table-body {
+    color: white;
+}
+
+.class-modal {
+    background-color: var(--secondaryColor);
+    color: white;
+    border-radius: 30px;
+}
+
+input[type=text] {
+    background-color: var(--hoverColor);
+    border:var(--primaryColor) solid 1px;
+    border-radius: 5px;
+}
+
+input[type=number] {
+    background-color: var(--hoverColor);
+    border:var(--primaryColor) solid 1px;
+    border-radius: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+    height: 40px;
+    border: var(--hoverColor) solid 1px;
+}
+.create-btn{
+    border: 1px var(--hoverColor) solid;
+    border-radius: 5px;
+    background-color: var(--secondaryColor);
+    padding: 8px;
+    color: white;
+    margin-right: 30px;
+}
+
+.create-btn:hover{
+    border: 1px var(--hoverColor) solid;
+    border-radius: 5px;
+    background-color: var(--hoverColor);
+    padding: 8px;
+    color: white;
+    border: 1px var(--hoverColor) solid;
+}
+
+ .modal-body{
+    background-color: var(--secondaryColor);
+    color: white;
+}
+
+.dlt-details{
+    margin:0;
+    padding: 0;
+    margin-left: 10px;
+    font-size: 13px;
+}
+.dlt-modal-footer{
+    background-color: var(--secondaryColor);
+}
+.modal-btn{
+    border: 1px var(--hoverColor) solid;
+    border-radius: 5px;
+    background-color: var(--secondaryColor);
+    padding: 5px;
+    color: white;
+    margin-right: 10px;
+}
+
+.modal-btn:hover{
+    border: 1px var(--hoverColor) solid;
+    border-radius: 5px;
+    background-color: var(--hoverColor);
+    /* padding: 8px; */
+    color: white;
+    border: 1px var(--hoverColor) solid;
+}

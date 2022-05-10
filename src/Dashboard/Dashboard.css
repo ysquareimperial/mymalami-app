@@ -1,11 +1,11 @@
 :root {
-    --primaryColor: #08351f;
-    --secondaryColor: #105031;
-    --hoverColor: #56a07c;
+    --primaryColor: rgb(37 37 38);
+    --secondaryColor: rgb(45 45 45);
+    --hoverColor: rgb(75, 75, 75);
 }
 
 
-.home-container { 
+.home-container {
     margin: 0;
     padding: 0;
 }
@@ -30,18 +30,20 @@
 .index-card {
     border-radius: 15px;
     margin-top: 20px;
-    background-color: white;
+    background-color: var(--secondaryColor);
     border: 0;
+    color: white;
 }
 
 .index-card:hover {
     cursor: pointer;
-    border: 1px #1B7B4D solid;
+    border: 1px solid;
+    border-color: var(--hoverColor);
 }
 
 .item-name {
-    /* color: white; */
-    color: var(--secondaryColor);
+    color: white;
+    /* color: var(--secondaryColor); */
     /* font-weight: lighter; */
     font-size: 150%;
 }
@@ -54,17 +56,19 @@
 }
 
 .item-total {
-    /* color: white; */
-    color: var(--secondaryColor);
+    color: white;
+    /* color: var(--secondaryColor); */
     font-weight: bolder;
     font-size: 300%;
 }
-.sidebar-items{
+
+.sidebar-items {
     list-style-type: none;
     padding-left: 0;
     margin-top: 15px;
 }
-li{
+
+li {
     color: white;
     /* background-color: aqua; */
     padding-left: 5px;
@@ -73,8 +77,18 @@ li{
     font-weight: bold;
     font-size: 20px;
 }
-li:hover{
+
+li:hover {
     background-color: var(--hoverColor);
     border-radius: 5px;
     cursor: pointer;
+}
+
+.index-container {
+    background-color: rgb(30 30 30);
+}
+
+.brand {
+    position: fixed;
+    bottom: 0;
 }
