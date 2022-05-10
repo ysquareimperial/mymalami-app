@@ -6,10 +6,17 @@ export default function CreateSubject() {
   const navigate = useNavigate()
   return (
     <div>
-      <Card className='classes-card shadow py-3 px-4 mt-3'>
+      <Card className='table-card shadow py-3 px-4 mt-3'>
         <Row>
           <Col md={6}>
-            <h3><span><img className="action-img" src={back} style={{ width: 35, height: 35, cursor: 'pointer' }} data-toggle="tooltip" data-placement="bottom" title="back" akt='' onClick={() => navigate('/subject')} /></span>Create Subject</h3>
+            <Row>
+              <Col md={1}>
+                <span><img className="action-img" src={back} data-toggle="tooltip" data-placement="bottom" title="back" akt='' onClick={() => navigate('/subject')} /></span>
+              </Col>
+              <Col md={11}>
+                <h3 className='table-card-title'>Create Subject</h3>
+              </Col>
+            </Row>
           </Col>
           <Col md={6}>
           </Col>
@@ -20,12 +27,13 @@ export default function CreateSubject() {
             {/* <input placeholder='Teacher Name' type='text' />
             <input placeholder='No of Students' type='number' /> */}
             <div>
-              <button className='create-btn'>Create</button>
-              <button className='create-btn'>Cancel</button>
+              <button className='action-btn'>Create</button>
+              <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>
             </div>
           </Col>
+          <Col md={6}>
+          </Col>
         </Row>
-        {/* <img className="action-img" src={back} style={{ width: 35, height: 35, cursor: 'pointer' }} data-toggle="tooltip" data-placement="bottom" title="back" akt='' onClick={() => navigate('/class')} /> */}
       </Card>
     </div>
   )

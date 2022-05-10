@@ -18,6 +18,8 @@ import Settings from "../Dashboard/UserSettings/Settings";
 import Profile from "../Profile/Profile";
 import EditUserInfo from "../Profile/EditUserInfo";
 import EditSchoolInfo from "../Profile/EditSchoolInfo";
+import Record from "../Dashboard/Record/Record";
+import SubjectRecord from "../Dashboard/Record/SubjectRecord";
 
 function AppNavigation() {
     let element = useRoutes([
@@ -26,14 +28,14 @@ function AppNavigation() {
             element: <AppIndex />,
             children: [
                 { index: true, element: <Home /> },
-                {
-                    path: "/",
-                    element: <Signin />
-                },
-                {
-                    path: '/sign-up',
-                    element: <Signup />
-                },
+                // {
+                //     path: "/sign-in",
+                //     element: <Signin />
+                // },
+                // {
+                //     path: '/sign-up',
+                //     element: <Signup />
+                // },
                 {
                     path: '/home',
                     element: <Home />
@@ -84,7 +86,7 @@ function AppNavigation() {
                 {
                     path: '/settings',
                     element: <Settings />
-                } ,
+                },
                 {
                     path: '/profile',
                     element: <Profile />
@@ -97,7 +99,23 @@ function AppNavigation() {
                     path: '/edit-school-info',
                     element: <EditSchoolInfo />
                 },
+                {
+                    path: '/record',
+                    element: <Record />
+                },
+                {
+                    path: '/subject-record',
+                    element: <SubjectRecord />
+                }
             ]
+        }, 
+        {
+            path: '/sign-in',
+            element: <Signin />
+        },
+        {
+            path: '/sign-up',
+            element: <Signup />
         }
     ]);
     return element;

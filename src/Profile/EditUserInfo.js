@@ -11,7 +11,7 @@ export default function EditUserInfo() {
                         <h3>
                             <span>
                                 <img className="action-img" src={back}
-                                    style={{ width: 30, height: 30 }} alt='' />
+                                    alt='' />
                             </span>
                             User Information
                         </h3>
@@ -19,7 +19,7 @@ export default function EditUserInfo() {
                     <Col md={6}>
                     </Col>
                 </Row>
-                <h5><img src={ysquare} alt='' style={{ width: 80, height: 80, borderRadius: 50 }} />{"  "}</h5>
+                <h5><img src={ysquare} alt=''  />{"  "}</h5>
                 {/* <input type='file' /> */}
                 <input className="form-control" type="file" id="formFile" />
                 <input type='text' />

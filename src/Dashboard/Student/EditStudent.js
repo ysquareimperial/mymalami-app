@@ -18,15 +18,17 @@ export default function EditStudent() {
     const [options] = useState(data)
     return (
         <div>
-            <Card className='classes-card shadow py-3 px-4 mt-3'>
+            <Card className='table-card shadow py-3 px-4 mt-3'>
                 <Row>
                     <Col md={6}>
-                        <h3><span>
-                            <img className="action-img" src={back}
-                                style={{ width: 35, height: 35, cursor: 'pointer' }}
-                                data-toggle="tooltip" data-placement="bottom" title="back" akt=''
-                                onClick={() => navigate('/class')} />
-                        </span>Edit Students</h3>
+                        <Row>
+                            <Col md={1}>
+                                <span><img className="action-img" src={back} data-toggle="tooltip" data-placement="bottom" title="back" akt='' onClick={() => navigate('/student')} /></span>
+                            </Col>
+                            <Col md={10}>
+                                <h3 className='table-card-title'>Edit Student</h3>
+                            </Col>
+                        </Row>
                     </Col>
                     <Col md={6}>
                     </Col>
@@ -37,8 +39,8 @@ export default function EditStudent() {
                         <input placeholder='Class Name' type='text' />
                         <input placeholder='Class Teacher Name' type='text' />
                         <div>
-                            <button className='create-btn'>Save</button>
-                            <button className='create-btn'>Cancel</button>
+                            <button className='action-btn'>Save</button>
+                            <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>
                         </div>
                     </Col>
                 </Row>

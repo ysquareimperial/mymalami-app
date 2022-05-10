@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import Navbar from "../Dashboard/Navbar";
 import Sidebar from "../Dashboard/Sidebar";
-import '../Dashboard/Dashboard.css'
+// import '../Dashboard/Dashboard.css'                                                                          
 export default function AppIndex() {
     return (
         <div className='home-container'>
