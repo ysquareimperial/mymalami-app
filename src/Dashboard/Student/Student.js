@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Card, Col, Modal, ModalBody, Row, Table } from 'reactstrap'
-import './student.css'
+// import './student.css'
 import edit from '../../images/edit.png'
 import dlt from '../../images/delete.png'
 import sum from '../../images/sum.png'
@@ -47,14 +47,14 @@ export default function Student() {
 
   return (
     <div>
-      <Card className='classes-card shadow py-3 px-4 mt-3'>
+      <Card className='table-card shadow py-3 px-4 mt-3'>
         <Row>
           <Col md={6}>
             <h3>Students</h3>
           </Col>
           <Col md={6}>
             <div className='d-flex justify-content-end'>
-              <img className='action-img' data-toggle="tooltip" data-placement="bottom" title="add class" style={{ width: 40, height: 40 }} src={sum} alt='s' onClick={() => navigate('/create-student')} />
+              <img className='action-img' data-toggle="tooltip" data-placement="bottom" title="add student" src={sum} alt='s' onClick={() => navigate('/create-student')} />
             </div>
           </Col>
         </Row>
@@ -73,20 +73,19 @@ export default function Student() {
             <tbody>
               {student.map((item, index) => (
                 <tr>
-                  <th className='text-white' scope="row">{item.sn}</th>
-                  <td className='text-white'>{item.name}</td>
-                  <td className='text-white'>{item.className}</td>
-                  {/* <td className='text-white'>{item.teacherName}</td> */}
-                  <td className='text-white'><img src={view} alt='' className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="view subjects/courses" style={{ width: 35, height: 35 }} onClick={toggle1} /></td>
-                  {/* <td className='text-white'>20</td> */}
+                  <th className='' scope="row">{item.sn}</th>
+                  <td className=''>{item.name}</td>
+                  <td className=''>{item.className}</td>
+                  {/* <td className=''>{item.teacherName}</td> */}
+                  <td className=''><img src={view} alt='' className='action-img' data-toggle="tooltip" data-placement="bottom" title="view subjects/courses" onClick={toggle1} /></td>
+                  {/* <td className=''>20</td> */}
                   <td className='d-flex justify-content-end'>
-                    {/* <img className='' data-toggle="tooltip" data-placement="bottom" title="view" style={{ width: 30, height: 30 }} src={eye} alt='s' /> */}
-                    <img className='action-img-1'
-                      data-toggle="tooltip" data-placement="bottom" title="edit class"
-                      style={{ width: 38, height: 38 }} src={edit} alt='s' onClick={()=>navigate('/edit-student')}/>
-                    <img className='action-img-1'
-                      data-toggle="tooltip" data-placement="bottom" title="delete class"
-                      style={{ width: 38, height: 38 }} src={dlt} alt='s' onClick={toggle} />
+                    <img className='action-img'
+                      data-toggle="tooltip" data-placement="bottom" title="edit student"
+                      src={edit} alt='s' onClick={() => navigate('/edit-student')} />
+                    <img className='action-img'
+                      data-toggle="tooltip" data-placement="bottom" title="delete student"
+                      src={dlt} alt='s' onClick={toggle} />
                   </td>
                 </tr>
               ))}
@@ -95,30 +94,30 @@ export default function Student() {
         </div>
       </Card>
       <Modal isOpen={open} toggle={toggle} className='dlt-modal'>
-        <ModalBody className='modal-body' style={{ borderRadius: '' }}>
-          <img src={dlt} style={{ width: 40, height: 40 }} /><p style={{ display: 'inline-block' }}>Are you sure you want to delete this Student?</p>
+        <ModalBody className='modal-body' >
+          <img src={dlt} /><p className='dlt-warning'>Are you sure you want to delete this Student?</p>
           <div>
             <p className='dlt-details'>Student Name: <span>JSS One</span></p>
             <p className='dlt-details'>Class Name: <span>Quavo Hunchox</span></p>
             <p className='dlt-details'>Class Teacher Name: <span>30</span></p>
           </div>
-          <div className='' style={{ float: 'right' }}>
-            <button className='modal-btn' onClick={toggle}>Cancel</button>
-            <button className='modal-btn'>Delete</button>
+          <div className='dlt-modal-action-div'>
+            <button className='action-btn' onClick={toggle}>Cancel</button>
+            <button className='action-cancel-btn'>Delete</button>
           </div>
         </ModalBody>
       </Modal>
       <Modal isOpen={open1} toggle={toggle1} className='dlt-modal'>
-        <ModalBody className='modal-body' style={{ borderRadius: '' }}>
-          <img src={book} alt='' style={{ width: 40, height: 40 }} /><p style={{ display: 'inline-block' }}>Subjects/Courses</p>
+        <ModalBody className='modal-body'>
+          <img src={book} alt='' /><p className='students'>Subjects/Courses</p>
           <div>
-            <p className='dlt-details'>Student Name: <span>Quavo Huncho</span></p>
-            <br></br>
+            <p className='std-details'>Student Name: <span>Quavo Huncho</span></p>
+            {/* <br></br> */}
             <p className='dlt-details'>Mathematics</p>
             <p className='dlt-details'>English</p>
           </div>
-          <div className='' style={{ float: 'right' }}>
-            <button className='modal-btn' onClick={toggle1}>Close</button>
+          <div className=''>
+            <button className='action-btn' onClick={toggle1}>Close</button>
           </div>
         </ModalBody>
       </Modal>

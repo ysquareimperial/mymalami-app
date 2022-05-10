@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ArrowDownCircle, Circle, Search } from 'react-feather'
 import { useNavigate } from 'react-router-dom'
 import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap'
-import './Navbar.css'
+// import './Navbar.css'
 import ysquare from '../images/ysquareimperial.png'
 import logo from '../images/sReord.png'
 export default function Navbar() {
@@ -18,15 +18,14 @@ export default function Navbar() {
                     <Row>
                         <Col md={1}>
                             <p className='logo'>
-                                <img src={logo} alt='sdfa' style={{ width: 45, height: 45, cursor:'pointer' }} data-toggle="tooltip" data-placement="bottom" title="sRecord" onClick={()=>navigate('/')}/>
-                                {/* <Circle color='white' size='2.7em' style={{ backgroundColor: 'white', borderRadius: 20 }} /> */}
-                            </p>
+                                <img className='logo' src={logo} alt='sdfa' data-toggle="tooltip" data-placement="bottom" title="sRecord" onClick={()=>navigate('/')}/>
+                               </p>
                         </Col>
                         <Col md={11}>
-                            <div class="has-search">
+                            {/* <div class="has-search">
                                 <span class="form-control-feedback"><Search/></span>
-                                <input type="text" class="search-input" placeholder="Search sRecord" style={{width:'40%', marginTop:3, borderRadius:20}}/>
-                            </div>
+                                <input type="text" class="search-input" placeholder="Search sRecord" />
+                            </div> */}
                         </Col>
                     </Row>
                 </Col>
@@ -45,7 +44,7 @@ export default function Navbar() {
                         </DropdownMenu>
                     </Dropdown>
                     <h1 className='dp-name' onClick={()=>navigate('/profile')}>
-                        <img src={ysquare} alt='profile' style={{ width: 38, height: 38, borderRadius: 50 }} />{" "}
+                        <img src={ysquare} className='dp' alt='profile'/>{" "}
                         Mr. Yasir Ado Hassan
                     </h1>
                 </Col>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Card } from 'reactstrap'
-import './signin.css'
+// import './signin.css'
 import { Mail, Unlock} from 'react-feather'
 import { useNavigate } from 'react-router-dom'
 export default function Signin() {

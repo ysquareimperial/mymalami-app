@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'reactstrap'
-import './report.css'
+// import './report.css'
 import report from '../../images/report.png'
 export default function Report() {
     return (
