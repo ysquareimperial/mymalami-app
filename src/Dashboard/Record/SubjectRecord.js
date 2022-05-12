@@ -79,6 +79,7 @@ export default function SubjectRecord() {
                                 <th>English Presentation</th>
                                 <th>English CA</th>
                                 <th>English Exam</th>
+                                <th>English Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -90,6 +91,7 @@ export default function SubjectRecord() {
                                     <td className=''><input className='record-input' type='text' /></td>
                                     <td className=''><input className='record-input' type='text' /></td>
                                     <td className=''><input className='record-input' type='text' /></td>
+                                    <td className=''>100</td>
                                 </tr>
                             ))}
                         </tbody>

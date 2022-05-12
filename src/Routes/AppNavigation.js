@@ -20,22 +20,20 @@ import EditUserInfo from "../Profile/EditUserInfo";
 import EditSchoolInfo from "../Profile/EditSchoolInfo";
 import Record from "../Dashboard/Record/Record";
 import SubjectRecord from "../Dashboard/Record/SubjectRecord";
+import LandingPage from "../LandingPage/LandingPage";
 
 function AppNavigation() {
     let element = useRoutes([
         {
-            path: "/",
+            path: '/',
+            element: <LandingPage />,
+            children: [{ index: true }]
+        },
+        {
+            // path: "/",
             element: <AppIndex />,
             children: [
                 { index: true, element: <Home /> },
-                // {
-                //     path: "/sign-in",
-                //     element: <Signin />
-                // },
-                // {
-                //     path: '/sign-up',
-                //     element: <Signup />
-                // },
                 {
                     path: '/home',
                     element: <Home />
@@ -108,7 +106,7 @@ function AppNavigation() {
                     element: <SubjectRecord />
                 }
             ]
-        }, 
+        },
         {
             path: '/sign-in',
             element: <Signin />
@@ -116,7 +114,8 @@ function AppNavigation() {
         {
             path: '/sign-up',
             element: <Signup />
-        }
+        },
+
     ]);
     return element;
 }

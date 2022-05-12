@@ -249,6 +249,21 @@ input[type=number] {
     border-radius: 5px;
     border: 1px solid;
 }
+input[type=password] {
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+}
+input[type=email] {
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
 
 .action-cancel-btn {
     border: none;
@@ -308,7 +323,7 @@ input[type=number] {
     margin-top: 1.5%;
 }
 .subject-name{
-    /* font-weight:200 */
+    font-weight:200
 }
 .std-enrolled{
     font-size: 13px;
@@ -324,4 +339,39 @@ input.record-input{
 .record-col .action-img{
 width: 20px;
 height: 20px;
+}
+.profile-pic{
+    width: 50px;
+    border-radius: 50px;
+}
+.profile-details .dlt-details{
+    margin-left: 0px;
+}
+.profile-details{
+    padding-top: 10px;
+}
+.scl-pic{
+    width:50px;
+}
+.profile-pen {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.profile-pen:hover {
+    background-color: var(--hoverColor);
+    border-radius: 50px;
+    padding: 3px;
+    transition: 500ms;
+    /* -o-transition: 50ms; */
+}
+.profile-row .table-card{
+    height: 50vh;
+}
+.profile-row .action-btn{
+    margin-right: 0;
+}
+.profile-row .action-cancel-btn{
+    margin-right: 0;
 }
