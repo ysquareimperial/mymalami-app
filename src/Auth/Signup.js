@@ -14,7 +14,7 @@ export default function Signup() {
                 <Col md={5}>
                 <h1 className='one-click'>One-Click students reports generator</h1>
                     <p className='about'>Creating high quality and accurate reports.</p>
-                    <button className='start-btn' onClick={() => navigate('/')}>Sign in</button>
+                    <button className='start-btn' onClick={() => navigate('/sign-in')}>Sign in</button>
                 </Col>
                 <Col md={4} className='text-center middle'>
                     {/* <h1 className='brand-name'>sRecord</h1> */}
@@ -54,9 +54,9 @@ export default function Signup() {
                             </Col>
                         </Row>
                         <hr></hr>
-                        <p className='dont-have-account'>Have an account? | <span className='signup' onClick={() => navigate('/')}>Sign in</span></p>
+                        <p className='dont-have-account'>Have an account? | <span className='signup' onClick={() => navigate('/sign-in')}>Sign in</span></p>
                     </Card>
-                    <button className='login-btn' onClick={()=>navigate('/index')}>SIGN UP</button>
+                    <button className='login-btn' onClick={()=>navigate('/home')}>SIGN UP</button>
 
                 </Col>
                 <Col md={2}></Col>
