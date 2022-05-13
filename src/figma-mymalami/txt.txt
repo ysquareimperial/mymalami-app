@@ -1,0 +1,16 @@
+logo
+home
+features
+contact us
+login
+signup
+
+"Create, grade and asess students by topics, subjects or class"
+"After grading sort students by score, age, names and much more"
+"Generate weekly, monthly or semesterly report cards"
+"All this at the click of a single button"
+
+63 1540
+621 474
+
+63 1425

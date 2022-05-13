@@ -375,3 +375,12 @@ height: 20px;
 .profile-row .action-cancel-btn{
     margin-right: 0;
 }
+
+.searchBox {
+    height: 10px;
+    /* border: 2px solid black; */
+}
+
+.optionContainer {
+    border: 2px solid;
+}
