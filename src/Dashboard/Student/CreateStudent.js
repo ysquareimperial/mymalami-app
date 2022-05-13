@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Card, Col, Row } from 'reactstrap'
 import back from '../../images/back.png'
 import { useNavigate } from 'react-router-dom'
+import Multiselect from 'multiselect-react-dropdown'
 export default function CreateStudent() {
 
     const navigate = useNavigate()
@@ -35,10 +36,10 @@ export default function CreateStudent() {
                     <Col md={6} className='mt-3'>
                         <input placeholder='Student Name' type='text' />
                         <br></br>
-                        select subjects
+                        {/* select subjects */}
                         {/* <input placeholder='Class Name' type='text' />
                         <input placeholder='Class Teacher Name' type='text' /> */}
-
+                        <Multiselect options={data} displayValue='value' showCheckbox={true} placeholder='Select subjects to be taken' avoidHighlightFirstOption={true}/>
                         <div className=''>
                             <button className='action-btn'>Create</button>
                             <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>
