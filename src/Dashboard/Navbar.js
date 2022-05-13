@@ -18,7 +18,7 @@ export default function Navbar() {
                     <Row>
                         <Col md={1}>
                             <p className='logo'>
-                                <img className='logo' src={logo} alt='sdfa' data-toggle="tooltip" data-placement="bottom" title="sRecord" onClick={()=>navigate('/')}/>
+                                <img className='logo' src={logo} alt='sdfa' data-toggle="tooltip" data-placement="bottom" title="sRecord" onClick={()=>navigate('/home')}/>
                                </p>
                         </Col>
                         <Col md={11}>
