@@ -17,7 +17,7 @@
 .home-container {
     margin: 0;
     padding: 0;
-    margin-top: 4.85%;
+    /* margin-top: 4.85%; */
 }
 
 .navbar {
@@ -43,6 +43,7 @@
 .sidebar-row {
     margin: 0;
     padding: 0;
+    margin-top: 60px;
 }
 
 .index-card {
@@ -378,7 +379,7 @@ height: 20px;
 
 .searchBox {
     height: 10px;
-    /* border: 2px solid black; */
+    border: 2px solid black;
 }
 
 .optionContainer {

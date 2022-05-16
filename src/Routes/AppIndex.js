@@ -12,7 +12,6 @@ export default function AppIndex() {
                     <Navbar />
                 </Col>
             </Row>
-
             <Row className='sidebar-row'>
                 <Col lg={2} md={2} className='sidebar'>
                     <Sidebar />

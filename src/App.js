@@ -5,7 +5,7 @@ import Navbar from './Dashboard/Navbar.js';
 function App() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <AppNavigation />
     </div>
   );

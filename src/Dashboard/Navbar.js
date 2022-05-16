@@ -13,7 +13,7 @@ export default function Navbar() {
     const navigate = useNavigate()
     return (
         <div>
-            <Row className='nav-row'>
+            <Row className='nav-row m-0 p-0'>
                 <Col md={6}>
                     <Row>
                         <Col md={1}>
