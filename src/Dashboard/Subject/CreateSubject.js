@@ -2,6 +2,8 @@ import React from 'react'
 import { Card, Col, Row } from 'reactstrap'
 import back from '../../images/back.png'
 import { useNavigate } from 'react-router-dom'
+import Multiselect from 'multiselect-react-dropdown'
+import subject from './ClassSubjects'
 export default function CreateSubject() {
   const navigate = useNavigate()
   return (
@@ -23,9 +25,10 @@ export default function CreateSubject() {
         </Row>
         <Row>
           <Col md={6} className='mt-3'>
-            <input placeholder='Subject Name' type='text' />
+            {/* <input placeholder='Subject Name' type='text' /> */}
             {/* <input placeholder='Teacher Name' type='text' />
             <input placeholder='No of Students' type='number' /> */}
+            <Multiselect options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} />
             <div>
               <button className='action-btn'>Create</button>
               <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>

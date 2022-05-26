@@ -4,15 +4,16 @@ import { Card, Col, Row } from 'reactstrap'
 import back from '../../images/back.png'
 import { useNavigate } from 'react-router-dom'
 import Multiselect from 'multiselect-react-dropdown'
+import subject from '../Subject/ClassSubjects'
 export default function CreateClass() {
     const navigate = useNavigate()
-    const data = [
-        { value: 'Mathematics', id: 1 },
-        { value: 'English', id: 2 },
-        { value: 'Civic Education', id: 3 },
-        { value: 'Mathesmatics', id: 4 },
-        { value: 'Englissh', id: 5 }
-    ]
+    // const data = [
+    //     { value: 'Mathematics', id: 1 },
+    //     { value: 'English', id: 2 },
+    //     { value: 'Civic Education', id: 3 },
+    //     { value: 'Mathesmatics', id: 4 },
+    //     { value: 'Englissh', id: 5 }
+    // ]
     const data2 = [
         { value: 'Adamu Abdullahi', id: 1 },
         { value: 'Aisha Sule', id: 2 },
@@ -42,7 +43,7 @@ export default function CreateClass() {
                         <input placeholder='Class Name' type='text' />
 
                         <br></br>
-                        <Multiselect options={data} displayValue='value' showCheckbox={true} placeholder='Select subjects for class' avoidHighlightFirstOption={true} />
+                        <Multiselect options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects for class' avoidHighlightFirstOption={true} />
                         <br />
                         <Multiselect options={data2} displayValue='value' showCheckbox={true} placeholder='Select students in class' avoidHighlightFirstOption={true} />
                         <div>
