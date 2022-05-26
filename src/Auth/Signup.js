@@ -17,7 +17,7 @@ export default function Signup() {
                     <div className='sign-left-col'>
                         <h1 className='sign-heading'>One-Click students reports generator</h1>
                         <p className='sign-para'>Creating high quality and accurate reports.</p>
-                        <button className='signin-btn' onClick={() => navigate('/sign-in')}>Sign in</button>
+                        <button className='s-btn' onClick={() => navigate('/sign-in')}>Sign in</button>
                     </div>
                 </Col>
                 <Col md={4} className='text-center middle signin-row'>

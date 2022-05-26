@@ -22,7 +22,7 @@ export default function LandingPage() {
                     <Col md={2}>
                         <img src={logo} alt='sRecord' className='ln-logo' />
                     </Col>
-                    <Col md={8} className='nav-items'>
+                    <Col md={7} className='nav-items'>
                         <ul className='nav-list'>
                             <a href='#features'><li className='l'>Features</li></a>
                             <a href='#testimonials'><li className='l'>Testimonials</li></a>
@@ -30,9 +30,9 @@ export default function LandingPage() {
                             <a href='#contact'><li className='l'>Contact</li></a>
                         </ul>
                     </Col>
-                    <Col md={2} className='div'>
-                        <button className='start-btn mt-1 shadow' onClick={() => navigate('/sign-in')}>Sign In</button>
-                        <button className='start-btn mt-1 shadow' onClick={() => navigate('/sign-up')}>Sign Up</button>
+                    <Col md={3} className='div'>
+                        <button className='signin-btn ' onClick={() => navigate('/sign-in')}>Sign In</button>
+                        <button className='signup-btn ' onClick={() => navigate('/sign-up')}>Sign Up</button>
                     </Col>
                 </Row>
             </div>
@@ -88,7 +88,7 @@ export default function LandingPage() {
                     <Col md={3}>
                         <Card className='py-2 px-3 f-card shadow text-center'>
                             <div className='text-center'>
-                                <img src={score} alt ='' className='shadow f-img' />
+                                <img src={score} alt='' className='shadow f-img' />
                             </div>
                             <h3 className='f-title'>Assign Scores</h3>
                             <p className='f-p'>Students scores are recorded and automatically graded.</p>
