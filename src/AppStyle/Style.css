@@ -4,6 +4,8 @@
     --hoverColor: rgb(236, 236, 236);
     --btnColor: rgb(82, 113, 255);
     --btnDangerColor: rgb(217, 83, 79);
+    --yellow: rgb(255, 201, 85);
+
 }
 
 /* :root {
@@ -115,6 +117,7 @@ li:hover {
 .logo {
     width: 50px;
     /* padding-left: 30px; */
+    /* padding-top: 2px; */
 }
 
 .dp-name {
@@ -126,7 +129,7 @@ li:hover {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    /* margin-top: 4px; */
+    margin-top: 7px;
 }
 
 .dp {
@@ -144,7 +147,7 @@ li:hover {
     /* background-color: var(--primaryColor); */
     border: none;
     float: right;
-    margin-top: 5px;
+    margin-top: 12px;
     /* z-index: 0; */
     z-index: inherit;
 }
@@ -189,7 +192,7 @@ li:hover {
 } */
 .nav-row {
     margin-top: 7px;
-    margin-bottom: -7px;
+    /* margin-bottom: -7px; */
 }
 
 .table-card {
@@ -250,6 +253,23 @@ input[type=number] {
     border-radius: 5px;
     border: 1px solid;
 }
+
+input[type=address] {
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+input[type=file] {
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
 input[type=password] {
     outline: none;
     padding: 10px;
@@ -257,6 +277,7 @@ input[type=password] {
     border-radius: 5px;
     border: 1px solid;
 }
+
 input[type=email] {
     outline: none;
     padding: 10px;
@@ -320,40 +341,50 @@ input[type=email] {
     /* padding:10px */
 }
 
-.record-heading{
+.record-heading {
     margin-top: 1.5%;
 }
-.subject-name{
-    font-weight:200
+
+.subject-name {
+    font-weight: 200
 }
-.std-enrolled{
+
+.std-enrolled {
     font-size: 13px;
 }
-.std-total{
+
+.std-total {
     font-size: 25px;
 }
 
-input.record-input{
+input.record-input {
     width: 30%;
-    height: 4%;
+    height: 30px;
+    margin: 0;
 }
-.record-col .action-img{
-width: 20px;
-height: 20px;
+
+.record-col .action-img {
+    width: 20px;
+    height: 20px;
 }
-.profile-pic{
+
+.profile-pic {
     width: 50px;
     border-radius: 50px;
 }
-.profile-details .dlt-details{
+
+.profile-details .dlt-details {
     margin-left: 0px;
 }
-.profile-details{
+
+.profile-details {
     padding-top: 10px;
 }
-.scl-pic{
-    width:50px;
+
+.scl-pic {
+    width: 50px;
 }
+
 .profile-pen {
     width: 20px;
     height: 20px;
@@ -367,13 +398,16 @@ height: 20px;
     transition: 500ms;
     /* -o-transition: 50ms; */
 }
-.profile-row .table-card{
+
+.profile-row .table-card {
     height: 50vh;
 }
-.profile-row .action-btn{
+
+.profile-row .action-btn {
     margin-right: 0;
 }
-.profile-row .action-cancel-btn{
+
+.profile-row .action-cancel-btn {
     margin-right: 0;
 }
 
@@ -384,4 +418,176 @@ height: 20px;
 
 .optionContainer {
     border: 2px solid;
+}
+
+.sub-btn {
+    border: none;
+    margin-left: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+    padding-left: 15px;
+    /* border-radius: 5px; */
+    background-color: var(--primaryColor);
+    color: var(--btnColor);
+    border-radius: 5px;
+
+}
+
+.sub-btn:hover {
+    border: none;
+    margin-left: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+    padding-left: 15px;
+    /* border-radius: 5px; */
+    background-color: var(--yellow);
+    color: var(--primaryColor);
+    border-radius: 5px;
+    transition: 500ms;
+}
+
+.edit-profile-pic {
+    border-radius: 50%;
+    width: 150px;
+}
+
+.edit-school-pic {
+    width: 150px;
+}
+
+.profile-div>.table-card {
+    height: 110vh;
+    margin-bottom: 10px;
+}
+
+.signin-container {
+    background-color: var(--btnColor);
+    /* color: var(--primaryColor); */
+    height: 100vh;
+}
+
+.sign-heading {
+    color: var(--primaryColor);
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 0;
+}
+
+.sign-para {
+    color: var(--primaryColor);
+    font-weight: lighter;
+    font-size: 30px;
+}
+
+.signin-btn {
+    color: var(--btnColor);
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    background-color: var(--primaryColor);
+}
+
+.sign-card {
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.sign-card input {
+    /* background-color: red; */
+    width: 100%;
+}
+
+.input-wrap {
+    margin-top: 20px
+}
+
+.signin-row {
+    margin-top: 100px;
+}
+
+.login-btn {
+    width: 70%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: white;
+    color: var(--btn);
+    margin-top: 0;
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 10px;
+}
+
+.login-btn:hover {
+    width: 80%;
+    transition: 500ms;
+    background-color: var(--yellow);
+    color: var(--primaryColor);
+}
+
+.sign-left-col {
+    margin-top: 100px;
+}
+
+.sign-logo {
+    width: 200px;
+}
+
+.signup {
+    cursor: pointer;
+}
+
+.action-cancel-btn-rcd {
+    border: none;
+    margin-right: 50px;
+    /* margin-top: 20px; */
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--btnDangerColor);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 20px;
+}
+
+.action-cancel-btn-rcd:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2), 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.add-module {
+    float: right;
+    width: 35px;
+    margin-top: 30px;
+}
+
+.add-module:hover {
+    background-color: #aaa;
+    border-radius: 5px;
+    transition: 500ms
+}
+
+.report-t, .report-th, .report-td{
+    border: 1px solid black;
+}
+.report-t{
+    width: 100%;
+}
+.report-th{
+    width: 10px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.t-d{
+    overflow: auto;
 }

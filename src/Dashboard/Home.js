@@ -7,7 +7,8 @@ import student from '../images/student.png'
 import book from '../images/book.png'
 import classs from '../images/class.png'
 import report from '../images/report.png'
-import { useNavigate } from 'react-router-dom'
+import sum from '../images/sum.png'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Home() {
     const navigate = useNavigate()
@@ -17,25 +18,29 @@ export default function Home() {
             img: <img alt='a' src={book} />,
             name: 'Subjects',
             total: '6',
-            url: '/subject'
+            url: '/subject',
+            nav: '/create-subject'
         },
         {
             img: <img alt='a' src={student} />,
             name: 'Students',
             total: '12',
-            url: '/student'
+            url: '/student',
+            nav: '/create-student'
         },
         {
             img: <img alt='a' src={classs} />,
             name: 'Classes',
             total: '3',
-            url: '/class'
+            url: '/class',
+            nav: '/create-class'
         },
         {
             img: <img alt='a' src={report} />,
             name: 'Reports',
             total: '12',
-            url: '/report'
+            url: '/report',
+            nav: '/report'
         }
     ]
     return (
@@ -49,7 +54,14 @@ export default function Home() {
                                 {item.img}
                             </div>
                             <div className='item-total'>
-                                {item.total}
+                                <Row>
+                                    <Col md={6}>
+                                        {item.total}
+                                    </Col>
+                                    <Col md={6}>
+                                        <img src={sum} className='add-module' title='add' onClick={() => navigate()} />
+                                    </Col>
+                                </Row>
                             </div>
                         </Card>
                     </Col>

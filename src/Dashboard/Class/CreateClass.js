@@ -40,13 +40,11 @@ export default function CreateClass() {
                 <Row>
                     <Col md={6} className='mt-3'>
                         <input placeholder='Class Name' type='text' />
-                        {/* <input placeholder='Teacher Name' type='text' />
-                        <input placeholder='No of Students' type='number' /> */}
+
                         <br></br>
-                        {/* select subjects */}
-                        <Multiselect options={data} displayValue='value' showCheckbox={true} placeholder='Select subjects for class' avoidHighlightFirstOption={true}/>
-                        {/* select students */}<br/>
-                        <Multiselect options={data2} displayValue='value' showCheckbox={true} placeholder='Select students in class' avoidHighlightFirstOption={true}/>
+                        <Multiselect options={data} displayValue='value' showCheckbox={true} placeholder='Select subjects for class' avoidHighlightFirstOption={true} />
+                        <br />
+                        <Multiselect options={data2} displayValue='value' showCheckbox={true} placeholder='Select students in class' avoidHighlightFirstOption={true} />
                         <div>
                             <button className='action-btn'>Create</button>
                             <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>

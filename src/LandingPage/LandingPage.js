@@ -27,10 +27,10 @@ export default function LandingPage() {
                     </Col>
                     <Col md={8} className='nav-items'>
                         <ul className='nav-list'>
-                            <li className='l'>Features</li>
-                            <li className='l'>Testimonials</li>
-                            <li className='l'>Subscribe</li>
-                            <li className='l'>Contact</li>
+                            <a href='#features'><li className='l'>Features</li></a>
+                            <a href='#testimonials'><li className='l'>Testimonials</li></a>
+                            <a href='#subscribe'><li className='l'>Subscribe</li></a>
+                            <a href='#contact'><li className='l'>Contact</li></a>
                         </ul>
                     </Col>
                     <Col md={2} className='div'>
@@ -59,7 +59,7 @@ export default function LandingPage() {
             </div>
 
             <div className='section-2'>
-                <div>
+                <div id='features'>
                     <Row className='m-0 p-0'>
                         <Col md={4}></Col>
                         <Col md={4} className='text-center features'>
@@ -108,7 +108,7 @@ export default function LandingPage() {
                     </Col>
                 </Row>
             </div>
-            <div className='section-3'>
+            <div className='section-3' id='testimonials'>
                 <Row className='m-0 p-0'>
                     <Col md={4}></Col>
                     <Col md={4} className='text-center features'>
@@ -185,7 +185,7 @@ export default function LandingPage() {
                     {/* <Col md={2}></Col> */}
                 </Row>
             </div>
-            <div className='section-4 text-center'>
+            <div className='section-4 text-center' id='subscribe'>
                 <Row className='m-0 p-0'>
                     <Col md={2}></Col>
                     <Col md={8} className='text-center features'>
@@ -260,14 +260,14 @@ export default function LandingPage() {
                     <Col md={2}></Col>
                 </Row>
             </div>
-            <div className='section-5'>
+            <div className='section-5' id='contact'>
                 <Row className='m-0 p-0'>
                     <Col md={4} className='mt-5'>
                         <img src={logo2} alt='sRecord-logo' className='footer-logo' />
                         <div className='footer-left'>
                             <p className='footer-p'>...Creating High Quality and Accurate Reports!</p>
                             <p className='footer-p1'>Copyrights &copy; 2022 sRecord - All Rights Reserved</p>
-                            <p className='footer-p1'>Terms - Privacy - Cookies - Sign-up - Sign In</p>
+                            <p className='footer-p1'>Terms - Privacy - Cookies - <span onClick={() => navigate('/sign-in')} style={{ cursor: 'pointer' }}>Sign in</span> - <span onClick={() => navigate('/sign-up')} style={{ cursor: 'pointer' }}>Sign up</span></p>
                         </div>
                     </Col>
                     <Col md={4} className='mt-5'>
@@ -298,14 +298,18 @@ export default function LandingPage() {
                     </Col>
                     <Col md={4} className='mt-5'>
                         <h4 className='address'>Contact Us</h4>
-                        <p className='text-white'>Follow us on our social media platforms:</p>
+                        <p className='icon-p'>Follow us on our social media platforms:</p>
                         <div className=''>
                             <Row>
-                                <Col md={2}> <Facebook className='social' size='2.5em'/></Col>
-                                <Col md={2}> <Instagram className='social' size='2.5em'/></Col>
-                                <Col md={2}> <Twitter className='social' size='2.5em'/></Col>
-                                <Col md={6}> <Linkedin className='social' size='2.5em'/></Col>
+                                <Col md={1}> <Facebook className='social' size='1.5em' /></Col>
+                                <Col md={1}> <Instagram className='social' size='1.5em' /></Col>
+                                <Col md={1}> <Twitter className='social' size='1.5em' /></Col>
+                                <Col md={9}> <Linkedin className='social' size='1.5em' /></Col>
                             </Row>
+                        </div>
+                        <div>
+                            <p className='text-white mt-4 mb-0'>Subscribe to our news letter:</p>
+                            <input type='text' placeholder='email' className='' style={{ width: 200 }} /><button className='sub-btn shadow'>Subscribe</button>
                         </div>
                     </Col>
                 </Row>

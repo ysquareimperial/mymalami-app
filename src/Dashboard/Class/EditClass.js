@@ -1,10 +1,25 @@
 import React from 'react'
 import { Card, Col, Row } from 'reactstrap'
 // import './class.css'
+import Multiselect from 'multiselect-react-dropdown'
 import back from '../../images/back.png'
 import { useNavigate } from 'react-router-dom'
 export default function EditClass() {
     const navigate = useNavigate()
+    const data = [
+        { value: 'Mathematics', id: 1 },
+        { value: 'English', id: 2 },
+        { value: 'Civic Education', id: 3 },
+        { value: 'Mathesmatics', id: 4 },
+        { value: 'Englissh', id: 5 }
+    ]
+    const data2 = [
+        { value: 'Adamu Abdullahi', id: 1 },
+        { value: 'Aisha Sule', id: 2 },
+        { value: 'Murtala Muhammed', id: 3 },
+        { value: 'Yasir Ado Hassan', id: 4 },
+        { value: 'Wanka Zaharaddeen', id: 5 }
+    ]
     return (
         <div>
             <Card className='table-card shadow py-3 px-4 mt-3'>
@@ -24,8 +39,12 @@ export default function EditClass() {
                 <Row>
                     <Col md={6} className='mt-3'>
                         <input placeholder='Class Name' type='text' />
-                        <input placeholder='Teacher Name' type='text' />
-                        <input placeholder='No of Students' type='number' />
+
+                        <br></br>
+                        <Multiselect options={data} displayValue='value' showCheckbox={true} placeholder='Select subjects for class' avoidHighlightFirstOption={true} />
+                        <br />
+                        <Multiselect options={data2} displayValue='value' showCheckbox={true} placeholder='Select students in class' avoidHighlightFirstOption={true} />
+                      
                         <div>
                             <button className='action-btn'>Save</button>
                             <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>

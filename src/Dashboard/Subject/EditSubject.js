@@ -25,8 +25,7 @@ export default function EditSubject() {
         <Row>
           <Col md={6} className='mt-3'>
             <input placeholder='Subject Name' type='text' />
-            <input placeholder='Teacher Name' type='text' />
-            <input placeholder='No of Students' type='number' />
+            {/* <input placeholder='No of Students' type='number' /> */}
             <div>
               <button className='action-btn'>Save</button>
               <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>

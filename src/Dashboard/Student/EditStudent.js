@@ -15,6 +15,7 @@ export default function EditStudent() {
         { value: 'Englissh', id: 5 }
     ]
 
+
     const [options] = useState(data)
     return (
         <div>
@@ -35,9 +36,11 @@ export default function EditStudent() {
                 </Row>
                 <Row>
                     <Col md={6} className='mt-3'>
-                        <input placeholder='Student Name' type='text' />
-                        <input placeholder='Class Name' type='text' />
-                        <input placeholder='Class Teacher Name' type='text' />
+                    <input placeholder='Student Name' type='text' />
+                    <input placeholder='Student Class' type='text' />
+                        <br></br>
+                        <Multiselect options={data} displayValue='value' showCheckbox={true} placeholder='Select subjects to be taken' avoidHighlightFirstOption={true} />
+                        
                         <div>
                             <button className='action-btn'>Save</button>
                             <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>

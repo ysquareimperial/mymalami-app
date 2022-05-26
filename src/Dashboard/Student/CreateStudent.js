@@ -36,9 +36,6 @@ export default function CreateStudent() {
                     <Col md={6} className='mt-3'>
                         <input placeholder='Student Name' type='text' />
                         <br></br>
-                        {/* select subjects */}
-                        {/* <input placeholder='Class Name' type='text' />
-                        <input placeholder='Class Teacher Name' type='text' /> */}
                         <Multiselect options={data} displayValue='value' showCheckbox={true} placeholder='Select subjects to be taken' avoidHighlightFirstOption={true} />
                         <div className=''>
                             <button className='action-btn'>Create</button>

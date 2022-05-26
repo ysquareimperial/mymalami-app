@@ -1,26 +1,19 @@
-import React, { useState } from 'react'
-import { Card, Col, Modal, ModalBody, Row, Table } from 'reactstrap'
-// import './record.css'
-import edit from '../../images/edit.png'
-import dlt from '../../images/delete.png'
-import sum from '../../images/sum.png'
+import React from 'react'
+import { Card, Col,Row, Table } from 'reactstrap'
+// // import './record.css'
+// import edit from '../../images/edit.png'
+// import dlt from '../../images/delete.png'
+// import sum from '../../images/sum.png'
 import back from '../../images/back.png'
-import view from '../../images/view.png'
-import save from '../../images/save.png'
+// import view from '../../images/view.png'
+// import save from '../../images/save.png'
 import { useNavigate } from 'react-router-dom'
 
 
 export default function SubjectRecord() {
     const navigate = useNavigate()
 
-    const [open, setOpen] = useState(false)
-    const toggle = () => {
-        setOpen(!open)
-    }
-    const [open1, setOpen1] = useState(false)
-    const toggle1 = () => {
-        setOpen1(!open1)
-    }
+ 
     const student = [
         {
             sn: '1',
@@ -56,7 +49,7 @@ export default function SubjectRecord() {
                     <Col md={6}>
                         <Row>
                             <Col md={1}>
-                                <span><img className="action-img" src={back} data-toggle="tooltip" data-placement="bottom" title="back" akt='' onClick={() => navigate('/record')} /></span>
+                                <span><img className="action-img" alt='' src={back} data-toggle="tooltip" data-placement="bottom" title="back" akt='' onClick={() => navigate('/record')} /></span>
                             </Col>
                             <Col md={11}>
                                 <h3 className='table-card-title'>Create Subject Record</h3>
@@ -79,7 +72,7 @@ export default function SubjectRecord() {
                                 <th>English Presentation</th>
                                 <th>English CA</th>
                                 <th>English Exam</th>
-                                <th>English Total</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -91,13 +84,13 @@ export default function SubjectRecord() {
                                     <td className=''><input className='record-input' type='text' /></td>
                                     <td className=''><input className='record-input' type='text' /></td>
                                     <td className=''><input className='record-input' type='text' /></td>
-                                    <td className=''>100</td>
+                                    <td className=''><button className='action-cancel-btn-rcd'>Delete</button></td>
                                 </tr>
                             ))}
                         </tbody>
                     </Table>
                     <div className=''>
-                        <button className='action-btn'><img className='action-img' src={save} />save</button>
+                        <button className='action-btn'>save</button>
                     </div>
                 </div>
             </Card>
