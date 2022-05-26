@@ -1,31 +1,11 @@
 import React from 'react'
-import { Card } from 'reactstrap'
+import { Card, Col, Row } from 'reactstrap'
 // import './report.css'
 import report from '../../images/report.png'
+import { tableHeading } from './StudentsReports'
+import { students } from './StudentsReports'
 export default function Report() {
-    const tableHeading = [
-        {
-            name: 'name',
-            subject1: 'English Language',
-            subject2: 'Mathematics',
-            subject3: 'Civic Education',
-            subject4: 'Agricultural Studies',
-            subject5: 'Computer Studies',
-            subject6: 'Computer Studies',
-            subject7: 'Computer Studies',
-            subject8: 'Computer Studies',
-            subject9: 'Computer Studies',
-            subject10: 'Computer Studies',
-            subject11: 'Computer Studies',
-            subject12: 'Computer Studies'
-        }
-    ]
-    const students = [
-        {
-            name: 'joe joeee',
-            
-        }
-    ]
+
     return (
         <div>
             <Card className='report-card shadow py-3 px-4 mt-3'>
@@ -54,32 +34,42 @@ export default function Report() {
                                     <th className='report-th'>{item.subject10}</th>
                                     <th className='report-th'>{item.subject11}</th>
                                     <th className='report-th'>{item.subject12}</th>
+                                    <th className='report-th'>{item.total}</th>
+                                    <th className='report-th'>{item.average}</th>
+                                    <th className='report-th'>{item.position}</th>
                                 </tr>
                             </thead>
                         ))}
                         {students.map((item, index) => (
                             <tbody>
-
                                 <tr>
                                     <td className='report-td'>1</td>
-                                    <td className='report-td'>{item.name}</td>
-                                    <td className='report-td'>60</td>
-                                    <td className='report-td'>50</td>
-                                    <td className='report-td'>21</td>
-                                    <td className='report-td'>44</td>
-                                    <td className='report-td'>44</td>
-                                    <td className='report-td'>90</td>
-                                    <td className='report-td'>19</td>
-                                    <td className='report-td'>33</td>
-                                    <td className='report-td'>33</td>
-                                    <td className='report-td'>22</td>
-                                    <td className='report-td'>22</td>
+                                    <td className='report-td'>{item.studentName}</td>
+                                    <td className='report-th'>{item.subject1}</td>
+                                    <td className='report-th'>{item.subject2}</td>
+                                    <td className='report-th'>{item.subject3}</td>
+                                    <td className='report-th'>{item.subject4}</td>
+                                    <td className='report-th'>{item.subject5}</td>
+                                    <td className='report-th'>{item.subject6}</td>
+                                    <td className='report-th'>{item.subject7}</td>
+                                    <td className='report-th'>{item.subject8}</td>
+                                    <td className='report-th'>{item.subject9}</td>
+                                    <td className='report-th'>{item.subject10}</td>
+                                    <td className='report-th'>{item.subject11}</td>
+                                    <td className='report-th'>{item.subject12}</td>
+                                    <td className='report-th'>{item.total}</td>
+                                    {/* <td className='report-th'>{(item.subject1) + (item.subject2) + (item.subject3)}</td> */}
                                 </tr>
                             </tbody>
                         ))}
                     </table>
                 </div>
-                {/* <input type='text'/> */}
+                <Row>
+                    <Col md={6}></Col>
+                    <Col md={6}>
+                        <button className='action-btn' style={{float:'right', marginRight:0}}>Generate Reports</button>
+                    </Col>
+                </Row>
             </Card>
         </div>
     )

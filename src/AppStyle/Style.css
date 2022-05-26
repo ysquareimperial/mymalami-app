@@ -529,7 +529,7 @@ input.record-input {
 }
 
 .sign-left-col {
-    margin-top: 100px;
+    /* margin-top: 300px; */
 }
 
 .sign-logo {
@@ -590,4 +590,7 @@ input.record-input {
 
 .t-d{
     overflow: auto;
+}
+.section1-text{
+    margin-top: 80px;
 }

@@ -3,7 +3,7 @@ import { ArrowDownCircle, Circle, Search } from 'react-feather'
 import { useNavigate } from 'react-router-dom'
 import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap'
 // import './Navbar.css'
-import ysquare from '../images/ysquareimperial.png'
+import ysquare from '../images/user.png'
 import logo from '../images/sReord.png'
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -45,7 +45,7 @@ export default function Navbar() {
                     </Dropdown>
                     <h1 className='dp-name' onClick={()=>navigate('/profile')}>
                         <img src={ysquare} className='dp' alt='profile'/>{" "}
-                        Mr. Yasir Ado Hassan
+                        Mr. Abcde Fij 
                     </h1>
                 </Col>
             </Row>

@@ -9,11 +9,8 @@ import angel from '../images/angel.jfif'
 import report from '../images/report.svg'
 import score from '../images/score.svg'
 import quote from '../images/quote.png'
-import address from '../images/address.png'
-import android from '../images/android.png'
-import email from '../images/email.png'
 // import { useNavigate } from 'react-router-dom'
-import customer1 from '../images/ysquareimperial.png'
+// import customer1 from '../images/ysquareimperial.png'
 import './LandingPage.css'
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'react-feather'
 export default function LandingPage() {
@@ -43,7 +40,7 @@ export default function LandingPage() {
             <div className='section-1'>
                 <Row className='p-0 m-0'>
                     <Col md={6}>
-                        <div className=''>
+                        <div className='section1-text'>
                             <h1 className='l-h1'>One-Click Students Reports Generator</h1>
                             {/* <p>Creating High Quality and Accurate Reports</p> */}
                             <p className='l-p'>sRecord is an application that helps teachers generate students reports by creating classes, subjects, students and records.</p>
@@ -73,7 +70,7 @@ export default function LandingPage() {
                     <Col md={3}>
                         <Card className='py-2 px-3 f-card shadow text-center'>
                             <div className='text-center'>
-                                <img src={classs} className='shadow f-img' />
+                                <img src={classs} alt='' className='shadow f-img' />
                             </div>
                             <h3 className='f-title'>Create Classes</h3>
                             <p className='f-p'>This feature is used for creating and assigning class to individaul student.</p>
@@ -82,7 +79,7 @@ export default function LandingPage() {
                     <Col md={3}>
                         <Card className='py-2 px-3 f-card shadow text-center'>
                             <div className='text-center'>
-                                <img src={classs} className='shadow f-img' />
+                                <img src={classs} alt='' className='shadow f-img' />
                             </div>
                             <h3 className='f-title'>Create Subjects</h3>
                             <p className='f-p'>Creating subjects will allow the teacher to assign subjects that students undertake.</p>
@@ -91,7 +88,7 @@ export default function LandingPage() {
                     <Col md={3}>
                         <Card className='py-2 px-3 f-card shadow text-center'>
                             <div className='text-center'>
-                                <img src={score} className='shadow f-img' />
+                                <img src={score} alt ='' className='shadow f-img' />
                             </div>
                             <h3 className='f-title'>Assign Scores</h3>
                             <p className='f-p'>Students scores are recorded and automatically graded.</p>
@@ -100,7 +97,7 @@ export default function LandingPage() {
                     <Col md={3}>
                         <Card className='py-2 px-3 f-card shadow text-center'>
                             <div className='text-center'>
-                                <img src={report} className='shadow f-img' />
+                                <img src={report} alt='' className='shadow f-img' />
                             </div>
                             <h3 className='f-title'>Generate Reports</h3>
                             <p className='f-p'>Reports are generated for every automatically student.</p>
