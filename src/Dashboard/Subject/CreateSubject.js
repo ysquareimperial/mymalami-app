@@ -1,11 +1,32 @@
-import React from 'react'
+import React, {useState, useCallback} from 'react'
 import { Card, Col, Row } from 'reactstrap'
 import back from '../../images/back.png'
 import { useNavigate } from 'react-router-dom'
-import Multiselect from 'multiselect-react-dropdown'
+// import Multiselect from 'multiselect-react-dropdown'
+import CreatableSelect from 'react-select/creatable'
+import makeAnimated from 'react-select/animated'
 import subject from './ClassSubjects'
+
+
 export default function CreateSubject() {
+
+  const [value, setValue] = useState();
+  const [options, setOptions] = useState(subject)
+
   const navigate = useNavigate()
+  const animatedComponents = makeAnimated()
+  
+  const handleChange = useCallback((inputValue) => setValue(inputValue), []);
+
+  const handleCreate = useCallback(
+    (inputValue) => {
+      const newValue = { value: inputValue.toLowerCase(), label: inputValue };
+      setOptions([...subject, newValue]);
+      setValue(newValue);
+    },
+    [subject]
+  )
+
   return (
     <div>
       <Card className='table-card shadow py-3 px-4 mt-3'>
@@ -28,7 +49,14 @@ export default function CreateSubject() {
             {/* <input placeholder='Subject Name' type='text' /> */}
             {/* <input placeholder='Teacher Name' type='text' />
             <input placeholder='No of Students' type='number' /> */}
-            <Multiselect options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} />
+            <CreatableSelect options={options} 
+                              isMulti 
+                              components={animatedComponents} 
+                              closeMenuOnSelect={false} 
+                              onChange={handleChange} 
+                              onCreateOption={handleCreate}
+                              placeholder='Select Subjects'/>
+            {/* // options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} /> */}
             <div>
               <button className='action-btn'>Create</button>
               <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>
