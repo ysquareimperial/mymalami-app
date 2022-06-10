@@ -4,7 +4,7 @@ import { Row, Col, Card } from 'reactstrap'
 // import { Mail, Unlock } from 'react-feather'
 import lb from '../images/sRecord-L&B.png'
 import { useNavigate } from 'react-router-dom'
-export default function Signin() {
+export default function CreateNewPassword() {
     const navigate = useNavigate()
     return (
         <div className='signin-container'>
@@ -26,34 +26,27 @@ export default function Signin() {
                             <img src={lb} className='sign-logo' alt='sRecord Logo' />
                         </div>
                         <div className='input-wrap'>
+                            <h5>Create New Password</h5>
+                            <p className='forgot-text'>An email was sent to y*******l@gmail.com with a link to reset your password and get back to your account.</p>
                             <div className="input-group">
                                 {/* <div className="input-group-prepend">
                                     <span className="input-group-text span-icon" id=""><Mail /></span>
                                 </div> */}
-                                <input type="email" className="" placeholder="Email" />
+                                <input type="password" className="" placeholder="new password" />
                             </div>
                             <div className="input-group mt-3">
                                 {/* <div className="input-group-prepend">
                                     <span className="input-group-text span-icon" id=""><Unlock /></span>
                                 </div> */}
-                                <input type="password" className="" placeholder="Password" />
+                                <input type="email" className="" placeholder="confirm password" />
                             </div>
                         </div>
-                        <Row>
-                            <Col lg={6} md={6} sm={6} xs={6}>
-                                {/* <p className='remember-me'>
-                                    <input className="check" type="checkbox" value="" id="" />
-                                    Remember Me
-                                </p> */}
-                            </Col>
-                            <Col lg={6} md={6} sm={6} xs={6}>
-                                <p className='forgot-p' onClick={() => navigate('/forgot-password')} style={{ cursor: 'pointer' }}>Forgot Password?</p>
-                            </Col>
-                        </Row>
-                        <hr></hr>
-                        <p className='dont-have-account'>Don't have an account? | <span className='signup' onClick={() => navigate('/sign-up')}>Sign up</span></p>
+                        <div className='send-email-div'>
+                            <button className='action-btn' onClick={() => navigate('/home')}>Save and sign in</button>
+                        </div>
+                        {/* <hr></hr> */}
                     </Card>
-                    <button className='login-btn' onClick={() => navigate('/home')}>Sign in</button>
+                    <button className='login-btn'><span className='signup' onClick={() => navigate('/sign-up')}>Create new account</span> | <span className='signup' onClick={() => navigate('/sign-in')}>Sign in</span></button>
                 </Col>
                 <Col md={2}></Col>
             </Row>

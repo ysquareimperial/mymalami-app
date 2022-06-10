@@ -1,49 +1,48 @@
-import { Modal, ModalBody, Table } from 'reactstrap'
-import React, { useState } from 'react'
-import { Card, Col, Row } from 'reactstrap'
+import { Modal, ModalBody, Table } from "reactstrap";
+import React, { useState } from "react";
+import { Card, Col, Row } from "reactstrap";
 // import './class.css'
-import edit from '../../images/edit.png'
-import dlt from '../../images/delete.png'
-import sum from '../../images/sum.png'
-import view from '../../images/view.png'
-import student from '../../images/student.png'
-import book from '../../images/book.png'
-import { useNavigate } from 'react-router-dom'
+import edit from "../../images/edit.png";
+import dlt from "../../images/delete.png";
+import sum from "../../images/sum.png";
+import view from "../../images/view.png";
+import student from "../../images/student.png";
+import book from "../../images/book.png";
+import { useNavigate } from "react-router-dom";
 export default function Classes() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const toggle = () => {
-    setOpen(!open)
-  }
-  const [open1, setOpen1] = useState(false)
+    setOpen(!open);
+  };
+  const [open1, setOpen1] = useState(false);
   const toggle1 = () => {
-    setOpen1(!open1)
-  }
-  const [open2, setOpen2] = useState(false)
+    setOpen1(!open1);
+  };
+  const [open2, setOpen2] = useState(false);
   const toggle2 = () => {
-    setOpen2(!open2)
-  }
+    setOpen2(!open2);
+  };
   const classs = [
     {
-      sn: '1',
-      name: 'Quavo Huncho',
-      teacherName: 'Future Hndrxx',
-      students: '30'
+      sn: "1",
+      name: "Quavo Huncho",
+      teacherName: "Future Hndrxx",
+      students: "30",
     },
     {
-      sn: '2',
-      name: 'Quavo Huncho',
-      teacherName: 'Future Hndrxx',
-      students: '30'
+      sn: "2",
+      name: "Quavo Huncho",
+      teacherName: "Future Hndrxx",
+      students: "30",
     },
     {
-      sn: '3',
-      name: 'Quavo Huncho',
-      teacherName: 'Future Hndrxx',
-      students: '30'
-    }
-
-  ]
-  const navigate = useNavigate()
+      sn: "3",
+      name: "Quavo Huncho",
+      teacherName: "Future Hndrxx",
+      students: "30",
+    },
+  ];
+  const navigate = useNavigate();
   // let form = {
   //   contactName: "",
   //   contactPhone: "",
@@ -53,19 +52,30 @@ export default function Classes() {
 
   return (
     <div className="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-      <Card className='table-card shadow py-3 px-4 mt-3'>
+      <div>
+        <input type="search" placeholder="search classes" />
+      </div>
+      <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
           <Col md={6}>
             <h3>Classes</h3>
           </Col>
           <Col md={6}>
-            <div className='d-flex justify-content-end'>
-              <img className='action-img' data-toggle="tooltip" data-placement="bottom" title="add class" src={sum} alt='s' onClick={() => navigate('/create-class')} />
+            <div className="d-flex justify-content-end">
+              <img
+                className="action-img"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="add class"
+                src={sum}
+                alt="s"
+                onClick={() => navigate("/create-class")}
+              />
             </div>
           </Col>
         </Row>
-        <div className='mt-4'>
-          <Table className='table' >
+        <div className="mt-4">
+          <Table size="sm" className="table" striped>
             <thead>
               <tr>
                 <th>S/N</th>
@@ -73,22 +83,49 @@ export default function Classes() {
                 {/* <th>Class Teacher Name</th> */}
                 <th>Subjects</th>
                 <th>No of Students</th>
-                <th className='d-flex justify-content-end'>Actions</th>
+                <th className="d-flex justify-content-end">Actions</th>
               </tr>
             </thead>
             <tbody>
               {classs.map((item, index) => (
                 <tr>
-                  <th className='' scope="row">{item.sn}</th>
-                  <td className=''>{item.name}</td>
-                  <td className=''>{item.teacherName}</td>
+                  <th className="" scope="row">
+                    {item.sn}
+                  </th>
+                  <td className="">{item.name}</td>
+                  <td className="">{item.teacherName}</td>
                   {/* <td className=''><img src={view} alt='' className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="view subjects/courses" style={{ width: 35, height: 35 }} onClick={toggle1}/></td> */}
                   {/* <td className=''>{item.students}</td> */}
-                  <td className='' ata-toggle="tooltip" data-placement="bottom" title="click to view students" ><span className='students-total' onClick={toggle2}>{item.students}</span></td>
+                  <td
+                    className=""
+                    ata-toggle="tooltip"
+                    data-placement="bottom"
+                    title="click to view students"
+                  >
+                    <span className="students-total" onClick={toggle2}>
+                      {item.students}
+                    </span>
+                  </td>
 
-                  <td className=' d-flex justify-content-end'>
-                    <img className='action-img' data-toggle="tooltip" data-placement="bottom" title="edit class" src={edit} alt='s' onClick={() => navigate('/edit-class')} />
-                    <img className='action-img' data-toggle="tooltip" data-placement="bottom" title="delete class" src={dlt} alt='s' onClick={toggle} />
+                  <td className=" d-flex justify-content-end">
+                    <img
+                      className="action-img"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="edit class"
+                      src={edit}
+                      alt="s"
+                      onClick={() => navigate("/edit-class")}
+                    />
+                    <img
+                      className="action-img"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="delete class"
+                      src={dlt}
+                      alt="s"
+                      onClick={toggle}
+                    />
                   </td>
                 </tr>
               ))}
@@ -96,17 +133,28 @@ export default function Classes() {
           </Table>
         </div>
       </Card>
-      <Modal isOpen={open} toggle={toggle} className='dlt-modal'>
-        <ModalBody className='modal-body' >
-          <img src={dlt} alt='' /><p className='dlt-warning'>Are you sure you want to delete this class?</p>
+      <Modal isOpen={open} toggle={toggle} className="dlt-modal">
+        <ModalBody className="modal-body">
+          <img src={dlt} alt="" />
+          <p className="dlt-warning">
+            Are you sure you want to delete this class?
+          </p>
           <div>
-            <p className='dlt-details'>Class Name: <span>JSS One</span></p>
-            <p className='dlt-details'>Class teacher Name: <span>Quavo Hunchox</span></p>
-            <p className='dlt-details'>Number of Students: <span>30</span></p>
+            <p className="dlt-details">
+              Class Name: <span>JSS One</span>
+            </p>
+            <p className="dlt-details">
+              Class teacher Name: <span>Quavo Hunchox</span>
+            </p>
+            <p className="dlt-details">
+              Number of Students: <span>30</span>
+            </p>
           </div>
-          <div className=''>
-            <button className='action-btn' onClick={toggle}>Cancel</button>
-            <button className='action-cancel-btn'>Delete</button>
+          <div className="">
+            <button className="action-btn" onClick={toggle}>
+              Cancel
+            </button>
+            <button className="action-cancel-btn">Delete</button>
           </div>
         </ModalBody>
       </Modal>
@@ -124,20 +172,25 @@ export default function Classes() {
           </div>
         </ModalBody>
       </Modal> */}
-      <Modal isOpen={open2} toggle={toggle2} className='dlt-modal'>
-        <ModalBody className='modal-body' >
-          <img src={student} alt='' /><p className='students'>Students</p>
+      <Modal isOpen={open2} toggle={toggle2} className="dlt-modal">
+        <ModalBody className="modal-body">
+          <img src={student} alt="" />
+          <p className="students">Students</p>
           <div>
-            <p className='std-details'>Class Name: <span>JSS One</span></p>
-            
-            <p className='dlt-details'>Ali</p>
-            <p className='dlt-details'>Crrrrr</p>
+            <p className="std-details">
+              Class Name: <span>JSS One</span>
+            </p>
+
+            <p className="dlt-details">Ali</p>
+            <p className="dlt-details">Crrrrr</p>
           </div>
-          <div className=''>
-            <button className='action-btn' onClick={toggle2}>Close</button>
+          <div className="">
+            <button className="action-btn" onClick={toggle2}>
+              Close
+            </button>
           </div>
         </ModalBody>
       </Modal>
     </div>
-  )
+  );
 }

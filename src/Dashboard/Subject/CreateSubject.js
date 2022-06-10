@@ -28,7 +28,7 @@ export default function CreateSubject() {
             {/* <input placeholder='Subject Name' type='text' /> */}
             {/* <input placeholder='Teacher Name' type='text' />
             <input placeholder='No of Students' type='number' /> */}
-            <Multiselect options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} />
+            <Multiselect className='multiselect' options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} />
             <div>
               <button className='action-btn'>Create</button>
               <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>

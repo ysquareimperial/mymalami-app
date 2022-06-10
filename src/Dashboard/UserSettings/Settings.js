@@ -25,7 +25,7 @@ export default function Settings() {
           <Card className='text-center table-card shadow py-3 px-4 mt-3'>
             <p><span><img className='action-img' src={email} alt='' /></span>Email and Password</p>
             <div className='d-flex justify-content-center'>
-              <input placeholder='' type='email' />
+              <input placeholder='' type='email' style={{border:'none', backgroundColor:'rgb(236, 236, 236)'}}/>
             </div>
             <div className='d-flex justify-content-center mt-3'>
               <input placeholder='' type='password' />

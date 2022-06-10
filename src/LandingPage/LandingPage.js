@@ -110,7 +110,7 @@ export default function LandingPage() {
                     <Col md={4}></Col>
                     <Col md={4} className='text-center features'>
                         <h1 className='l-h1 mt-5'>Customer Reviews</h1>
-                        <p className='text-white mb-5'>what our customers are saying...</p>
+                        <p className='mb-5'>what our customers are saying...</p>
                     </Col>
                     <Col md={4}></Col>
                 </Row>
@@ -182,6 +182,7 @@ export default function LandingPage() {
                     {/* <Col md={2}></Col> */}
                 </Row>
             </div>
+            <hr></hr>
             <div className='section-4 text-center' id='subscribe'>
                 <Row className='m-0 p-0'>
                     <Col md={2}></Col>
@@ -259,7 +260,7 @@ export default function LandingPage() {
             </div>
             <div className='section-5' id='contact'>
                 <Row className='m-0 p-0'>
-                    <Col md={4} className='mt-5'>
+                    <Col md={4} sm={12} xs={12} className='mt-5'>
                         <img src={logo2} alt='sRecord-logo' className='footer-logo' />
                         <div className='footer-left'>
                             <p className='footer-p'>...Creating High Quality and Accurate Reports!</p>
@@ -267,7 +268,7 @@ export default function LandingPage() {
                             <p className='footer-p1'>Terms - Privacy - Cookies - <span onClick={() => navigate('/sign-in')} style={{ cursor: 'pointer' }}>Sign in</span> - <span onClick={() => navigate('/sign-up')} style={{ cursor: 'pointer' }}>Sign up</span></p>
                         </div>
                     </Col>
-                    <Col md={4} className='mt-5'>
+                    <Col md={4} sm={12} xs={12} className='mt-5'>
                         <h4 className='address'>Address</h4>
                         <div className=''>
                             <Row>
@@ -293,7 +294,7 @@ export default function LandingPage() {
                             </Row>
                         </div>
                     </Col>
-                    <Col md={4} className='mt-5'>
+                    <Col md={4} sm={12} xs={12} className='mt-5'>
                         <h4 className='address'>Contact Us</h4>
                         <p className='icon-p'>Follow us on our social media platforms:</p>
                         <div className=''>

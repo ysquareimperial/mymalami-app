@@ -39,6 +39,9 @@ export default function Subject() {
 
   return (
     <div>
+      <div>
+        <input type="search" placeholder="search subjects" />
+      </div>
       <Card className='table-card shadow py-3 px-4 mt-3'>
         <Row>
           <Col md={6}>
@@ -57,7 +60,7 @@ export default function Subject() {
           </Col>
         </Row>
         <div className='mt-4'>
-          <Table >
+          <Table size='sm' striped>
             <thead>
               <tr>
                 <th>S/N</th>

@@ -25,9 +25,8 @@ export default function EditUserInfo() {
                     <Col md={6}>
                         <h5><img src={ysquare} className='edit-profile-pic' alt='' />{"  "}</h5>
                         {/* <input type='file' /> */}
-                        <input type="file" id="formFile" />
-                        <input type='text' className='mt-3' />
-                        <input type='text' className='mt-3' />
+                        <input type="file" />
+                        <input type='text' className='mt-3'/>
                         <input type='number' className='mt-3' />
                         <input type='email' className='mt-3' />
                         <input type='address' className='mt-3' />

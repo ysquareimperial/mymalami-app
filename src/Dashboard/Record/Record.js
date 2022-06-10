@@ -80,7 +80,6 @@ export default function Record() {
                             {/* <div className=''>
                                 <img src={student} /><p className='std-enrolled'>Students Enrolled: <span className='std-total'>{item.total}</span></p>
                             </div> */}
-
                         </Card>
                     </Col>
                 ))}

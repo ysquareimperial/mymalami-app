@@ -65,7 +65,7 @@ export default function Signup() {
                         <hr></hr>
                         <p className='dont-have-account'>Have an account? | <span className='signup' onClick={() => navigate('/sign-in')}>Sign in</span></p>
                     </Card>
-                    <button className='login-btn' onClick={() => navigate('/home')}>SIGN UP</button>
+                    <button className='login-btn' onClick={() => navigate('/home')}>Sign up</button>
                 </Col>
                 <Col md={2}></Col>
             </Row>

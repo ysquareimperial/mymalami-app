@@ -21,102 +21,116 @@ import EditSchoolInfo from "../Profile/EditSchoolInfo";
 import Record from "../Dashboard/Record/Record";
 import SubjectRecord from "../Dashboard/Record/SubjectRecord";
 import LandingPage from "../LandingPage/LandingPage";
+import ForgotPassword from "../Auth/ForgotPassword";
+import EmailSent from "../Auth/EmailSent";
+import CreateNewPassword from "../Auth/CreateNewPassword";
 
 function AppNavigation() {
-    let element = useRoutes([
+  let element = useRoutes([
+    {
+      path: "/",
+      element: <LandingPage />,
+      children: [{ index: true }],
+    },
+    {
+      element: <AppIndex />,
+      children: [
+        { index: true, element: <Home /> },
         {
-            path: '/',
-            element: <LandingPage />,
-            children: [{ index: true }]
+          path: "/home",
+          element: <Home />,
         },
         {
-            // path: "/",
-            element: <AppIndex />,
-            children: [
-                { index: true, element: <Home /> },
-                {
-                    path: '/home',
-                    element: <Home />
-                },
-                {
-                    path: '/class',
-                    element: <Class />
-                },
-                {
-                    path: '/create-class',
-                    element: <CreateClass />
-                },
-                {
-                    path: '/edit-class',
-                    element: <EditClass />
-                },
-                {
-                    path: '/student',
-                    element: <Student />
-                },
-                {
-                    path: '/create-student',
-                    element: <CreateStudent />
-                },
-                {
-                    path: '/edit-student',
-                    element: <EditStudent />
-                },
-                {
-                    path: '/subject',
-                    element: <Subject />
-                },
-                {
-                    path: '/create-subject',
-                    element: <CreateSubject />
-                }, {
-                    path: '/edit-subject',
-                    element: <EditSubject />
-                },
-                {
-                    path: '/report',
-                    element: <Report />
-                },
-                {
-                    path: '/create-student',
-                    element: <CreateStudent />
-                },
-                {
-                    path: '/settings',
-                    element: <Settings />
-                },
-                {
-                    path: '/profile',
-                    element: <Profile />
-                },
-                {
-                    path: '/edit-user-info',
-                    element: <EditUserInfo />
-                },
-                {
-                    path: '/edit-school-info',
-                    element: <EditSchoolInfo />
-                },
-                {
-                    path: '/record',
-                    element: <Record />
-                },
-                {
-                    path: '/subject-record',
-                    element: <SubjectRecord />
-                }
-            ]
+          path: "/class",
+          element: <Class />,
         },
         {
-            path: '/sign-in',
-            element: <Signin />
+          path: "/create-class",
+          element: <CreateClass />,
         },
         {
-            path: '/sign-up',
-            element: <Signup />
+          path: "/edit-class",
+          element: <EditClass />,
         },
-
-    ]);
-    return element;
+        {
+          path: "/student",
+          element: <Student />,
+        },
+        {
+          path: "/create-student",
+          element: <CreateStudent />,
+        },
+        {
+          path: "/edit-student",
+          element: <EditStudent />,
+        },
+        {
+          path: "/subject",
+          element: <Subject />,
+        },
+        {
+          path: "/create-subject",
+          element: <CreateSubject />,
+        },
+        {
+          path: "/edit-subject",
+          element: <EditSubject />,
+        },
+        {
+          path: "/report",
+          element: <Report />,
+        },
+        {
+          path: "/create-student",
+          element: <CreateStudent />,
+        },
+        {
+          path: "/settings",
+          element: <Settings />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/edit-user-info",
+          element: <EditUserInfo />,
+        },
+        {
+          path: "/edit-school-info",
+          element: <EditSchoolInfo />,
+        },
+        {
+          path: "/record",
+          element: <Record />,
+        },
+        {
+          path: "/subject-record",
+          element: <SubjectRecord />,
+        },
+      ],
+    },
+    {
+      path: "/sign-in",
+      element: <Signin />,
+    },
+    {
+      path: "/sign-up",
+      element: <Signup />,
+    },
+    {
+      path: "forgot-password",
+      element: <ForgotPassword />,
+    },
+    {
+      path: "email-sent",
+      element: <EmailSent />,
+    },
+    {
+      path: "create-new-password",
+      element: <CreateNewPassword />,
+    },
+  ]);
+  return element;
 }
 export default AppNavigation;

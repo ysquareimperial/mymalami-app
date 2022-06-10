@@ -1,64 +1,106 @@
-import React, { useState } from 'react'
-import { Card, Col, Row } from 'reactstrap'
-import back from '../../images/back.png'
-import { useNavigate } from 'react-router-dom'
-import Multiselect from 'multiselect-react-dropdown'
-import subject from '../Subject/ClassSubjects'
-import sum from '../../images/sum.png'
+import React, { useState } from "react";
+import { Card, Col, Form, Row, Table } from "reactstrap";
+import back from "../../images/back.png";
+import { useNavigate } from "react-router-dom";
+import Multiselect from "multiselect-react-dropdown";
+import subject from "../Subject/ClassSubjects";
+import sum from "../../images/sum.png";
+import { students } from "../Report/StudentsReports";
 export default function CreateStudent() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
-    // const data = [
-    //     { value: 'Mathematics', id: 1 },
-    //     { value: 'English', id: 2 },
-    //     { value: 'Civic Education', id: 3 },
-    //     { value: 'Mathesmatics', id: 4 },
-    //     { value: 'Englissh', id: 5 }
-    // ]
+  let _form = {
+    student: "",
+  };
+  const [studentName, setStudentName] = useState(_form);
 
-    const [options] = useState(subject)
-
-    function createInput() {
-        let newInput = document.createElement('input')
-        newInput.setAttribute('type','text')
-        newInput.setAttribute('placeholder', 'Student Name')
-        document.getElementById('new-input').appendChild(newInput)
-    }
-
-    return (
-        <div>
-            <Card className='table-card shadow py-3 px-4 mt-3'>
-                <Row>
-                    <Col md={6}>
-                        <Row>
-                            <Col md={1}>
-                                <span><img className="action-img" src={back} data-toggle="tooltip" data-placement="bottom" title="back" akt='' onClick={() => navigate('/student')} /></span>
-                            </Col>
-                            <Col md={11}>
-                                <h3 className='table-card-title'>Create Student</h3>
-                            </Col>
-                        </Row>
-                    </Col>
-                    <Col md={6}>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={6} className='mt-3'>
-                        <input placeholder='Student Name' type='text' />
-                        <br></br>
-                        <div id='new-input'></div>
-                        <Multiselect options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects to be taken' avoidHighlightFirstOption={true} />
-                        <div className=''>
-                            <button className='action-btn'>Create</button>
-                            <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>
-                        </div>
-                    </Col>
-                    <Col>
-                        <img className='action-img mt-3' title="add student" src={sum} alt='s' onClick={createInput} />
-                    </Col>
-                </Row>
-            </Card>
-        </div>
-
-    )
+  const [studentArray, setStudentArray] = useState([]);
+  const handleAdd = (e) => {
+    e.preventDefault();
+    setStudentArray((p) => [...p, { ...studentName }]);
+    setStudentName(_form);
+  };
+  const handleChange = ({ target: { name, value } }) => {
+    setStudentName((prev) => ({ ...prev, [name]: value }));
+  };
+  const handleSubmit = () => {
+    console.log(studentArray);
+  };
+  return (
+    <div>
+      <Card className="table-card shadow py-3 px-4 mt-3" style={{}}>
+        <Row>
+          <Col md={6}>
+            <div style={{ position: "sticky", top: 0 }}>
+              {/* {JSON.stringify(studentArray)} */}
+              <Row>
+                <Col md={1}>
+                  <span>
+                    <img
+                      className="action-img"
+                      src={back}
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="back"
+                      akt=""
+                      onClick={() => navigate("/student")}
+                    />
+                  </span>
+                </Col>
+                <Col md={11}>
+                  <h3 className="table-card-title">Create Student</h3>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={10}>
+                  <Form onSubmit={handleAdd}>
+                    <input
+                      placeholder="Student Name"
+                      className="mt-3"
+                      type="text"
+                      name="student"
+                      value={studentName.student}
+                      onChange={handleChange}
+                    />
+                  </Form>
+                </Col>
+                <Col md={2}>
+                  <img
+                    className="action-img mt-3"
+                    title="add student"
+                    src={sum}
+                    alt="s"
+                    onClick={handleAdd}
+                  />
+                </Col>
+              </Row>
+            </div>
+          </Col>
+          <Col md={6}>
+            <div className="display-studentList">
+              <Table striped>
+                <thead>
+                  <tr>
+                    <th>S/N</th>
+                    <th>Students Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {studentArray.map((item, index) => (
+                    <tr>
+                      <th scope="row">{index + 1}</th>
+                      <td>{item.student}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+              <button className="action-btn mt-1" onClick={handleSubmit}>
+                Save
+              </button>
+            </div>
+          </Col>
+        </Row>
+      </Card>
+    </div>
+  );
 }

@@ -18,8 +18,8 @@ export default function Navbar() {
                     <Row>
                         <Col md={1}>
                             <p className='logo'>
-                                <img className='logo' src={logo} alt='sdfa' data-toggle="tooltip" data-placement="bottom" title="sRecord" onClick={()=>navigate('/home')}/>
-                               </p>
+                                <img className='logo' src={logo} alt='sdfa' data-toggle="tooltip" data-placement="bottom" title="sRecord" onClick={() => navigate('/home')} />
+                            </p>
                         </Col>
                         <Col md={11}>
                             {/* <div class="has-search">
@@ -37,15 +37,15 @@ export default function Navbar() {
                         <DropdownMenu className='drop-down-menu'>
                             {/* <DropdownItem header>Settings & Privacy</DropdownItem> */}
                             {/* <DropdownItem disabled>Action</DropdownItem> */}
-                            <DropdownItem className='drop-down-item' onClick={()=>navigate('/settings')}>Settings</DropdownItem>
+                            <DropdownItem className='drop-down-item' onClick={() => navigate('/settings')}>Settings</DropdownItem>
                             <DropdownItem className='drop-down-item'>Help & Support</DropdownItem >
                             <DropdownItem className='drop-down-item' divider />
                             <DropdownItem className='drop-down-item'>Sign Out</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
-                    <h1 className='dp-name' onClick={()=>navigate('/profile')}>
-                        <img src={ysquare} className='dp' alt='profile'/>{" "}
-                        Mr. Abcde Fij 
+                    <h1 className='dp-name' onClick={() => navigate('/profile')}>
+                        <img src={ysquare} className='dp' alt='profile' />{" "}
+                        Mr. Abcde Fij
                     </h1>
                 </Col>
             </Row>
