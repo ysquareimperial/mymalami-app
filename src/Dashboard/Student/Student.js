@@ -7,6 +7,7 @@ import sum from "../../images/sum.png";
 import view from "../../images/view.png";
 import book from "../../images/book.png";
 import { useNavigate } from "react-router-dom";
+import { Search } from "react-feather";
 
 export default function Student() {
   const navigate = useNavigate();
@@ -213,22 +214,14 @@ export default function Student() {
 
   return (
     <div>
-      <div>
-        <input type="search" placeholder="search students" />
+      <div style={{ position: "relative" }}>
+        <Search style={{ position: "absolute", bottom:10, left:10, color:'grey' }} />
+        <input type="search" placeholder="search students" style={{paddingLeft:45}}/>
       </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
           <Col md={6}>
-            <h3
-              style={{
-                position: "fixed",
-                backgroundColor: "white",
-                padding: 5,
-                borderRadius: 20,
-              }}
-            >
-              Students
-            </h3>
+            <h3>Students</h3>
           </Col>
           <Col md={6}>
             <div className="d-flex justify-content-end">
