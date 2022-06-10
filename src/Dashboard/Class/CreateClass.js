@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useState, useCallback} from 'react'
 import { Card, Col, Row } from 'reactstrap'
 // import './class.css'
 import back from '../../images/back.png'
 import { useNavigate } from 'react-router-dom'
-import Multiselect from 'multiselect-react-dropdown'
+// import Multiselect from 'multiselect-react-dropdown'
+import CreatableSelect from 'react-select/creatable'
+import makeAnimated from 'react-select/animated'
 import subject from '../Subject/ClassSubjects'
 export default function CreateClass() {
     const navigate = useNavigate()
@@ -14,13 +16,38 @@ export default function CreateClass() {
     //     { value: 'Mathesmatics', id: 4 },
     //     { value: 'Englissh', id: 5 }
     // ]
-    const data2 = [
-        { value: 'Adamu Abdullahi', id: 1 },
-        { value: 'Aisha Sule', id: 2 },
-        { value: 'Murtala Muhammed', id: 3 },
-        { value: 'Yasir Ado Hassan', id: 4 },
-        { value: 'Wanka Zaharaddeen', id: 5 }
-    ]
+    const [value, setValue] = useState();
+    const [options, setOptions] = useState(subject)
+
+    const [data2, setData2] = useState([
+        { value: 'Adamu Abdullahi', label: 'Adamu Abdullahi' },
+        { value: 'Aisha Sule', label: 'Aisha Sule' },
+        { value: 'Murtala Muhammed', label:'Murtala Muhammed' },
+        { value: 'Yasir Ado Hassan', label: 'Yasir Ado Hassan' },
+        { value: 'Wanka Zaharaddeen', label: 'Wanka Zaharaddeen' }
+    ])
+
+    const animatedComponents = makeAnimated()
+  
+  const handleChange = useCallback((inputValue) => setValue(inputValue), []);
+
+  const handleCreate = useCallback(
+    (inputValue) => {
+      const newValue = { value: inputValue.toLowerCase(), label: inputValue };
+      setOptions([...subject, newValue]);
+      setValue(newValue);
+    },
+    [subject]
+  )
+
+  const handleCreate2 = useCallback(
+    (inputValue) => {
+      const newValue = { value: inputValue.toLowerCase(), label: inputValue };
+      setData2([...data2, newValue]);
+      setValue(newValue);
+    },
+    [subject]
+  )
     return (
         <div>
             <Card className='table-card shadow py-3 px-4 mt-3'>
@@ -43,9 +70,21 @@ export default function CreateClass() {
                         <input placeholder='Class Name' type='text' />
 
                         <br></br>
-                        <Multiselect options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects for class' avoidHighlightFirstOption={true} />
+                        <CreatableSelect options={options} 
+                              isMulti 
+                              components={animatedComponents} 
+                              closeMenuOnSelect={false} 
+                              onChange={handleChange} 
+                              onCreateOption={handleCreate}
+                              placeholder='Select Subjects'/>
                         <br />
-                        <Multiselect options={data2} displayValue='value' showCheckbox={true} placeholder='Select students in class' avoidHighlightFirstOption={true} />
+                        <CreatableSelect options={data2} 
+                              isMulti 
+                              components={animatedComponents} 
+                              closeMenuOnSelect={false} 
+                              onChange={handleChange} 
+                              onCreateOption={handleCreate2}
+                              placeholder='Select Students'/>
                         <div>
                             <button className='action-btn'>Create</button>
                             <button className='action-cancel-btn' style={{ float: 'right', marginRight: 0 }}>Cancel</button>
