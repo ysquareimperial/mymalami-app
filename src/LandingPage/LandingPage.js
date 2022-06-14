@@ -49,7 +49,7 @@ export default function LandingPage() {
           <Col md={3} className="div">
             <button
               className="signup-btn shadow"
-              onClick={() => navigate("/sign-up")}
+              onClick={() => navigate("/sign-in")}
               style={{ float: "right", marginRight: 30 }}
             >
               Sign In

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Card } from "reactstrap";
 // import { Mail, Phone, Unlock, User } from 'react-feather'
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,39 @@ import Error from "./Error";
 
 export default function Signup() {
   const navigate = useNavigate();
+  let _form = {
+    fullName: "",
+    phone: "",
+    email: "",
+    password: "",
+  };
+  const [signup, setSignup] = useState(_form);
+  const handleChange = ({ target: { name, value } }) => {
+    setSignup((prev) => ({ ...prev, [name]: value }));
+  };
 
+  const [formError, setFormError] = useState({});
+  const validateForm = () => {
+    let errors = {};
+    let emailRe = /\S+@\S+\.\S+/;
+    Object.keys(signup).forEach((m) => {
+      if (signup[m] === "") {
+        errors[m] = m + " cannot be empty";
+      } else if (m === "email" && !emailRe.test(signup[m])) {
+        errors[m] = m + " is not valid";
+      }
+    });
+    return errors;
+  };
+  const handleSubmit = () => {
+    let errorObj = validateForm();
+    if (Object.keys(errorObj).length) {
+      setFormError(errorObj);
+    } else {
+      navigate("/home");
+      console.log(signup);
+    }
+  };
   return (
     <div className="signin-container">
       <Row className="m-0 p-0">
@@ -35,35 +67,48 @@ export default function Signup() {
             </div>
             <div className="input-wrap">
               <div className="input-group">
-                <p
-                  className="m-0 p-0 pt-0"
-                  style={{ fontSize: 13, color: "red", float: "left" }}
-                >
-                  <AlertCircle
-                    size="1em"
-                    style={{
-                      backgroundColor: "red",
-                      color: "white",
-                      borderRadius: "50%",
-                    }}
-                  />{" "}
-                  Enter First Name
-                </p>
-                <input type="text" placeholder="Full Name" />
+                {formError.fullName && <Error errorName={formError.fullName} />}
+                {/* <Error errorName={"Enter Phone Number"} /> */}
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  name="fullName"
+                  value={signup.fullName}
+                  onChange={handleChange}
+                />
               </div>
               <div className="input-group">
-                <Error errorName={"Enter Phone Number"} />
-                <input type="number" placeholder="Phone" />
+                {formError.phone && <Error errorName={formError.phone} />}
+                {/* <Error errorName={"Enter Phone Number"} /> */}
+                <input
+                  type="number"
+                  placeholder="Phone"
+                  name="phone"
+                  value={signup.phone}
+                  onChange={handleChange}
+                />
               </div>
               <div className="input-group mt-3">
-                <Error errorName={"Enter Email"} />
-
-                <input type="email" placeholder="Email" />
+                {formError.email && <Error errorName={formError.email} />}
+                {/* <Error errorName={"Enter Email"} /> */}
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={signup.email}
+                  onChange={handleChange}
+                />
               </div>
               <div className="input-group mt-3">
-                <Error errorName={"Enter Password"} />
-
-                <input type="password" placeholder="Password" />
+                {formError.password && <Error errorName={formError.password} />}
+                {/* <Error errorName={"Enter Password"} /> */}
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={signup.password}
+                  onChange={handleChange}
+                />
               </div>
             </div>
             {/* <Row>
@@ -92,7 +137,7 @@ export default function Signup() {
               </span>
             </p>
           </Card>
-          <button className="login-btn" onClick={() => navigate("/home")}>
+          <button className="login-btn" onClick={handleSubmit}>
             Sign up
           </button>
         </Col>
