@@ -9,6 +9,7 @@ import view from "../../images/view.png";
 import student from "../../images/student.png";
 import book from "../../images/book.png";
 import { useNavigate } from "react-router-dom";
+import { Search } from "react-feather";
 export default function Classes() {
   const [open, setOpen] = useState(false);
   const toggle = () => {
@@ -52,8 +53,15 @@ export default function Classes() {
 
   return (
     <div className="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-      <div>
-        <input type="search" placeholder="search classes" />
+      <div style={{ position: "relative" }}>
+        <Search
+          style={{ position: "absolute", bottom: 10, left: 10, color: "grey" }}
+        />
+        <input
+          type="search"
+          placeholder="search classes"
+          style={{ paddingLeft: 45 }}
+        />
       </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>

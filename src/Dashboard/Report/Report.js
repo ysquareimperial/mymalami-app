@@ -1,12 +1,21 @@
 import React from "react";
 import { Card, Col, Row, Table } from "reactstrap";
-// import './report.css'
-import report from "../../images/report.png";
+import {Search} from 'react-feather'
 import { tableHeading } from "./StudentsReports";
 import { students } from "./StudentsReports";
 export default function Report() {
   return (
     <div>
+      <div style={{ position: "relative" }}>
+        <Search
+          style={{ position: "absolute", bottom: 10, left: 10, color: "grey" }}
+        />
+        <input
+          type="search"
+          placeholder="search student reports"
+          style={{ paddingLeft: 45 }}
+        />
+      </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <h3 className="">
           {/* <span>
@@ -20,7 +29,7 @@ export default function Report() {
               <thead>
                 <tr>
                   <th className="">S/N</th>
-                  <th className="" >{item.name}</th>
+                  <th className="">{item.name}</th>
                   <th className="">{item.subject1}</th>
                   <th className="">{item.subject2}</th>
                   <th className="">{item.subject3}</th>
@@ -43,7 +52,9 @@ export default function Report() {
               {students.map((item, index) => (
                 <tr>
                   <td className="">{index + 1}</td>
-                  <td className=""><div style={{width:220}}>{item.studentName}</div></td>
+                  <td className="">
+                    <div style={{ width: 220 }}>{item.studentName}</div>
+                  </td>
                   <td className="">{item.subject1}</td>
                   <td className="">{item.subject2}</td>
                   <td className="">{item.subject3}</td>

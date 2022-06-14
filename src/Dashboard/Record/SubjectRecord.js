@@ -1,18 +1,5 @@
-import React, { useState } from "react";
-import {
-  Button,
-  Card,
-  CardText,
-  CardTitle,
-  Col,
-  Nav,
-  NavItem,
-  NavLink,
-  Row,
-  TabContent,
-  Table,
-  TabPane,
-} from "reactstrap";
+import React from "react";
+import { Card, Col, Row } from "reactstrap";
 // // import './record.css'
 // import edit from '../../images/edit.png'
 // import dlt from '../../images/delete.png'
@@ -22,16 +9,22 @@ import back from "../../images/back.png";
 // import save from '../../images/save.png'
 import { useNavigate } from "react-router-dom";
 
-import classnames from "classnames";
-import Record from "./Record";
 import RecordTab from "./RecordTab";
+import { Search } from "react-feather";
 export default function SubjectRecord() {
   const navigate = useNavigate();
 
   return (
     <div>
-      <div>
-        <input type="search" placeholder="search students" />
+      <div style={{ position: "relative" }}>
+        <Search
+          style={{ position: "absolute", bottom: 10, left: 10, color: "grey" }}
+        />
+        <input
+          type="search"
+          placeholder="search students"
+          style={{ paddingLeft: 45 }}
+        />
       </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>

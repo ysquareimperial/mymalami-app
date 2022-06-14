@@ -48,175 +48,20 @@ export default function Student() {
       className: "JSS 1",
       subject: "Mathddnndn kk ",
       teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "2",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "3",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "1",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Mathddnndn kk ",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "2",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "3",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "1",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Mathddnndn kk ",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "2",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "3",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "1",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Mathddnndn kk ",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "2",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "3",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "1",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Mathddnndn kk ",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "2",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "3",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "1",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Mathddnndn kk ",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "2",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "3",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "1",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Mathddnndn kk ",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "2",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "3",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "1",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Mathddnndn kk ",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "2",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
-    {
-      sn: "3",
-      name: "Quavo Huncho",
-      className: "JSS 1",
-      subject: "Math",
-      teacherName: "Future Hndrxx",
-    },
+    }
   ];
 
   return (
     <div>
       <div style={{ position: "relative" }}>
-        <Search style={{ position: "absolute", bottom:10, left:10, color:'grey' }} />
-        <input type="search" placeholder="search students" style={{paddingLeft:45}}/>
+        <Search
+          style={{ position: "absolute", bottom: 10, left: 10, color: "grey" }}
+        />
+        <input
+          type="search"
+          placeholder="search students"
+          style={{ paddingLeft: 45 }}
+        />
       </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>

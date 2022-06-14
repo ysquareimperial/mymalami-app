@@ -6,6 +6,7 @@ import dlt from '../../images/delete.png'
 import sum from '../../images/sum.png'
 import student from '../../images/student.png'
 import { useNavigate } from 'react-router-dom'
+import { Search } from 'react-feather'
 export default function Subject() {
   const [open, setOpen] = useState(false)
   const toggle = () => {
@@ -39,8 +40,11 @@ export default function Subject() {
 
   return (
     <div>
-      <div>
-        <input type="search" placeholder="search subjects" />
+       <div style={{ position: "relative" }}>
+        <Search
+          style={{ position: "absolute", bottom: 10, left: 10, color: "grey" }}
+        />
+        <input type="search" placeholder="search subjects" style={{paddingLeft:45}}/>
       </div>
       <Card className='table-card shadow py-3 px-4 mt-3'>
         <Row>
