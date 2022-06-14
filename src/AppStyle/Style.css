@@ -309,9 +309,12 @@ input[type=search] {
     padding: 10px;
     width: 100%;
     border-radius: 5px;
+    outline: none;
     /* border: 1px solid; */
 }
-
+input[type=search]:focus{
+    outline: none;
+}
 .multiselect {
     background-color: rgb(236, 236, 236);
     border-radius: 5px;
