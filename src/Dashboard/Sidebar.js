@@ -8,15 +8,22 @@ import classs from "../images/class.png";
 import report from "../images/report.png";
 import lb from "../images/sRecord-L&B.png";
 import record from "../images/record.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 export default function Sidebar() {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <div style={{ position: "fixed" }}>
       <Row className="">
         <Col>
           <ul className="sidebar-items">
-            <li onClick={() => navigate("/home")}>
+            <li
+              onClick={() => navigate("/home")}
+              className={`active1 ${
+                location.pathname === "/home" && "active_sidebar"
+              }`}
+            >
               <img
                 style={{
                   width: 25,
@@ -29,20 +36,12 @@ export default function Sidebar() {
               />
               Home
             </li>
-            <li onClick={() => navigate("/subject")}>
-              <img
-                style={{
-                  width: 25,
-                  height: 25,
-                  marginRight: 5,
-                  marginBottom: 5,
-                }}
-                src={book}
-                alt="h"
-              />
-              Subjects
-            </li>
-            <li onClick={() => navigate("/student")}>
+            <li
+              onClick={() => navigate("/student")}
+              className={`active1 ${
+                location.pathname === "/student" && "active_sidebar"
+              }`}
+            >
               <img
                 style={{
                   width: 25,
@@ -55,7 +54,30 @@ export default function Sidebar() {
               />
               Students
             </li>
-            <li onClick={() => navigate("/class")}>
+            <li
+              onClick={() => navigate("/subject")}
+              className={`active1 ${
+                location.pathname === "/subject" && "active_sidebar"
+              }`}
+            >
+              <img
+                style={{
+                  width: 25,
+                  height: 25,
+                  marginRight: 5,
+                  marginBottom: 5,
+                }}
+                src={book}
+                alt="h"
+              />
+              Subjects
+            </li>
+            <li
+              onClick={() => navigate("/class")}
+              className={`active1 ${
+                location.pathname === "/class" && "active_sidebar"
+              }`}
+            >
               <img
                 style={{
                   width: 25,
@@ -68,7 +90,12 @@ export default function Sidebar() {
               />
               Classes
             </li>
-            <li onClick={() => navigate("/subject-record")}>
+            <li
+              onClick={() => navigate("/subject-record")}
+              className={`active1 ${
+                location.pathname === "/subject-record" && "active_sidebar"
+              }`}
+            >
               <img
                 style={{
                   width: 25,
@@ -81,7 +108,12 @@ export default function Sidebar() {
               />
               Records
             </li>
-            <li onClick={() => navigate("/report")}>
+            <li
+              onClick={() => navigate("/report")}
+              className={`active1 ${
+                location.pathname === "/report" && "active_sidebar"
+              }`}
+            >
               <img
                 style={{
                   width: 25,

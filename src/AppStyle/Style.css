@@ -98,13 +98,17 @@
     padding-top: 5px;
     /* font-weight: 5%; */
     font-size: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 li:hover {
     background-color: var(--hoverColor);
-    border-radius: 5px;
     cursor: pointer;
     padding-right: 10px;
+    color: black;
+    width: 200px;
+
 }
 
 .index-container {
@@ -313,9 +317,11 @@ input[type=search] {
     outline: none;
     /* border: 1px solid; */
 }
-input[type=search]:focus{
+
+input[type=search]:focus {
     outline: none;
 }
+
 .multiselect {
     background-color: rgb(236, 236, 236);
     border-radius: 5px;
@@ -366,12 +372,13 @@ input[type=search]:focus{
 }
 
 .students-total {
-    padding: 10px
+    padding: 5px
 }
 
 .students-total:hover {
     cursor: pointer;
     background-color: var(--hoverColor);
+    border-radius: 50%;
     /* padding:10px */
 }
 
@@ -434,7 +441,7 @@ input.record-input {
 }
 
 .profile-row .table-card {
-    height: 50vh;
+    height: 48vh;
 }
 
 .profile-row .action-btn {
@@ -664,4 +671,21 @@ input.record-input {
     background-color: var(--btnColor);
     color: white;
     border-radius: 20px;
+}
+
+/* .active1{
+    text-decoration: none;
+    cursor: pointer;
+} */
+
+.active_sidebar {
+    background-color: var(--hoverColor);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    color: black;
+    border-left: 3px solid var(--btnColor);
+    /* border-right: 3px solid var(--btnColor); */
+    width: 200px;
+
 }
