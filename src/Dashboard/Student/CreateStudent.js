@@ -3,10 +3,8 @@ import { Card, Col, Form, Row, Table } from "reactstrap";
 import back from "../../images/back.png";
 import { useNavigate } from "react-router-dom";
 import sum from "../../images/sum.png";
-import {
-  NotificationContainer,
-  NotificationManager,
-} from "react-notifications";
+import { ToastContainer, toast } from "react-toastify";
+
 export default function CreateStudent() {
   const navigate = useNavigate();
 
@@ -27,11 +25,17 @@ export default function CreateStudent() {
   const handleSubmit = () => {
     console.log(studentArray);
   };
-  const createNotification = (type) => {
-    return () => {
-      NotificationManager.success("Students created successfully");
-    };
-  };
+  const notify = () =>
+    toast.success(`${studentArray.length} student(s) created`, {
+      position: "bottom-center",
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   return (
     <div>
       <Card className="table-card shadow py-3 px-4 mt-3" style={{}}>
@@ -103,17 +107,27 @@ export default function CreateStudent() {
               <button
                 className="action-btn mt-1"
                 onClick={() => {
-                  createNotification();
                   handleSubmit();
+                  notify();
                 }}
               >
                 Save
               </button>
+              <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+              />
             </div>
           </Col>
         </Row>
       </Card>
-      <NotificationContainer />
     </div>
   );
 }
