@@ -40,7 +40,7 @@ export default function Sidebar() {
                 src={book}
                 alt="h"
               />
-              Subjects/Courses
+              Subjects
             </li>
             <li onClick={() => navigate("/student")}>
               <img

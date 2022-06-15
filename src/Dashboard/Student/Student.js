@@ -6,6 +6,10 @@ import dlt from "../../images/delete.png";
 import sum from "../../images/sum.png";
 import view from "../../images/view.png";
 import book from "../../images/book.png";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 import { useNavigate } from "react-router-dom";
 import {
   useTable,
@@ -16,6 +20,31 @@ import {
 import { Search } from "react-feather";
 
 export default function Student() {
+  const createNotification = (type) => {
+    return () => {
+      switch (type) {
+        case "info":
+          NotificationManager.info("Info message");
+          break;
+        case "success":
+          NotificationManager.success("10 students created");
+
+          break;
+        case "warning":
+          NotificationManager.warning(
+            "Warning message",
+            "Close after 3000ms",
+            1000
+          );
+          break;
+        case "error":
+          NotificationManager.error("Error message", "Click me!", 5000, () => {
+            alert("callback");
+          });
+          break;
+      }
+    };
+  };
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
@@ -107,7 +136,7 @@ export default function Student() {
         accessor: "col4",
       },
       {
-        Header: (<p style={{margin:0, float:'right'}}>Action</p>),
+        Header: <p style={{ margin: 0, float: "right" }}>Action</p>,
         accessor: "col5",
       },
     ],
@@ -131,29 +160,28 @@ export default function Student() {
             onClick={toggle1}
           />
         ),
-        col5:
-        (
-          <div style={{float:'right'}}>
-          <img
-            className="action-img"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="edit student"
-            src={edit}
-            alt="s"
-            onClick={() => navigate("/edit-student")}
-          />
-          <img
-            className="action-img"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="delete student"
-            src={dlt}
-            alt="s"
-            onClick={toggle}
-          />
-        </div>
-        )
+        col5: (
+          <div style={{ float: "right" }}>
+            <img
+              className="action-img"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="edit student"
+              src={edit}
+              alt="s"
+              onClick={() => navigate("/edit-student")}
+            />
+            <img
+              className="action-img"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="delete student"
+              src={dlt}
+              alt="s"
+              onClick={toggle}
+            />
+          </div>
+        ),
       },
       {
         col1: "2",
@@ -170,29 +198,28 @@ export default function Student() {
             onClick={toggle1}
           />
         ),
-        col5:
-        (
-          <div style={{float:'right'}}>
-          <img
-            className="action-img"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="edit student"
-            src={edit}
-            alt="s"
-            onClick={() => navigate("/edit-student")}
-          />
-          <img
-            className="action-img"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="delete student"
-            src={dlt}
-            alt="s"
-            onClick={toggle}
-          />
-        </div>
-        )
+        col5: (
+          <div style={{ float: "right" }}>
+            <img
+              className="action-img"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="edit student"
+              src={edit}
+              alt="s"
+              onClick={() => navigate("/edit-student")}
+            />
+            <img
+              className="action-img"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="delete student"
+              src={dlt}
+              alt="s"
+              onClick={toggle}
+            />
+          </div>
+        ),
       },
       {
         col1: "3",
@@ -210,7 +237,7 @@ export default function Student() {
           />
         ),
         col5: (
-          <div style={{float:'right'}}>
+          <div style={{ float: "right" }}>
             <img
               className="action-img"
               data-toggle="tooltip"
@@ -247,27 +274,28 @@ export default function Student() {
             onClick={toggle1}
           />
         ),
-        col5:(
-        <div style={{float:'right'}}>
-        <img
-          className="action-img"
-          data-toggle="tooltip"
-          data-placement="bottom"
-          title="edit student"
-          src={edit}
-          alt="s"
-          onClick={() => navigate("/edit-student")}
-        />
-        <img
-          className="action-img"
-          data-toggle="tooltip"
-          data-placement="bottom"
-          title="delete student"
-          src={dlt}
-          alt="s"
-          onClick={toggle}
-        />
-      </div>)
+        col5: (
+          <div style={{ float: "right" }}>
+            <img
+              className="action-img"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="edit student"
+              src={edit}
+              alt="s"
+              onClick={() => navigate("/edit-student")}
+            />
+            <img
+              className="action-img"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="delete student"
+              src={dlt}
+              alt="s"
+              onClick={toggle}
+            />
+          </div>
+        ),
       },
     ],
     []
@@ -308,6 +336,10 @@ export default function Student() {
     setGlobalFilter,
   } = useTable({ columns, data, defaultColumn }, useGlobalFilter);
 
+  const handleDeleteModal = () => {
+    createNotification("info");
+    toggle();
+  };
   return (
     <div>
       <GlobalFilter
@@ -422,7 +454,7 @@ export default function Student() {
           </Table> */}
         {/* </div> */}
       </Card>
-      {/* <Modal isOpen={open} toggle={toggle} className="dlt-modal">
+      <Modal isOpen={open} toggle={toggle} className="dlt-modal">
         <ModalBody className="modal-body">
           <img src={dlt} />
           <p className="dlt-warning">
@@ -443,7 +475,15 @@ export default function Student() {
             <button className="action-btn" onClick={toggle}>
               Cancel
             </button>
-            <button className="action-cancel-btn">Delete</button>
+            <button
+              className="action-cancel-btn"
+              onClick={() => {
+                toggle();
+                createNotification("error");
+              }}
+            >
+              Delete
+            </button>
           </div>
         </ModalBody>
       </Modal>
@@ -455,8 +495,8 @@ export default function Student() {
             <p className="std-details">
               Student Name: <span>Quavo Huncho</span>
             </p>
-            {/* <br></br> */}
-      {/* <p className="dlt-details">Mathematics</p>
+            <br></br>
+            <p className="dlt-details">Mathematics</p>
             <p className="dlt-details">English</p>
           </div>
           <div className="">
@@ -465,7 +505,30 @@ export default function Student() {
             </button>
           </div>
         </ModalBody>
-      </Modal> */}
+      </Modal>
+      <button className="btn btn-info" onClick={createNotification("info")}>
+        Info
+      </button>
+      <hr />
+      <button
+        className="btn btn-success"
+        onClick={createNotification("success")}
+      >
+        Success
+      </button>
+      <hr />
+      <button
+        className="btn btn-warning"
+        onClick={createNotification("warning")}
+      >
+        Warning
+      </button>
+      <hr />
+      <button className="btn btn-danger" onClick={createNotification("error")}>
+        Error
+      </button>
+
+      <NotificationContainer />
     </div>
   );
 }
