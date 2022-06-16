@@ -109,6 +109,7 @@ export default function CreateStudent() {
                 onClick={() => {
                   handleSubmit();
                   notify();
+                  // navigate('/student')
                 }}
               >
                 Save

@@ -3,8 +3,19 @@ import { Card, Col, Row } from "reactstrap";
 // import './student.css'
 import back from "../../images/back.png";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import { Multiselect } from "multiselect-react-dropdown";
 export default function EditStudent() {
+  const notify = () =>
+    toast.success(`1 student(s) updated`, {
+      position: "bottom-center",
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   const navigate = useNavigate();
   const data = [
     { value: "Mathematics", id: 1 },
@@ -55,7 +66,15 @@ export default function EditStudent() {
             />
 
             <div>
-              <button className="action-btn">Save</button>
+              <button
+                className="action-btn"
+                onClick={() => {
+                  notify();
+                //   navigate("/student");
+                }}
+              >
+                Save
+              </button>
               <button
                 className="action-cancel-btn"
                 style={{ float: "right", marginRight: 0 }}
@@ -66,6 +85,17 @@ export default function EditStudent() {
           </Col>
         </Row>
       </Card>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

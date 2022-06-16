@@ -6,6 +6,7 @@ import dlt from "../../images/delete.png";
 import sum from "../../images/sum.png";
 import view from "../../images/view.png";
 import book from "../../images/book.png";
+import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import {
   useTable,
@@ -16,7 +17,16 @@ import {
 import { Search } from "react-feather";
 
 export default function Student() {
-  
+  const notify = () =>
+    toast.error(`1 student(s) deleted`, {
+      position: "bottom-center",
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
@@ -264,7 +274,9 @@ export default function Student() {
               title="delete student"
               src={dlt}
               alt="s"
-              onClick={toggle}
+              onClick={() => {
+                toggle();
+              }}
             />
           </div>
         ),
@@ -451,6 +463,7 @@ export default function Student() {
               className="action-cancel-btn"
               onClick={() => {
                 toggle();
+                notify();
               }}
             >
               Delete
@@ -477,7 +490,18 @@ export default function Student() {
           </div>
         </ModalBody>
       </Modal>
-     
+      {/* <button onClick={notify}>Fasdf</button> */}
+      <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+              />
     </div>
   );
 }
