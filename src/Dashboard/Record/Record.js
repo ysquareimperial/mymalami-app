@@ -84,6 +84,7 @@ export default function Record() {
                     </Col>
                 ))}
             </Row>
+            
         </div>
     )
 }

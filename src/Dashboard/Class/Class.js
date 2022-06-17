@@ -7,10 +7,21 @@ import dlt from "../../images/delete.png";
 import sum from "../../images/sum.png";
 import view from "../../images/view.png";
 import student from "../../images/student.png";
+import { ToastContainer, toast } from "react-toastify";
 import book from "../../images/book.png";
 import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
 export default function Classes() {
+  const notify = () =>
+    toast.error(`Class deleted`, {
+      position: "bottom-center",
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   const [open, setOpen] = useState(false);
   const toggle = () => {
     setOpen(!open);
@@ -162,7 +173,15 @@ export default function Classes() {
             <button className="action-btn" onClick={toggle}>
               Cancel
             </button>
-            <button className="action-cancel-btn">Delete</button>
+            <button
+              className="action-cancel-btn"
+              onClick={() => {
+                toggle();
+                notify();
+              }}
+            >
+              Delete
+            </button>
           </div>
         </ModalBody>
       </Modal>
@@ -199,6 +218,17 @@ export default function Classes() {
           </div>
         </ModalBody>
       </Modal>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }
