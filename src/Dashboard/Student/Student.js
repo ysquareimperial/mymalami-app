@@ -151,7 +151,7 @@ export default function Student() {
               title="edit student"
               src={edit}
               alt="s"
-              onClick={() => navigate("/edit-student")}
+              onClick={() => navigate("/student/edit-student")}
             />
             <img
               className="action-img"
@@ -345,7 +345,7 @@ export default function Student() {
                 title="add student"
                 src={sum}
                 alt="s"
-                onClick={() => navigate("/create-student")}
+                onClick={() => navigate("create-student")}
               />
             </div>
           </Col>

@@ -18,7 +18,7 @@ import Settings from "../Dashboard/UserSettings/Settings";
 import Profile from "../Profile/Profile";
 import EditUserInfo from "../Profile/EditUserInfo";
 import EditSchoolInfo from "../Profile/EditSchoolInfo";
-import Record from "../Dashboard/Record/Record";
+// import Record from "../Dashboard/Record/Record";
 import SubjectRecord from "../Dashboard/Record/SubjectRecord";
 import LandingPage from "../LandingPage/LandingPage";
 import ForgotPassword from "../Auth/ForgotPassword";
@@ -45,11 +45,11 @@ function AppNavigation() {
           element: <Class />,
         },
         {
-          path: "/create-class",
+          path: "/class/create-class",
           element: <CreateClass />,
         },
         {
-          path: "/edit-class",
+          path: "/class/edit-class",
           element: <EditClass />,
         },
         {
@@ -57,11 +57,11 @@ function AppNavigation() {
           element: <Student />,
         },
         {
-          path: "/create-student",
+          path: "/student/create-student",
           element: <CreateStudent />,
         },
         {
-          path: "/edit-student",
+          path: "/student/edit-student",
           element: <EditStudent />,
         },
         {
@@ -69,11 +69,11 @@ function AppNavigation() {
           element: <Subject />,
         },
         {
-          path: "/create-subject",
+          path: "/subject/create-subject",
           element: <CreateSubject />,
         },
         {
-          path: "/edit-subject",
+          path: "/subject/edit-subject",
           element: <EditSubject />,
         },
         {
@@ -102,10 +102,6 @@ function AppNavigation() {
         },
         {
           path: "/record",
-          element: <Record />,
-        },
-        {
-          path: "/subject-record",
           element: <SubjectRecord />,
         },
       ],

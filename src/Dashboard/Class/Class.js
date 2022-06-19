@@ -85,7 +85,7 @@ export default function Classes() {
                 title="add class"
                 src={sum}
                 alt="s"
-                onClick={() => navigate("/create-class")}
+                onClick={() => navigate("/class/create-class")}
               />
             </div>
           </Col>
@@ -131,7 +131,7 @@ export default function Classes() {
                       title="edit class"
                       src={edit}
                       alt="s"
-                      onClick={() => navigate("/edit-class")}
+                      onClick={() => navigate("/class/edit-class")}
                     />
                     <img
                       className="action-img"

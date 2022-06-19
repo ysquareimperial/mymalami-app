@@ -73,7 +73,7 @@ export default function Subject() {
                 title="create subject"
                 src={sum}
                 alt="s"
-                onClick={() => navigate("/create-subject")}
+                onClick={() => navigate("/subject/create-subject")}
               />
             </div>
           </Col>
@@ -114,7 +114,7 @@ export default function Subject() {
                       title="edit subject"
                       src={edit}
                       alt="s"
-                      onClick={() => navigate("/edit-subject")}
+                      onClick={() => navigate("/subject/edit-subject")}
                     />
                     <img
                       className="action-img"

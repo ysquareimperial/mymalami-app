@@ -39,7 +39,7 @@ export default function Sidebar() {
             <li
               onClick={() => navigate("/student")}
               className={`active1 ${
-                location.pathname === "/student" && "active_sidebar"
+                location.pathname.includes("/student") && "active_sidebar"
               }`}
             >
               <img
@@ -57,7 +57,7 @@ export default function Sidebar() {
             <li
               onClick={() => navigate("/subject")}
               className={`active1 ${
-                location.pathname === "/subject" && "active_sidebar"
+                location.pathname.includes ("/subject") && "active_sidebar"
               }`}
             >
               <img
@@ -75,7 +75,7 @@ export default function Sidebar() {
             <li
               onClick={() => navigate("/class")}
               className={`active1 ${
-                location.pathname === "/class" && "active_sidebar"
+                location.pathname.includes("/class") && "active_sidebar"
               }`}
             >
               <img
@@ -91,9 +91,9 @@ export default function Sidebar() {
               Classes
             </li>
             <li
-              onClick={() => navigate("/subject-record")}
+              onClick={() => navigate("/record")}
               className={`active1 ${
-                location.pathname === "/subject-record" && "active_sidebar"
+                location.pathname === "/record" && "active_sidebar"
               }`}
             >
               <img
