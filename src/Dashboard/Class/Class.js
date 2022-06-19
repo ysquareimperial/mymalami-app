@@ -36,19 +36,16 @@ export default function Classes() {
   };
   const classs = [
     {
-      sn: "1",
       name: "Quavo Huncho",
       teacherName: "Future Hndrxx",
       students: "30",
     },
     {
-      sn: "2",
       name: "Quavo Huncho",
       teacherName: "Future Hndrxx",
       students: "30",
     },
     {
-      sn: "3",
       name: "Quavo Huncho",
       teacherName: "Future Hndrxx",
       students: "30",
@@ -109,7 +106,7 @@ export default function Classes() {
               {classs.map((item, index) => (
                 <tr>
                   <th className="" scope="row">
-                    {item.sn}
+                    {index+1}
                   </th>
                   <td className="">{item.name}</td>
                   <td className="">{item.teacherName}</td>
@@ -126,7 +123,7 @@ export default function Classes() {
                     </span>
                   </td>
 
-                  <td className=" d-flex justify-content-end">
+                  <td className="d-flex justify-content-end">
                     <img
                       className="action-img"
                       data-toggle="tooltip"

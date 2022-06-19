@@ -30,19 +30,16 @@ export default function Subject() {
   };
   const subject = [
     {
-      sn: "1",
       name: "English Language",
       teacherName: "Futre Pluto Hndrx",
       students: "30",
     },
     {
-      sn: "2",
       name: "JS Language",
       teacherName: "Futre Pluto Hndrx",
       students: "30",
     },
     {
-      sn: "3",
       name: "HTM Language",
       teacherName: "Futre Pluto Hndrx",
       students: "30",
@@ -96,7 +93,7 @@ export default function Subject() {
               {subject.map((item, index) => (
                 <tr>
                   <th className="" scope="row">
-                    {item.sn}
+                    {index+1}
                   </th>
                   <td className="">{item.name}</td>
                   <td

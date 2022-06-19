@@ -4,7 +4,8 @@ import back from "../../images/back.png";
 import { useNavigate } from "react-router-dom";
 import sum from "../../images/sum.png";
 import { ToastContainer, toast } from "react-toastify";
-
+import dlt from "../../images/delete.png";
+import Error from "../../Auth/Error";
 export default function CreateStudent() {
   const navigate = useNavigate();
 
@@ -14,10 +15,26 @@ export default function CreateStudent() {
   const [studentName, setStudentName] = useState(_form);
 
   const [studentArray, setStudentArray] = useState([]);
+  const [formError, setFormError] = useState({});
+  const validateForm = () => {
+    let errors = {};
+    Object.keys(studentName).forEach((m) => {
+      if (studentName[m] === "") {
+        errors[m] = m + " name cannot be empty";
+      }
+    });
+    return errors;
+  };
   const handleAdd = (e) => {
-    e.preventDefault();
-    setStudentArray((p) => [...p, { ...studentName }]);
-    setStudentName(_form);
+    let errorObj = validateForm();
+    if (Object.keys(errorObj).length) {
+      setFormError(errorObj);
+    } else {
+      e.preventDefault();
+      setStudentArray((p) => [...p, { ...studentName }]);
+      setStudentName(_form);
+      setFormError(!errorObj);
+    }
   };
   const handleChange = ({ target: { name, value } }) => {
     setStudentName((prev) => ({ ...prev, [name]: value }));
@@ -35,6 +52,19 @@ export default function CreateStudent() {
       draggable: true,
       progress: undefined,
     });
+
+  const remove = (itm) => {
+    setStudentArray((studentName) =>
+      studentName.filter((Onestudent) => Onestudent.student !== itm.student)
+    );
+  };
+
+  // const remove = (index) => {
+  //   setStudentArray([
+  //     ...studentName.slice(0, index),
+  //     ...studentName.slice(index + 1, studentName.length),
+  //   ]);
+  // };
 
   return (
     <div>
@@ -72,12 +102,15 @@ export default function CreateStudent() {
                       value={studentName.student}
                       onChange={handleChange}
                     />
+                    {formError.student && (
+                      <Error errorName={formError.student} />
+                    )}
                   </Form>
                 </Col>
                 <Col md={2}>
                   <img
                     className="action-img mt-3"
-                    title="add student"
+                    title="press enter to add student"
                     src={sum}
                     alt="s"
                     onClick={handleAdd}
@@ -93,6 +126,7 @@ export default function CreateStudent() {
                   <tr>
                     <th>S/N</th>
                     <th>Students Name</th>
+                    <th style={{ float: "right" }}>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -100,6 +134,17 @@ export default function CreateStudent() {
                     <tr>
                       <th scope="row">{index + 1}</th>
                       <td>{item.student}</td>
+                      <td>
+                        <img
+                          src={dlt}
+                          alt="dlt"
+                          className="action-img d-flex justify-content-end"
+                          style={{ float: "right" }}
+                          onClick={() => {
+                            remove(item);
+                          }}
+                        />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -109,7 +154,7 @@ export default function CreateStudent() {
                 onClick={() => {
                   handleSubmit();
                   notify();
-                  // navigate('/student')
+                  navigate('/student')
                 }}
               >
                 Save

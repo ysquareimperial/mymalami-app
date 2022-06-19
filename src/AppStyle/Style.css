@@ -441,7 +441,7 @@ input.record-input {
 }
 
 .profile-row .table-card {
-    height: 48vh;
+    height: 52vh;
 }
 
 .profile-row .action-btn {
@@ -507,6 +507,13 @@ input.record-input {
     background-color: var(--btnColor);
     /* color: var(--primaryColor); */
     height: 100vh;
+}
+
+.sign-left-col {
+    /* position: absolute; */
+    top: 50%;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
 }
 
 .sign-heading {

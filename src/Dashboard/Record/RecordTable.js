@@ -15,7 +15,7 @@ export default function RecordTable() {
     });
   const student = [
     {
-      sn: "1",
+     
       name: "Ali Mike",
       aissignment: "10",
       presentation: "8",
@@ -23,7 +23,7 @@ export default function RecordTable() {
       exam: "70",
     },
     {
-      sn: "1",
+     
       name: "Ali Mike",
       aissignment: "10",
       presentation: "8",
@@ -31,7 +31,7 @@ export default function RecordTable() {
       exam: "70",
     },
     {
-      sn: "1",
+     
       name: "Ali Mike",
       aissignment: "10",
       presentation: "8",
@@ -57,7 +57,7 @@ export default function RecordTable() {
           {student.map((item, index) => (
             <tr>
               <th className="" scope="row">
-                {item.sn}
+                {index+1}
               </th>
               <td className="">{item.name}</td>
               <td className="">

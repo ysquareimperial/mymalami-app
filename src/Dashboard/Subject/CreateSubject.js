@@ -76,6 +76,7 @@ export default function CreateSubject() {
               onChange={handleChange}
               onCreateOption={handleCreate}
               placeholder="Select Subjects"
+              style={{}}
             />
             {/* // options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} /> */}
             <div>

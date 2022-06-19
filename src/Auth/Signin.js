@@ -47,10 +47,10 @@ export default function Signin() {
       {/* {JSON.stringify(formError)} */}
       <Row className="m-0 p-0">
         <Col lg={1} md={1}></Col>
-        <Col lg={5} md={5} className="signin-row">
-          <div className="sign-left-col">
+        <Col md={5} className="signin-row" style={{position:'relative'}}>
+          <div className="sign-left-col" style={{position:'absolute', top:50}}>
             <h1 className="sign-heading">
-              One-Click students reports generator
+              One-Click students report generator
             </h1>
             <p className="sign-para">
               Creating high quality and accurate reports.
