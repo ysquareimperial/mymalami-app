@@ -34,13 +34,17 @@ export default function CreateStudent() {
       setStudentArray((p) => [...p, { ...studentName }]);
       setStudentName(_form);
       setFormError(!errorObj);
+
     }
   };
   const handleChange = ({ target: { name, value } }) => {
     setStudentName((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     console.log(studentArray);
+    // e.preventDefault()
+      notify()
+      navigate('/student')
   };
   const notify = () =>
     toast.success(`${studentArray.length} student(s) created`, {
@@ -152,9 +156,9 @@ export default function CreateStudent() {
               <button
                 className="action-btn mt-1"
                 onClick={() => {
+                  // notify();
                   handleSubmit();
-                  notify();
-                  navigate('/student')
+                  // navigate('/student')
                 }}
               >
                 Save
