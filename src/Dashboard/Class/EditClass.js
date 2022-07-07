@@ -83,6 +83,10 @@ export default function EditClass() {
                 className="action-btn"
                 onClick={() => {
                   notify();
+                  setTimeout(() => {
+                    // handleSubmit();
+                    navigate("/class");
+                  }, 1000);
                 }}
               >
                 Save

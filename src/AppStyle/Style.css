@@ -97,7 +97,7 @@
     padding-bottom: 5px;
     padding-top: 5px;
     /* font-weight: 5%; */
-    font-size: 20px;
+    font-size: 15px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -510,10 +510,7 @@ input.record-input {
 }
 
 .sign-left-col {
-    /* position: absolute; */
-    top: 50%;
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
+   
 }
 
 .sign-heading {

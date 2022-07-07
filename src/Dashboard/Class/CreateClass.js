@@ -115,6 +115,10 @@ export default function CreateClass() {
                 className="action-btn"
                 onClick={() => {
                   notify();
+                  setTimeout(() => {
+                    // handleSubmit();
+                    navigate("/class");
+                  }, 1000);
                 }}
               >
                 Create

@@ -25,17 +25,17 @@ export default function CreateSubject() {
       setValue(newValue);
     },
     [subject]
-    );
-    const notify = () =>
-      toast.success(`Subject(s) created`, {
-        position: "bottom-center",
-        autoClose: 2500,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+  );
+  const notify = () =>
+    toast.success(`Subject(s) created`, {
+      position: "bottom-center",
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   return (
     <div>
@@ -80,7 +80,16 @@ export default function CreateSubject() {
             />
             {/* // options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} /> */}
             <div>
-              <button className="action-btn" onClick={notify}>
+              <button
+                className="action-btn"
+                onClick={() => {
+                  notify();
+                  setTimeout(() => {
+                    // handleSubmit();
+                    navigate("/subject");
+                  }, 1000);
+                }}
+              >
                 Create
               </button>
               <button

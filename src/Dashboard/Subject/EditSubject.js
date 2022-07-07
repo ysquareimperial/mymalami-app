@@ -50,6 +50,10 @@ export default function EditSubject() {
                 className="action-btn"
                 onClick={() => {
                   notify();
+                  setTimeout(() => {
+                    // handleSubmit();
+                    navigate("/subject");
+                  }, 1000);
                 }}
               >
                 Save

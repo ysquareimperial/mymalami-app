@@ -152,9 +152,11 @@ export default function CreateStudent() {
               <button
                 className="action-btn mt-1"
                 onClick={() => {
-                  handleSubmit();
                   notify();
-                  navigate('/student')
+                  setTimeout(() => {
+                    handleSubmit();
+                    navigate("/student");
+                  }, 1000);
                 }}
               >
                 Save

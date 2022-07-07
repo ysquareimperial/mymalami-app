@@ -45,30 +45,33 @@ export default function Signin() {
   return (
     <div className="signin-container">
       {/* {JSON.stringify(formError)} */}
-      <Row className="m-0 p-0">
-        <Col lg={1} md={1}></Col>
-        <Col md={5} className="signin-row" style={{position:'relative'}}>
-          <div className="sign-left-col" style={{position:'absolute', top:50}}>
-            <h1 className="sign-heading">
-              One-Click students report generator
-            </h1>
-            <p className="sign-para">
-              Creating high quality and accurate reports.
-            </p>
-            <button className="s-btn" onClick={() => navigate("/sign-up")}>
-              Get Started
-            </button>
-          </div>
-        </Col>
-        <Col lg={4} md={4} className="text-center middle signin-row">
-          {/* <h1 className='brand-name'>sRecord</h1> */}
-          <Card className="sign-card shadow text-center">
-            {/* <img class="card-img-top img-circle rounded-circle" src="https://dummyimage.com/100x100/000/fff" /> */}
-            {/* <User className='card-img-top' size='5em' /> */}
-            <div>
-              <img src={lb} className="sign-logo" alt="sRecord Logo" />
+      <form onSubmit={handleSubmit}>
+        <Row className="m-0 p-0">
+          <Col lg={1} md={1}></Col>
+          <Col md={5} className="signin-row" style={{ position: "relative" }}>
+            <div
+              className="sign-left-col"
+              style={{ position: "absolute", top: 50 }}
+            >
+              <h1 className="sign-heading">
+                One-Click students report generator
+              </h1>
+              <p className="sign-para">
+                Creating high quality and accurate reports.
+              </p>
+              <button className="s-btn" onClick={() => navigate("/sign-up")}>
+                Get Started
+              </button>
             </div>
-            <form onSubmit={handleSubmit}>
+          </Col>
+          <Col lg={4} md={4} className="text-center middle signin-row">
+            {/* <h1 className='brand-name'>sRecord</h1> */}
+            <Card className="sign-card shadow text-center">
+              {/* <img class="card-img-top img-circle rounded-circle" src="https://dummyimage.com/100x100/000/fff" /> */}
+              {/* <User className='card-img-top' size='5em' /> */}
+              <div>
+                <img src={lb} className="sign-logo" alt="sRecord Logo" />
+              </div>
               <div className="input-wrap">
                 <div className="input-group">
                   {/* <div className="input-group-prepend">
@@ -102,53 +105,53 @@ export default function Signin() {
                   )}
                 </div>
               </div>
-            </form>
-            <Row>
-              <Col md={7}>
-                {/* <p className='remember-me'>
+              <Row>
+                <Col md={7}>
+                  {/* <p className='remember-me'>
                                     <input className="check" type="checkbox" value="" id="" />
                                     Remember Me
                                 </p> */}
 
-                <p
-                  className="mt-1"
-                  style={{ fontSize: 13, color: "red", float: "left" }}
-                >
-                  {/* <AlertCircle size='1em' style={{backgroundColor:'red', color:'white', borderRadius:'50%'}}/>{" "} */}
-                  {/* <Error errorName={"email or password not correct"} /> */}
-                </p>
-              </Col>
-              <Col md={5}>
-                <p
-                  className="forgot-p"
-                  onClick={() => navigate("/forgot-password")}
-                  style={{ cursor: "pointer" }}
-                >
-                  Forgot Password?
-                </p>
-              </Col>
-            </Row>
-            <hr></hr>
-            <p className="dont-have-account">
-              Don't have an account? |{" "}
-              <span className="signup" onClick={() => navigate("/sign-up")}>
-                Sign up
-              </span>
-            </p>
-          </Card>
-          <button
-            className="login-btn"
-            onClick={() => {
-              //
-              handleSubmit();
-              //   validate();
-            }}
-          >
-            Sign in
-          </button>
-        </Col>
-        <Col md={2}></Col>
-      </Row>
+                  <p
+                    className="mt-1"
+                    style={{ fontSize: 13, color: "red", float: "left" }}
+                  >
+                    {/* <AlertCircle size='1em' style={{backgroundColor:'red', color:'white', borderRadius:'50%'}}/>{" "} */}
+                    {/* <Error errorName={"email or password not correct"} /> */}
+                  </p>
+                </Col>
+                <Col md={5}>
+                  <p
+                    className="forgot-p"
+                    onClick={() => navigate("/forgot-password")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Forgot Password?
+                  </p>
+                </Col>
+              </Row>
+              <hr></hr>
+              <p className="dont-have-account">
+                Don't have an account? |{" "}
+                <span className="signup" onClick={() => navigate("/sign-up")}>
+                  Sign up
+                </span>
+              </p>
+            </Card>
+            <button
+              className="login-btn"
+              onClick={() => {
+                //
+                handleSubmit();
+                //   validate();
+              }}
+            >
+              Sign in
+            </button>
+          </Col>
+          <Col md={2}></Col>
+        </Row>
+      </form>
     </div>
   );
 }

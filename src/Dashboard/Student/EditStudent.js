@@ -70,7 +70,10 @@ export default function EditStudent() {
                 className="action-btn"
                 onClick={() => {
                   notify();
-                //   navigate("/student");
+                  setTimeout(() => {
+                  navigate('/student')
+                  }, 1000);
+                
                 }}
               >
                 Save
