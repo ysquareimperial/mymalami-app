@@ -15,12 +15,14 @@ export default function LSection1() {
                 sRecord is an application that helps teachers generate students
                 reports by creating classes, subjects, students and records.
               </p>
-              <button
-                className="sign-up shadow"
-                onClick={() => navigate("/sign-up")}
-              >
-                Get stated for free
-              </button>
+              <div className="get-started-div">
+                <button
+                  className="sign-up shadow"
+                  onClick={() => navigate("/sign-up")}
+                >
+                  Get stated for free
+                </button>
+              </div>
             </div>
           </div>
         </Col>

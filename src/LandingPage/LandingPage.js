@@ -13,6 +13,7 @@ export default function LandingPage() {
       <LSection1 />
       <LSection2 />
       <LSection3 />
+      <hr />
       <LSection4 />
       <LFooter />
     </div>

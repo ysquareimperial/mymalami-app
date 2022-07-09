@@ -480,6 +480,7 @@ input.record-input {
     background-color: var(--primaryColor);
     color: var(--btnColor);
     border-radius: 5px;
+    height: 45px;
 
 }
 
