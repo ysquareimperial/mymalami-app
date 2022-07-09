@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <div>
       <Row className="nav-row m-0 p-0">
-        <Col md={6}>
+        <Col md={1} sm={1} xs={1}>
           <Row>
             <Col md={1}>
               <p className="logo">
@@ -44,7 +44,7 @@ export default function Navbar() {
             </Col>
           </Row>
         </Col>
-        <Col md={6}>
+        <Col md={11} sm={11} xs={11}>
           <Dropdown isOpen={open} toggle={toggle}>
             <DropdownToggle className="drop-down">
               <ArrowDownCircle />
@@ -66,7 +66,7 @@ export default function Navbar() {
             </DropdownMenu>
           </Dropdown>
           <h1 className="dp-name" onClick={() => navigate("/profile")}>
-            <img src={ysquare} className="dp" alt="profile" /> Mr. Abcde Fij
+            <img src={ysquare} className="dp" alt="profile" /> <span className="profile-name">Mr. Muhammadu</span>
           </h1>
         </Col>
       </Row>

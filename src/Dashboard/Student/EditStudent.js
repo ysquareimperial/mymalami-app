@@ -32,7 +32,7 @@ export default function EditStudent() {
         <Row>
           <Col md={6}>
             <Row>
-              <Col md={1}>
+              <Col md={1} sm={1} xs={1}>
                 <span>
                   <img
                     className="action-img"
@@ -45,8 +45,8 @@ export default function EditStudent() {
                   />
                 </span>
               </Col>
-              <Col md={10}>
-                <h3 className="table-card-title">Edit Student</h3>
+              <Col md={10} sm={10} xs={10}>
+                <p className="table-card-title">Edit Student</p>
               </Col>
             </Row>
           </Col>

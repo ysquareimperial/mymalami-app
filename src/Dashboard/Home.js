@@ -8,7 +8,7 @@ import book from "../images/book.png";
 import classs from "../images/class.png";
 import report from "../images/report.png";
 import sum from "../images/sum.png";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div className="home-main-div">
       <Row>
         {indexActions.map((item, index) => (
           <Col md={3}>
@@ -55,15 +55,15 @@ export default function Home() {
               <p className="item-name">{item.name}</p>
               <div className="item-icon">{item.img}</div>
               <div className="item-total">
-                <Row>
-                  <Col md={6}>{item.total}</Col>
-                  <Col md={6}>
+                <Row className="">
+                  <Col md={9} sm={9} xs={9}>{item.total}</Col>
+                  <Col md={3} sm={3} xs={3}>
                     <div>
                       <img
                         src={sum}
                         className="add-module"
                         title="add"
-                        alt=''
+                        alt=""
                         // onClick={() => navigate(item.nav)}
                       />
                     </div>

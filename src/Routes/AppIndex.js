@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Col, Row } from "reactstrap";
+import MobileFooter from "../Dashboard/MobileFooter";
 import Navbar from "../Dashboard/Navbar";
 import Sidebar from "../Dashboard/Sidebar";
 // import '../Dashboard/Dashboard.css'
@@ -10,6 +11,7 @@ export default function AppIndex() {
       <Row className="navbar">
         <Col lg={12} md={12} sm={12} xs={12}>
           <Navbar />
+          <MobileFooter/>
         </Col>
       </Row>
       <Row className="sidebar-row">

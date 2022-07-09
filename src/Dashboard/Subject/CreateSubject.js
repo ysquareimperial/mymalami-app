@@ -26,6 +26,8 @@ export default function CreateSubject() {
     },
     [subject]
   );
+
+    
   const notify = () =>
     toast.success(`Subject(s) created`, {
       position: "bottom-center",
@@ -37,13 +39,14 @@ export default function CreateSubject() {
       progress: undefined,
     });
 
+
   return (
     <div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
           <Col md={6}>
             <Row>
-              <Col md={1}>
+              <Col md={1} sm={1} xs={1}>
                 <span>
                   <img
                     className="action-img"
@@ -56,8 +59,8 @@ export default function CreateSubject() {
                   />
                 </span>
               </Col>
-              <Col md={11}>
-                <h3 className="table-card-title">Create Subject</h3>
+              <Col md={11} sm={11} xs={11}>
+                <p className="table-card-title">Create Subject</p>
               </Col>
             </Row>
           </Col>

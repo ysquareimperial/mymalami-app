@@ -129,7 +129,7 @@ export default function Student() {
     () => [
       {
         col1: "1",
-        col2: "Adamu Abdullahi",
+        col2: "AdamuAbddddddddfs",
         col3: "JSS 1A",
         col4: (
           <img
@@ -333,10 +333,10 @@ export default function Student() {
       />
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <h3>Students</h3>
           </Col>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <div className="d-flex justify-content-end">
               <img
                 className="action-img"
@@ -370,7 +370,9 @@ export default function Student() {
                   <tr {...row.getRowProps()}>
                     {row.cells.map((cell) => {
                       return (
-                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                        <td {...cell.getCellProps()} className="table-data">
+                          {cell.render("Cell")}
+                        </td>
                       );
                     })}
                   </tr>

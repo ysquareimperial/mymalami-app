@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 export default function Profile() {
   const navigate = useNavigate();
   return (
-    <div className="py-3 px-3">
+    <div className="py-3 px-3 home-main-div">
       <Row>
         <Col md={6}>
           <h3>
@@ -30,7 +30,7 @@ export default function Profile() {
       </Row>
       <Row className="profile-row">
         <Col md={4}>
-          <Card className="table-card shadow py-3 px-4 mt-3">
+          <Card className="profile-card shadow py-3 px-4 mt-3">
             <Row>
               <Col md={10} sm={10} xs={10} lg={10}>
                 <h5>User Information</h5>
@@ -47,12 +47,16 @@ export default function Profile() {
                 />
               </Col>
             </Row>
-            <Row>
-              <Col md={3} sm={3} xs={3} lg={3}>
+            <Row className="mt-3">
+              <Col md={2} sm={2} xs={2} lg={2}>
                 <img src={ysquare} alt="" className="profile-pic" />
               </Col>
-              <Col md={9} sm={9} xs={9} lg={9}>
-                <h5>{"  "}Yasir Ado Hassan</h5>
+              <Col md={10} sm={10} xs={10} lg={10}>
+                <div className="profile-flex-container">
+                  <div>
+                    <h6>{"  "}Yasir Ado Hassan</h6>
+                  </div>
+                </div>
               </Col>
             </Row>
             <div className="profile-details">
@@ -83,7 +87,7 @@ export default function Profile() {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="table-card shadow py-3 px-4 mt-3">
+          <Card className="profile-card shadow py-3 px-4 mt-3">
             <Row>
               <Col md={10} sm={10} xs={10} lg={10}>
                 <h5>School Information</h5>
@@ -100,13 +104,17 @@ export default function Profile() {
                 />
               </Col>
             </Row>
-            <Row>
-              <Col md={3} sm={3} xs={3} lg={3}>
+            <Row className="mt-3">
+              <Col md={2} sm={2} xs={2} lg={2}>
                 <img src={logo} className="scl-pic" alt="" />
                 {"  "}
               </Col>
-              <Col md={9} sm={9} xs={9} lg={9}>
-                <h5>sRecord Primary School</h5>
+              <Col md={10} sm={10} xs={10} lg={10}>
+                <div className="profile-flex-container">
+                  <div>
+                    <h6>sRecord Primary School</h6>
+                  </div>
+                </div>
               </Col>
             </Row>
             <div className="profile-details">
@@ -138,7 +146,7 @@ export default function Profile() {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="table-card shadow py-3 px-4 mt-3"></Card>
+          <Card className="profile-card shadow py-3 px-4 mt-3"></Card>
         </Col>
       </Row>
     </div>

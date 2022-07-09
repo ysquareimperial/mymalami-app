@@ -61,10 +61,10 @@ export default function Subject() {
       </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <h3>Subjects</h3>
           </Col>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <div className="d-flex justify-content-end">
               <img
                 className="action-img"

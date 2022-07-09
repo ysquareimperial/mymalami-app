@@ -37,17 +37,17 @@ export default function Classes() {
   const classs = [
     {
       name: "Quavo Huncho",
-      teacherName: "Future Hndrxx",
+   
       students: "30",
     },
     {
       name: "Quavo Huncho",
-      teacherName: "Future Hndrxx",
+   
       students: "30",
     },
     {
       name: "Quavo Huncho",
-      teacherName: "Future Hndrxx",
+   
       students: "30",
     },
   ];
@@ -73,10 +73,10 @@ export default function Classes() {
       </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <h3>Classes</h3>
           </Col>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <div className="d-flex justify-content-end">
               <img
                 className="action-img"
@@ -97,8 +97,8 @@ export default function Classes() {
                 <th>S/N</th>
                 <th>Class Name</th>
                 {/* <th>Class Teacher Name</th> */}
-                <th>Subjects</th>
-                <th>No of Students</th>
+                {/* <th>Subjects</th> */}
+                <th>Students</th>
                 <th className="d-flex justify-content-end">Actions</th>
               </tr>
             </thead>
@@ -106,10 +106,10 @@ export default function Classes() {
               {classs.map((item, index) => (
                 <tr>
                   <th className="" scope="row">
-                    {index+1}
+                    {index + 1}
                   </th>
                   <td className="">{item.name}</td>
-                  <td className="">{item.teacherName}</td>
+                  {/* <td className="">{item.teacherName}</td> */}
                   {/* <td className=''><img src={view} alt='' className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="view subjects/courses" style={{ width: 35, height: 35 }} onClick={toggle1}/></td> */}
                   {/* <td className=''>{item.students}</td> */}
                   <td

@@ -74,7 +74,7 @@ export default function CreateStudent() {
             <div style={{ position: "sticky", top: 0 }}>
               {/* {JSON.stringify(studentArray)} */}
               <Row>
-                <Col md={1}>
+                <Col md={1} sm={1} xs={1}>
                   <span>
                     <img
                       className="action-img"
@@ -87,8 +87,8 @@ export default function CreateStudent() {
                     />
                   </span>
                 </Col>
-                <Col md={11}>
-                  <h3 className="table-card-title">Create Student</h3>
+                <Col md={11} sm={11} xs={11}>
+                  <p className="table-card-title">Create Student</p>
                 </Col>
               </Row>
               <Row>
