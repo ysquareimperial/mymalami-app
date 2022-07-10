@@ -443,7 +443,7 @@ li:hover {
 
     .l-h1 {
         text-align: center;
-        font-size: 40px;
+        font-size: 150%;
     }
 
     .l-p {
@@ -457,7 +457,7 @@ li:hover {
     .flex-container-1 {
         display: flex;
         align-items: center;
-        height: 300px;
+        height: 100%;
     }
 
     .section1-img {
@@ -482,7 +482,7 @@ li:hover {
     }
 
     [class*="p-type-"] {
-        width: 250px;
+        width: 70%;
     }
 
     .section-5 {
@@ -501,6 +501,9 @@ li:hover {
         margin: 0;
         padding: 0;
         margin-top: 30px;
+    }
+    .signin-row-mobile{
+        display: none;
     }
 }
 

@@ -10,7 +10,7 @@ export default function CreateNewPassword() {
         <div className='signin-container'>
             <Row className='m-0 p-0'>
                 <Col lg={1} md={1}></Col>
-                <Col lg={5} md={5} className='signin-row'>
+                <Col lg={5} md={5} className='signin-row signin-row-mobile'>
                     <div className='sign-left-col'>
                         <h1 className='sign-heading'>One-Click students reports generator</h1>
                         <p className='sign-para'>Creating high quality and accurate reports.</p>

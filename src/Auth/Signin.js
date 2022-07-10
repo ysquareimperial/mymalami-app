@@ -48,7 +48,7 @@ export default function Signin() {
       <form onSubmit={handleSubmit}>
         <Row className="m-0 p-0">
           <Col lg={1} md={1}></Col>
-          <Col md={5} className="signin-row" style={{ position: "relative" }}>
+          <Col md={5} className="signin-row signin-row-mobile" style={{ position: "relative" }}>
             <div
               className="sign-left-col"
               style={{ position: "absolute", top: 50 }}
