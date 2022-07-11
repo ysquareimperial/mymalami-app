@@ -30,7 +30,7 @@ export default function SubjectRecord() {
         <Row>
           <Col md={6}>
             <Row>
-              <Col md={1}>
+              <Col md={1} sm={1} xs={1}>
                 <span>
                   <img
                     className="action-img"
@@ -44,8 +44,8 @@ export default function SubjectRecord() {
                   />
                 </span>
               </Col>
-              <Col md={11}>
-                <h3 className="table-card-title">Create Subject Record</h3>
+              <Col md={11} sm={11} xs={11}>
+                <p className="table-card-title">Create Subject Record</p>
               </Col>
             </Row>
           </Col>

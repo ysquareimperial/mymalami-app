@@ -109,7 +109,7 @@ export default function Student() {
     () => [
       {
         col1: "1",
-        col2: "Adamu Abdullahi",
+        col2: "AdamuAbddddddddfs",
         col3: "JSS 1A",
         col4: (
           <img
@@ -131,7 +131,7 @@ export default function Student() {
               title="edit student"
               src={edit}
               alt="s"
-              onClick={() => navigate("/edit-student")}
+              onClick={() => navigate("/student/edit-student")}
             />
             <img
               className="action-img"
@@ -299,10 +299,10 @@ export default function Student() {
       />
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <h3>Students</h3>
           </Col>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <div className="d-flex justify-content-end">
               <img
                 className="action-img"
@@ -311,7 +311,7 @@ export default function Student() {
                 title="add student"
                 src={sum}
                 alt="s"
-                onClick={() => navigate("/create-student")}
+                onClick={() => navigate("create-student")}
               />
             </div>
           </Col>
@@ -329,8 +329,38 @@ export default function Student() {
                 </tr>
               ))}
             </thead>
-            { loading ? (
-              <tbody>
+            <tbody {...getTableBodyProps()}>
+              {rows.map((row) => {
+                prepareRow(row);
+                return (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map((cell) => {
+                      return (
+                        <td {...cell.getCellProps()} className="table-data">
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        </div>
+        {/* <div className="mt-4">
+          <Table size="sm" className="table" striped>
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Student Name</th>
+                <th>Class Name</th>
+                {/* <th>Class Teacher Name</th> */}
+        {/* <th>Subjects/Courses</th> */}
+        {/* <th className="d-flex justify-content-end">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {student.map((item, index) => (
                 <tr>
                   <td style={{fontSize: 22}} colSpan="10000">Searching...</td>
                 </tr>

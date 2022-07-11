@@ -37,7 +37,7 @@ export default function EditClass() {
         <Row>
           <Col md={6}>
             <Row>
-              <Col md={1}>
+              <Col md={1} sm={1} xs={1}>
                 <span>
                   <img
                     className="action-img"
@@ -50,8 +50,8 @@ export default function EditClass() {
                   />
                 </span>
               </Col>
-              <Col md={10}>
-                <h3 className="table-card-title">Edit Class</h3>
+              <Col md={10} sm={10} xs={10}>
+                <p className="table-card-title">Edit Class</p>
               </Col>
             </Row>{" "}
           </Col>
@@ -83,6 +83,10 @@ export default function EditClass() {
                 className="action-btn"
                 onClick={() => {
                   notify();
+                  setTimeout(() => {
+                    // handleSubmit();
+                    navigate("/class");
+                  }, 1000);
                 }}
               >
                 Save

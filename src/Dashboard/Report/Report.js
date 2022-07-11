@@ -22,7 +22,7 @@ export default function Report() {
                         <img src={report} alt='a' />
                     </span> */}
           Reports
-        </h3>
+        </h3>   
         <div className="t-d">
           <Table striped className="" size="sm">
             {tableHeading.map((item, index) => (

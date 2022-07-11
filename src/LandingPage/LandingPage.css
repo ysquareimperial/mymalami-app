@@ -8,6 +8,11 @@
 
 }
 
+
+* {
+    box-sizing: border-box;
+}
+
 .whole {
     margin: 0;
     padding: 0;
@@ -42,17 +47,17 @@ li:hover {
 }
 
 .nav-bar {
+    position: sticky;
+    top: 0;
     background-color: var(--primaryColor);
     margin: 0;
     padding: 0;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
-    position: fixed;
-    z-index: 100;
+    z-index: 1;
     overflow: hidden;
     margin: auto;
     width: 100%;
-    left: 0;
-    top: 0;
+
 }
 
 .signup-btn {
@@ -88,11 +93,11 @@ li:hover {
     font-size: 15px;
     background-color: var(--btnColor);
     color: white;
+    transition: 500ms;
 }
 
 .start-btn:hover {
     background-color: var(--yellow);
-    transition: 500ms;
 }
 
 .navbar-row {
@@ -109,40 +114,37 @@ li:hover {
 
 .section-1 {
     background-color: var(--primaryColor);
-    /* background-color: red; */
-    height: 100vh;
-    margin-top: 150px;
-    margin-left: 50px;
+    /* padding-top: 100px; */
+}
+
+.flex-container-1-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container-1 {
+    display: flex;
+    align-items: center;
+    height: 500px;
 }
 
 .section-2 {
     background-color: var(--btnColor);
-    /* background-color: red; */
-    height: 100vh;
 }
 
-.section2-r {
-    margin-left: 50px;
-
-}
+.section2-r {}
 
 .section-3 {
     background-color: var(--primaryColor);
-    /* background-color: red; */
-    height: 100vh;
 }
 
 .section-4 {
     background-color: var(--primaryColor);
-    /* background-color: red; */
-    height: 100vh;
-    /* margin-top: 350px; */
 }
 
 .section-5 {
     background-color: var(--btnColor);
-    /* background-color: red; */
-    height: 45vh;
 }
 
 .one-click {
@@ -157,7 +159,6 @@ li:hover {
     font-weight: bold;
     font-size: 50px;
     color: var(--btnColor);
-    /* margin-top: -0px; */
 }
 
 .l-p {
@@ -168,7 +169,6 @@ li:hover {
 .sign-up {
     color: var(--btnColor);
     background-color: var(--btnColor);
-    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2), 0px 4px 4px 0px rgba(0, 0, 0, 0.2); */
     font-weight: '';
     font-size: 20px;
     border: none;
@@ -185,15 +185,8 @@ li:hover {
 }
 
 .features .l-h1 {
-    /* background-color: 'white'; 
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;  */
-    /* padding:20; */
-    /* background-color: var(--btnColor); */
+
     color: white
-        /* padding-top: 10px;
-    padding-bottom: 0px; */
-        /* width: 20px; */
 }
 
 .features p {
@@ -222,8 +215,7 @@ li:hover {
     border: none;
     background-color: var(--btnColor);
     border-radius: 20px;
-    margin-top: 30px;
-    height: 60vh;
+
 }
 
 
@@ -234,7 +226,7 @@ li:hover {
 
 .section-3 .l-h1 {
     color: var(--btnColor);
-    /* margin-top: 250px; */
+
 }
 
 .c-row {
@@ -268,8 +260,6 @@ li:hover {
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    /* position: fixed; */
-    /* bottom: 0; */
 }
 
 .p-card-1, .p-card-2, .p-card-3 {
@@ -281,7 +271,6 @@ li:hover {
 
 .p-type-1 {
     width: 150px;
-    /* height: 39.6px; */
     border-radius: 5px;
     text-align: center;
     font-size: 21.6px;
@@ -306,12 +295,10 @@ li:hover {
 .p-type-2 {
     background-color: var(--primaryColor);
     width: 150px;
-    /* height: 39.6px; */
     border-radius: 5px;
     text-align: center;
     font-size: 21.6px;
     color: var(--btnColor);
-    /* background: white; */
     border: none;
     position: absolute;
     margin: auto;
@@ -373,12 +360,6 @@ li:hover {
     color: var(--btnColor);
 }
 
-.div {
-    /* display: flex; */
-    /* justify-content: space-around;
-    float: right; */
-}
-
 .footer-logo {
     width: 250px;
 }
@@ -414,12 +395,13 @@ li:hover {
 .icon-p {
     color: var(--primaryColor);
     font-size: 15px;
+    display: inline;
+    margin-left: 10px;
 }
 
 .social {
     color: var(--primaryColor);
-    /* padding: 10px; */
-    /* width: 100; */
+    margin-right: 30px;
 }
 
 .social:hover {
@@ -429,4 +411,104 @@ li:hover {
     border-radius: 20px;
     padding: 2px;
     transition: 500ms;
+}
+
+.section1-img {
+    width: 500px;
+    border-radius: 300px;
+    height: 500px;
+    padding: 50px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.price-duration {
+    font-weight: lighter;
+}
+
+.news-letter {
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-items {
+        display: none;
+    }
+
+    .nav-bar-desktop {
+        display: none;
+    }
+
+    .l-h1 {
+        text-align: center;
+        font-size: 150%;
+    }
+
+    .l-p {
+        text-align: center;
+    }
+
+    .get-started-div {
+        text-align: center;
+    }
+
+    .flex-container-1 {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .section1-img {
+        display: none;
+    }
+
+    .f-card {
+        margin-bottom: 25px;
+
+    }
+
+    .c-card {
+        margin-bottom: 25px;
+    }
+
+    .subscribe-r-text {
+        display: none;
+    }
+
+    .p-card-2 {
+        margin-bottom: 70px;
+    }
+
+    [class*="p-type-"] {
+        width: 70%;
+    }
+
+    .section-5 {
+        text-align: center;
+    }
+
+    .address {
+        font-weight: bold;
+        color: var(--primaryColor);
+        font-size: 20px;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .news-letter {
+        margin: 0;
+        padding: 0;
+        margin-top: 30px;
+    }
+    .signin-row-mobile{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .nav-bar-phone {
+        display: none;
+    }
 }

@@ -6,15 +6,15 @@ import { useNavigate } from 'react-router-dom'
 export default function EditUserInfo() {
     const navigate = useNavigate()
     return (
-        <div className='profile-div'>
+        <div className='profile-div home-main-div'>
             <Card className='table-card shadow py-3 px-4 mt-3'>
                 <Row>
                     <Col md={6}>
                         <Row>
-                            <Col md={1}>
+                            <Col md={1} sm={1} xs={1}>
                                 <span><img className="action-img" src={back} data-toggle="tooltip" data-placement="bottom" title="back" alt='' onClick={() => navigate('/profile')} /></span>
                             </Col>
-                            <Col md={11}>
+                            <Col md={11} sm={11} xs={11}>
                                 <h3 className='table-card-title'>Edit User Info</h3>
                             </Col>
                         </Row>

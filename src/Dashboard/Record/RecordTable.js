@@ -1,6 +1,7 @@
 import React from "react";
 import { Table } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
+import dlt from "../../images/delete.png";
 
 export default function RecordTable() {
   const notify = () =>
@@ -15,7 +16,6 @@ export default function RecordTable() {
     });
   const student = [
     {
-     
       name: "Ali Mike",
       aissignment: "10",
       presentation: "8",
@@ -23,7 +23,6 @@ export default function RecordTable() {
       exam: "70",
     },
     {
-     
       name: "Ali Mike",
       aissignment: "10",
       presentation: "8",
@@ -31,7 +30,6 @@ export default function RecordTable() {
       exam: "70",
     },
     {
-     
       name: "Ali Mike",
       aissignment: "10",
       presentation: "8",
@@ -42,7 +40,7 @@ export default function RecordTable() {
   return (
     <div>
       <Table size="sm" className="table">
-        <thead style={{ position: "sticky", top: 0, backgroundColor: "white" }}>
+        <thead>
           <tr>
             <th>S/N</th>
             <th>Student Name</th>
@@ -50,14 +48,14 @@ export default function RecordTable() {
             <th>English Presentation</th>
             <th>English CA</th>
             <th>English Exam</th>
-            <th>Action</th>
+            <th style={{ float: "right" }}>Action</th>
           </tr>
         </thead>
         <tbody>
           {student.map((item, index) => (
             <tr>
               <th className="" scope="row">
-                {index+1}
+                {index + 1}
               </th>
               <td className="">{item.name}</td>
               <td className="">
@@ -72,15 +70,14 @@ export default function RecordTable() {
               <td className="">
                 <input className="record-input" type="text" />
               </td>
-              <td className="">
-                <button
-                  className="action-cancel-btn-rcd"
+              <td className="" style={{ float: "right" }}>
+                <img
+                  src={dlt}
+                  className="action-img"
                   onClick={() => {
                     notify();
                   }}
-                >
-                  Delete
-                </button>
+                />
               </td>
             </tr>
           ))}

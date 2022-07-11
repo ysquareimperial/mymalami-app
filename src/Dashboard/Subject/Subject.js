@@ -61,10 +61,10 @@ export default function Subject() {
       </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <h3>Subjects</h3>
           </Col>
-          <Col md={6}>
+          <Col md={6} sm={6} xs={6}>
             <div className="d-flex justify-content-end">
               <img
                 className="action-img"
@@ -73,7 +73,7 @@ export default function Subject() {
                 title="create subject"
                 src={sum}
                 alt="s"
-                onClick={() => navigate("/create-subject")}
+                onClick={() => navigate("/subject/create-subject")}
               />
             </div>
           </Col>
@@ -114,7 +114,7 @@ export default function Subject() {
                       title="edit subject"
                       src={edit}
                       alt="s"
-                      onClick={() => navigate("/edit-subject")}
+                      onClick={() => navigate("/subject/edit-subject")}
                     />
                     <img
                       className="action-img"

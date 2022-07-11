@@ -21,7 +21,7 @@ export default function EditSubject() {
         <Row>
           <Col md={6}>
             <Row>
-              <Col md={1}>
+              <Col md={1} sm={1} xs={1}>
                 <span>
                   <img
                     className="action-img"
@@ -34,8 +34,8 @@ export default function EditSubject() {
                   />
                 </span>
               </Col>
-              <Col md={10}>
-                <h3 className="table-card-title">Edit Subject</h3>
+              <Col md={10} sm={10} xs={10}>
+                <p className="table-card-title">Edit Subject</p>
               </Col>
             </Row>
           </Col>
@@ -50,6 +50,10 @@ export default function EditSubject() {
                 className="action-btn"
                 onClick={() => {
                   notify();
+                  setTimeout(() => {
+                    // handleSubmit();
+                    navigate("/subject");
+                  }, 1000);
                 }}
               >
                 Save

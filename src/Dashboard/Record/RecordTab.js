@@ -25,21 +25,30 @@ export default function RecordTab() {
   const toggle2 = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
   };
+
+  const tabs = [
+    {
+      tab1: "English"
+    },
+    {
+      tab2:''
+    }
+  ];
   return (
     <div>
       <div>
         <div>
           <Nav tabs className="mt-3">
-            <NavItem>
-              <NavLink
-                className={classnames({ active: activeTab === "0" })}
-                onClick={() => {
-                  toggle2("0");
-                }}
-              >
-                English
-              </NavLink>
-            </NavItem>
+              <NavItem>
+                <NavLink
+                  className={classnames({ active: activeTab === "0" })}
+                  onClick={() => {
+                    toggle2("0");
+                  }}
+                >
+                  English
+                </NavLink>
+              </NavItem>
             <NavItem>
               <NavLink
                 className={classnames({ active: activeTab === "4" })}

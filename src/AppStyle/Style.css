@@ -53,7 +53,12 @@
     margin-top: 20px;
     background-color: var(--secondaryColor);
     border: 0;
+    /* margin-bottom: 30px; */
 
+}
+
+.home-main-div {
+    margin-bottom: 70px;
 }
 
 .index-card:hover {
@@ -97,7 +102,7 @@
     padding-bottom: 5px;
     padding-top: 5px;
     /* font-weight: 5%; */
-    font-size: 20px;
+    font-size: 15px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -112,7 +117,8 @@
 }
 
 .index-container {
-    background-color: var(--hoverColor)
+    background-color: var(--hoverColor);
+
 }
 
 .brand {
@@ -130,7 +136,7 @@
     float: right;
     padding-left: 15%;
     font-size: 16px;
-    margin-right: 35px;
+    margin-right: 2px;
     padding-left: 5px;
     padding-right: 10px;
     padding-top: 5px;
@@ -140,7 +146,7 @@
 
 .dp {
     width: 40px;
-    border-radius: 50px;
+    border-radius: 50%;
 }
 
 .dp-name:hover {
@@ -347,10 +353,10 @@ input[type=search]:focus {
 }
 
 .table-card-title {
-    font-weight: lighter;
-    font-size: 21px;
+    /* font-weight: lighter; */
+    /* font-size: 21px; */
     /* margin-left: px; */
-    margin-top: 5px;
+    margin-top: 4px;
     display: inline-block;
 }
 
@@ -430,6 +436,7 @@ input.record-input {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    float: right;
 }
 
 .profile-pen:hover {
@@ -440,12 +447,13 @@ input.record-input {
     /* -o-transition: 50ms; */
 }
 
-.profile-row .table-card {
-    height: 52vh;
+.profile-card {
+    height: 40vh;
+    border-radius: 15px;
 }
 
 .profile-row .action-btn {
-    margin-right: 0;
+    float: right;
 }
 
 .profile-row .action-cancel-btn {
@@ -472,6 +480,7 @@ input.record-input {
     background-color: var(--primaryColor);
     color: var(--btnColor);
     border-radius: 5px;
+    height: 45px;
 
 }
 
@@ -509,12 +518,7 @@ input.record-input {
     height: 100vh;
 }
 
-.sign-left-col {
-    /* position: absolute; */
-    top: 50%;
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
-}
+.sign-left-col {}
 
 .sign-heading {
     color: var(--primaryColor);
@@ -695,4 +699,47 @@ input.record-input {
     /* border-right: 3px solid var(--btnColor); */
     width: 200px;
 
+}
+
+.settings-card {
+    border-radius: 15px;
+    height: 50vh;
+}
+
+.settings-btn {
+    border: none;
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    background-color: var(--btnColor);
+    color: white;
+    border-radius: 20px;
+}
+.settings-btn:hover {
+    transition: 100ms;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2), 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.settings-dlt-btn {
+    border: none;
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    background-color: var(--btnDangerColor);
+    color: white;
+    border-radius: 20px;
+}
+.settings-dlt-btn:hover {
+    transition: 100ms;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2), 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.profile-flex-container{
+    height: 60px;
+    display: flex;
+    align-items: center;
 }

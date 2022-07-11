@@ -20,7 +20,7 @@ export default function Settings() {
     setOpen(!open);
   };
   return (
-    <div className="py-3 px-3">
+    <div className="py-3 px-3 home-main-div">
       <Row>
         <Col md={6}>
           <h3>Settings</h3>
@@ -29,7 +29,7 @@ export default function Settings() {
       </Row>
       <Row className="profile-row">
         <Col md={4}>
-          <Card className="text-center table-card shadow py-3 px-4 mt-3">
+          <Card className="text-center settings-card shadow py-3 px-4 mt-3">
             <CardBody style={{height:20}}>
               <p>
                 <span>
@@ -53,13 +53,13 @@ export default function Settings() {
             </CardBody>
             <CardFooter style={{backgroundColor:'white', border:'none'}}>
               <div className="text-center">
-                <button className="action-btn">Change Email</button>
+                <button className="settings-btn">Change Email</button>
               </div>
             </CardFooter>
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="text-center table-card shadow py-3 px-4 mt-3">
+          <Card className="text-center settings-card shadow py-3 px-4 mt-3">
             <CardBody style={{height:20}}>
               <p>
                 <span>
@@ -79,13 +79,13 @@ export default function Settings() {
             </CardBody>
             <CardFooter style={{backgroundColor:'white', border:'none'}}>
               <div className="text-center">
-                <button className="action-btn">Save Password</button>
+                <button className="settings-btn">Save Password</button>
               </div>
             </CardFooter>
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="text-center table-card shadow py-3 px-4 mt-3">
+          <Card className="text-center settings-card shadow py-3 px-4 mt-3">
             <CardBody style={{height:20}}>
               <p style={{}}>
                 <span>
@@ -107,7 +107,7 @@ export default function Settings() {
             </CardBody>
             <CardFooter style={{backgroundColor:'white', border:'none'}}>
               <div className="text-center">
-                <button className="action-cancel-btn" onClick={toggle}>
+                <button className="settings-dlt-btn" onClick={toggle}>
                   Delete My Account
                 </button>
               </div>
