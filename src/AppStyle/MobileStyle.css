@@ -43,10 +43,32 @@
         margin-left: 10px;
     }
 
+    .mobile-profile {
+        width: 65%;
+        border-radius: 50%;
+    }
+
+    .brand-d{
+        text-align: center;
+        color: white;
+        font-size: 13px;
+        margin-top: 20px;
+    }
+    .brand-info{
+        margin: 0;
+    }
+
 }
 
 @media only screen and (min-width: 768px) {
     .mobile-footer {
+        display: none;
+    }
+
+    .mobile-profile {
+        display: none;
+    }
+    .brand-d{
         display: none;
     }
 }

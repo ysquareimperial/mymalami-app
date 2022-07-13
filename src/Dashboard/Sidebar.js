@@ -141,7 +141,7 @@ export default function Sidebar() {
             marginLeft: 7,
           }}
         >
-          Terms <span>Privacy</span>
+          Terms . <span>Privacy</span>
         </p>
         <p
           style={{
@@ -154,7 +154,7 @@ export default function Sidebar() {
           }}
         >
           sRecord &copy; 2022
-        </p>
+        </p>  
       </div>
     </div>
   );

@@ -30,6 +30,17 @@ export default function SubjectRecord() {
     { studentName: 'Muhammad Ali' },
     { studentName: 'Muhammad Abdul' },
     { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
   ]
   return (
     <div>

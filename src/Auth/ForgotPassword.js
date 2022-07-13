@@ -44,6 +44,12 @@ export default function ForgotPassword() {
                 </Col>
                 <Col md={2}></Col>
             </Row>
+            <div className="brand-d">
+                <p className="brand-info">
+                    Terms . <span>Privacy . </span>
+                    sRecord &copy; 2022
+                </p>
+            </div>
         </div>
     )
 }

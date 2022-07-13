@@ -18,7 +18,7 @@ export default function Home() {
       name: "Students",
       total: "12",
       url: "/student",
-      nav: "/create-student",
+      nav: "/student/create-student",
     },
     {
       img: <img alt="a" src={book} />,
@@ -59,13 +59,16 @@ export default function Home() {
                   <Col md={9} sm={9} xs={9}>{item.total}</Col>
                   <Col md={3} sm={3} xs={3}>
                     <div>
+                      {/* <a href={item.nav}> */}
                       <img
                         src={sum}
                         className="add-module"
                         title="add"
                         alt=""
-                        // onClick={() => navigate(item.nav)}
+                        onClick={() => navigate(item.nav)}
                       />
+
+                      {/* </a> */}
                     </div>
                   </Col>
                 </Row>

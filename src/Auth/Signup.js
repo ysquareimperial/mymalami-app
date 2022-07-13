@@ -133,7 +133,7 @@ export default function Signup() {
               <Col lg={6} md={6} sm={6} xs={6}></Col>
             </Row>
             <hr></hr>
-            <p className="dont-have-account">
+            <p className="forgot-p">
               Have an account? |{" "}
               <span className="signup" onClick={() => navigate("/sign-in")}>
                 Sign in
@@ -146,6 +146,12 @@ export default function Signup() {
         </Col>
         <Col md={2}></Col>
       </Row>
+      <div className="brand-d">
+        <p className="brand-info">
+        Terms . <span>Privacy . </span>
+        sRecord &copy; 2022
+      </p>
+    </div>
     </div>
   );
 }

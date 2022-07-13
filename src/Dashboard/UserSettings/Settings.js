@@ -30,7 +30,7 @@ export default function Settings() {
       <Row className="profile-row">
         <Col md={4}>
           <Card className="text-center settings-card shadow py-3 px-4 mt-3">
-            <CardBody style={{height:20}}>
+            <CardBody style={{ height: 20 }}>
               <p>
                 <span>
                   <img className="action-img" src={email} alt="" />
@@ -51,7 +51,7 @@ export default function Settings() {
                 <input placeholder="" type="password" />
               </div>
             </CardBody>
-            <CardFooter style={{backgroundColor:'white', border:'none'}}>
+            <CardFooter style={{ backgroundColor: 'white', border: 'none' }}>
               <div className="text-center">
                 <button className="settings-btn">Change Email</button>
               </div>
@@ -60,7 +60,7 @@ export default function Settings() {
         </Col>
         <Col md={4}>
           <Card className="text-center settings-card shadow py-3 px-4 mt-3">
-            <CardBody style={{height:20}}>
+            <CardBody style={{ height: 20 }}>
               <p>
                 <span>
                   <img className="action-img" src={password} alt="" />
@@ -77,7 +77,7 @@ export default function Settings() {
                 <input placeholder="confirm password" type="password" />
               </div>
             </CardBody>
-            <CardFooter style={{backgroundColor:'white', border:'none'}}>
+            <CardFooter style={{ backgroundColor: 'white', border: 'none' }}>
               <div className="text-center">
                 <button className="settings-btn">Save Password</button>
               </div>
@@ -86,26 +86,26 @@ export default function Settings() {
         </Col>
         <Col md={4}>
           <Card className="text-center settings-card shadow py-3 px-4 mt-3">
-            <CardBody style={{height:20}}>
+            <CardBody style={{ height: 20 }}>
               <p style={{}}>
                 <span>
                   <img className="action-img" src={dlt} alt="" />
                 </span>
                 Delete My Account
               </p>
-              <p style={{margin:0, fontSize:13}} className="text-danger">
+              <p style={{ margin: 0, fontSize: 13 }} className="text-danger">
                 Your account will not be recovered once deleted!{" "}
               </p>
 
               <div className=" justify-content-center">
-                <p style={{ fontSize:13}}>
+                <p style={{ fontSize: 13 }}>
                   Please enter your password to confirm the deletion of your
                   account.
                 </p>
                 <input placeholder="password" type="password" />
               </div>
             </CardBody>
-            <CardFooter style={{backgroundColor:'white', border:'none'}}>
+            <CardFooter style={{ backgroundColor: 'white', border: 'none' }}>
               <div className="text-center">
                 <button className="settings-dlt-btn" onClick={toggle}>
                   Delete My Account
@@ -117,8 +117,14 @@ export default function Settings() {
       </Row>
       <Modal isOpen={open} toggle={toggle} className="dlt-modal">
         <ModalBody className="modal-body">
-          <img src={dlt} alt="profile-picture" className="" />
-          <p>Are you sure you want to delete your account?</p>
+          <Row>
+            <Col lg={1} md={1} sm={1} xs={1}>
+              <img src={dlt} alt="profile-picture" className="" style={{ width: '250%' }} />
+            </Col>
+            <Col lg={11} md={11} sm={11} xs={11}>
+              <p className='mt-2'>Are you sure you want to delete your account?</p>
+            </Col>
+          </Row>
           <div>
             <h5>
               <img src={ysquare} alt="" className="profile-pic" />

@@ -124,14 +124,14 @@ export default function Signin() {
                   <p
                     className="forgot-p"
                     onClick={() => navigate("/forgot-password")}
-                    style={{ cursor: "pointer" }}
+
                   >
                     Forgot Password?
                   </p>
                 </Col>
               </Row>
               <hr></hr>
-              <p className="dont-have-account">
+              <p className="forgot-p">
                 Don't have an account? |{" "}
                 <span className="signup" onClick={() => navigate("/sign-up")}>
                   Sign up
@@ -152,6 +152,12 @@ export default function Signin() {
           <Col md={2}></Col>
         </Row>
       </form>
+      <div className="brand-d">
+        <p className="brand-info">
+        Terms . <span>Privacy . </span>
+        sRecord &copy; 2022
+      </p>
     </div>
+    </div >
   );
 }

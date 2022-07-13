@@ -163,7 +163,9 @@
     /* z-index: 0; */
 
 }
-
+.dropdown{
+    /* width: 100px; */
+}
 .drop-down:hover {
     background-color: var(--hoverColor);
     color: black;
@@ -600,7 +602,7 @@ input.record-input {
 }
 
 .sign-logo {
-    width: 200px;
+    width: 30%;
 }
 
 .signup {
@@ -669,6 +671,10 @@ input.record-input {
 .forgot-text {
     font-size: 13px;
     color: rgb(156, 156, 156);
+}
+.forgot-p{
+    margin: 0;
+    font-size: 13px;
 }
 
 .send-email-div .action-btn {

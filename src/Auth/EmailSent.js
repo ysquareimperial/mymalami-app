@@ -28,7 +28,7 @@ export default function EmailSent() {
                         <div className='input-wrap'>
                             <h5>Email Sent</h5>
                             <p className='forgot-text'>An email was sent to y*******l@gmail.com with a link to reset your password and get back to your account.</p>
-                           
+
                         </div>
                         <div className='send-email-div'>
                             <button className='action-btn' onClick={() => navigate('/create-new-password')}>OK</button>
@@ -39,6 +39,12 @@ export default function EmailSent() {
                 </Col>
                 <Col md={2}></Col>
             </Row>
+            <div className="brand-d">
+                <p className="brand-info">
+                    Terms . <span>Privacy . </span>
+                    sRecord &copy; 2022
+                </p>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowDownCircle, Circle, Search } from "react-feather";
+import { ArrowDownCircle, Circle, HelpCircle, Lock, Search, Settings } from "react-feather";
 import { useNavigate } from "react-router-dom";
 import {
   Col,
@@ -12,6 +12,8 @@ import {
 // import './Navbar.css'
 import ysquare from "../images/user.png";
 import logo from "../images/sReord.png";
+import Profile from "../Profile/Profile";
+import profileimage from '../images/ysquareimperial.png'
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const toggle = () => {
@@ -21,7 +23,7 @@ export default function Navbar() {
   return (
     <div>
       <Row className="nav-row m-0 p-0">
-        <Col md={1} sm={1} xs={1}>
+        <Col md={6} sm={6} xs={6}>
           <Row>
             <Col md={1}>
               <p className="logo">
@@ -44,25 +46,47 @@ export default function Navbar() {
             </Col>
           </Row>
         </Col>
-        <Col md={11} sm={11} xs={11}>
-          <Dropdown isOpen={open} toggle={toggle}>
+        <Col md={6} sm={6} xs={6}>
+          <Dropdown isOpen={open} toggle={toggle} className='dropdown'>
             <DropdownToggle className="drop-down">
               <ArrowDownCircle />
             </DropdownToggle>
             <DropdownMenu className="drop-down-menu">
               {/* <DropdownItem header>Settings & Privacy</DropdownItem> */}
               {/* <DropdownItem disabled>Action</DropdownItem> */}
+              <DropdownItem className="drop-down-item"
+                onClick={() => navigate("/profile")}>
+
+                <div className="mobile-profile">
+                  <div>
+                    <img src={profileimage} className='mobile-profile' alt="" />
+                  </div>
+                </div>
+              </DropdownItem>
               <DropdownItem
                 className="drop-down-item"
                 onClick={() => navigate("/settings")}
+                style={{ fontSize: 13 }}
               >
-                Settings
+                Settings <Settings style={{ float: 'right', color: 'grey' }} size='1.5em' />
               </DropdownItem>
-              <DropdownItem className="drop-down-item">
-                Help & Support
-              </DropdownItem>
-              <DropdownItem className="drop-down-item" divider />
-              <DropdownItem className="drop-down-item" onClick={()=>navigate('/sign-in')}>Sign Out</DropdownItem>
+              <DropdownItem className="drop-down-item" style={{ fontSize: 13 }} >
+                Support <HelpCircle style={{ float: 'right', color: 'grey' }} size='1.5em' />
+              </DropdownItem >
+              <DropdownItem className="drop-down-item" onClick={() => navigate('/sign-in')} style={{ fontSize: 13 }}>Sign Out <Lock style={{ float: 'right', color: 'grey' }} size='1.5em' /></DropdownItem>
+              <div className="brand-d mt-0">
+                <DropdownItem className="drop-down-item" divider />
+                <DropdownItem>
+                  <p className="brand-info" style={{ color: "grey", float:'left' }}>
+                    Terms . <span>Privacy . </span>
+
+                  </p>
+                  <p className="brand-info" style={{ color: "grey",float:'left' }}>
+                    sRecord &copy; 2022
+                  </p>
+                </DropdownItem>
+              </div>
+
             </DropdownMenu>
           </Dropdown>
           <h1 className="dp-name" onClick={() => navigate("/profile")}>
