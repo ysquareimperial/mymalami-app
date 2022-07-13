@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { Card, Col, Modal, ModalBody, Row, Table } from "reactstrap";
 // import './student.css'
 import edit from "../../images/edit.png";
@@ -10,9 +10,9 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import {
   useTable,
+  useFilters,
   useGlobalFilter,
   useAsyncDebounce,
-  usePagination,
 } from "react-table";
 import { Search } from "react-feather";
 
@@ -38,19 +38,16 @@ export default function Student() {
     setOpen1(!open1);
   };
 
-  const [loading, setLoading] = useState(false)
   function GlobalFilter({
     preGlobalFilteredRows,
     globalFilter,
     setGlobalFilter,
   }) {
     const count = preGlobalFilteredRows.length;
-    const [value, setValue] = useState(globalFilter);
+    const [value, setValue] = React.useState(globalFilter);
     const onChange = useAsyncDebounce((value) => {
-      setLoading(true)
       setGlobalFilter(value || undefined);
-      // setLoading(false);
-    }, 2000)
+    }, 2000);
 
     return (
       <span>
@@ -70,7 +67,7 @@ export default function Student() {
               setValue(e.target.value);
               onChange(e.target.value);
             }}
-            placeholder={`Search ${count} students`}
+            placeholder={`search students`}
             type="search"
             style={{ paddingLeft: 45 }}
           />
@@ -79,7 +76,7 @@ export default function Student() {
     );
   }
 
-  const columns = useMemo(
+  const columns = React.useMemo(
     () => [
       {
         Header: "S/N",
@@ -105,7 +102,7 @@ export default function Student() {
     []
   );
 
-  const data = useMemo(
+  const data = React.useMemo(
     () => [
       {
         col1: "1",
@@ -265,26 +262,40 @@ export default function Student() {
     []
   );
 
-  function Tabular ({ columns, data, loading }) {
+  function DefaultColumnFilter({
+    column: { filterValue, preFilteredRows, setFilter },
+  }) {
+    const count = preFilteredRows.length;
+
+    return (
+      <input
+        className="form-control"
+        value={filterValue || ""}
+        onChange={(e) => {
+          setFilter(e.target.value || undefined);
+        }}
+        placeholder={`Search ${count} records...`}
+      />
+    );
+  }
+  const defaultColumn = React.useMemo(
+    () => ({
+      // Default Filter UI
+      Filter: DefaultColumnFilter,
+    }),
+    []
+  );
+
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
+    rows,
     prepareRow,
     state,
     preGlobalFilteredRows,
     setGlobalFilter,
-    page,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    pageCount,
-    gotoPage,
-    nextPage,
-    previousPage,
-    setPageSize,
-    state: { pageIndex, pageSize}
-  } = useTable({ columns, data, initialState: { pageIndex: 0, pageSize: 2} }, useGlobalFilter, usePagination);
+  } = useTable({ columns, data, defaultColumn }, useGlobalFilter);
 
   const handleDeleteModal = () => {
     toggle();
@@ -362,78 +373,49 @@ export default function Student() {
             <tbody>
               {student.map((item, index) => (
                 <tr>
-                  <td style={{fontSize: 22}} colSpan="10000">Searching...</td>
+                  <th className="" scope="row">
+                    {item.sn}
+                  </th>
+                  <td className="">{item.name}</td>
+                  <td className="">{item.className}</td> */}
+        {/* <td className=''>{item.teacherName}</td> */}
+        {/* <td className="">
+                    <img
+                      src={view}
+                      alt=""
+                      className="action-img"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="view subjects/courses"
+                      onClick={toggle1}
+                    />
+                  </td> */}
+        {/* <td className=''>20</td> */}
+        {/* <td className="d-flex justify-content-end">
+                    <img
+                      className="action-img"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="edit student"
+                      src={edit}
+                      alt="s"
+                      onClick={() => navigate("/edit-student")}
+                    />
+                    <img
+                      className="action-img"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="delete student"
+                      src={dlt}
+                      alt="s"
+                      onClick={toggle}
+                    />
+                  </td>
                 </tr>
-              </tbody>
-            ) : (  
-              <tbody {...getTableBodyProps()}>
-                {page.map((row, i) => {
-                  prepareRow(row);
-                  return (
-                    <tr {...row.getRowProps()}>
-                      {row.cells.map((cell) => {
-                        return (
-                          <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                        );
-                      })}
-                    </tr>
-                  );
-                })}
-              </tbody>
-             )
-            } 
-          </Table>
-          <ul className="pagination">
-                <li className="page-item" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-                    <span className="page-link" style={{color: 'black'}}>First</span>
-                </li>
-                <li className="page-item" onClick={() => previousPage()} disabled={!canPreviousPage}>
-                    <span className="page-link" style={{color: 'black'}}>{'<'}</span>
-                </li>
-                <li className="page-item" onClick={() => nextPage()} disabled={!canNextPage}>
-                    <span className="page-link" style={{color: 'black'}}>{'>'}</span>
-                </li>
-                <li className="page-item" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-                    <span className="page-link" style={{color: 'black'}}>Last</span>
-                </li>
-                <li>
-                    <a className="page-link" style={{color: 'black'}}>
-                        Page{' '}
-                        <strong>
-                            {pageIndex + 1} of {pageOptions.length}
-                        </strong>{' '}
-                    </a>
-                </li>
-                <li>
-                    <a className="page-link">
-                        <input
-                            className="form-control"
-                            type="number"
-                            defaultValue={pageIndex + 1}
-                            onChange={e => {
-                                const page = e.target.value ? Number(e.target.value) - 1 : 0
-                                gotoPage(page)
-                            }}
-                            style={{ width: '100px', height: '20px' }}
-                        />
-                    </a>
-                </li>{' '}
-                <select
-                    className="form-control"
-                    value={pageSize}
-                    onChange={e => {
-                        setPageSize(Number(e.target.value))
-                    }}
-                    style={{ width: '120px', height: '38px' }}
-                >
-                    {[1, 2, 5].map(pageSize => (
-                        <option key={pageSize} value={pageSize}>
-                            Show {pageSize}
-                        </option>
-                    ))}
-                </select>
-            </ul>
-        </div>
+              ))}
+            </tbody>
+          </Table> */}
+        {/* </div> */}
       </Card>
       <Modal isOpen={open} toggle={toggle} className="dlt-modal">
         <ModalBody className="modal-body">
@@ -501,9 +483,4 @@ export default function Student() {
       />
     </div>
   );
- }
-
- return (
-      <Tabular columns={columns} data={data} loading={loading} />
-    )
 }

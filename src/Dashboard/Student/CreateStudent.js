@@ -43,7 +43,7 @@ export default function CreateStudent() {
   const handleSubmit = (e) => {
     console.log(studentArray);
     // e.preventDefault()
-      notify()
+      // notify()
       navigate('/student')
   };
   const notify = () =>
@@ -72,6 +72,7 @@ export default function CreateStudent() {
 
   return (
     <div>
+      {JSON.stringify(studentArray)}
       <Card className="table-card shadow py-3 px-4 mt-3" style={{}}>
         <Row>
           <Col md={6}>

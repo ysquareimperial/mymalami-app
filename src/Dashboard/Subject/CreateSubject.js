@@ -39,9 +39,12 @@ export default function CreateSubject() {
       progress: undefined,
     });
 
+    console.log(value)
+
 
   return (
-    <div>
+    <div><br/>
+      {JSON.stringify(value)}
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
           <Col md={6}>
@@ -79,7 +82,7 @@ export default function CreateSubject() {
               onChange={handleChange}
               onCreateOption={handleCreate}
               placeholder="Select Subjects"
-              style={{}}
+              value={value}
             />
             {/* // options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} /> */}
             <div>
