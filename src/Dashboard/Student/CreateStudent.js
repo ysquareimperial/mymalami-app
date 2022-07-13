@@ -34,13 +34,17 @@ export default function CreateStudent() {
       setStudentArray((p) => [...p, { ...studentName }]);
       setStudentName(_form);
       setFormError(!errorObj);
+
     }
   };
   const handleChange = ({ target: { name, value } }) => {
     setStudentName((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     console.log(studentArray);
+    // e.preventDefault()
+      // notify()
+      navigate('/student')
   };
   const notify = () =>
     toast.success(`${studentArray.length} student(s) created`, {
@@ -68,6 +72,7 @@ export default function CreateStudent() {
 
   return (
     <div>
+      {JSON.stringify(studentArray)}
       <Card className="table-card shadow py-3 px-4 mt-3" style={{}}>
         <Row>
           <Col md={6}>

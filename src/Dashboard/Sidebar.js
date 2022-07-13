@@ -111,7 +111,7 @@ export default function Sidebar() {
             <li
               onClick={() => navigate("/report")}
               className={`active1 ${
-                location.pathname === "/report" && "active_sidebar"
+                location.pathname.includes("/report") && "active_sidebar"
               }`}
             >
               <img

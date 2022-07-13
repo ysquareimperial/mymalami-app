@@ -1,10 +1,14 @@
 import React from "react";
 import { Card, Col, Row, Table } from "reactstrap";
-import {Search} from 'react-feather'
+import { Search } from 'react-feather'
 import { tableHeading } from "./StudentsReports";
 import { students } from "./StudentsReports";
+import { PDFDownloadLink } from '@react-pdf/renderer'
 import ReportCard from "./ReportCard";
+// import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Report() {
+  const navigate = useNavigate()
   return (
     <div>
       <div style={{ position: "relative" }}>
@@ -23,7 +27,7 @@ export default function Report() {
                         <img src={report} alt='a' />
                     </span> */}
           Reports
-        </h3>   
+        </h3>
         <div className="t-d">
           <Table striped className="" size="sm">
             {tableHeading.map((item, index) => (
@@ -78,15 +82,21 @@ export default function Report() {
         <Row>
           <Col md={6}></Col>
           <Col md={6}>
-            <button
-              className="action-btn"
-              style={{ float: "right", marginRight: 0 }}
-            >
-              Generate Reports
-            </button>
+            <div style={{ float: 'right' }}>
+              <button
+                className="action-btn"
+                style={{ marginRight: 5 }}
+                onClick={() => navigate('/report/report-cards')}
+              >
+                View Report Cards
+              </button>
+              <PDFDownloadLink document={<ReportCard />} fileName='ReportCard'>
+                {({ loading }) => (loading ? <button style={{ marginRight: 0 }} className="action-btn">Loading Document...</button> : <button style={{ marginRight: 0 }} className="action-btn"> Download Report Cards</button>)}
+              </PDFDownloadLink>
+            </div>
           </Col>
         </Row>
       </Card>
-    </div>
+    </div >
   );
 }

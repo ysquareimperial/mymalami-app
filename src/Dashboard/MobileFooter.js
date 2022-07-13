@@ -70,7 +70,7 @@ export default function MobileFooter() {
               <img
                 onClick={() => navigate("/report")}
                 className={`active1 ${
-                  location.pathname === "/report" && "active_footer"
+                  location.pathname.includes("/report") && "active_footer"
                 }`}
                 src={report}
                 alt=""

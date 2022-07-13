@@ -30,6 +30,7 @@ export default function Student() {
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false)
   const toggle = () => {
     setOpen(!open);
   };
@@ -37,29 +38,6 @@ export default function Student() {
   const toggle1 = () => {
     setOpen1(!open1);
   };
-  // const student = [
-  //   {
-  //     sn: "1",
-  //     name: "Quavo Huncho",
-  //     className: "JSS 1",
-  //     subject: "Mathddnndn kk ",
-  //     teacherName: "Future Hndrxx",
-  //   },
-  //   {
-  //     sn: "2",
-  //     name: "Quavo Huncho",
-  //     className: "JSS 1",
-  //     subject: "Math",
-  //     teacherName: "Future Hndrxx",
-  //   },
-  //   {
-  //     sn: "3",
-  //     name: "Quavo Huncho",
-  //     className: "JSS 1",
-  //     subject: "Math",
-  //     teacherName: "Future Hndrxx",
-  //   }
-  // ];
 
   function GlobalFilter({
     preGlobalFilteredRows,
@@ -69,7 +47,9 @@ export default function Student() {
     const count = preGlobalFilteredRows.length;
     const [value, setValue] = React.useState(globalFilter);
     const onChange = useAsyncDebounce((value) => {
-      setGlobalFilter(value || undefined);
+      setLoading(true)
+      setGlobalFilter(value || undefined)
+      setLoading(false);
     }, 2000);
 
     return (
@@ -351,7 +331,26 @@ export default function Student() {
           </Col>
         </Row>
         <div className="mt-4">
-          <Table className="table" striped size="sm" {...getTableProps()} hover  borderless responsive="xs">
+          {loading ? (
+            <Table className="table" striped size="sm" {...getTableProps()}>
+                <thead>
+              {headerGroups.map((headerGroup) => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column) => (
+                    <th {...column.getHeaderProps()}>
+                      {column.render("Header")}
+                    </th>
+                  ))}
+                </tr>
+              ))}
+            </thead>
+            <tbody>
+              <tr>Loading data...</tr>
+            </tbody>
+            </Table>
+          ) : (
+
+          <Table className="table" striped size="sm" {...getTableProps()}>
             <thead>
               {headerGroups.map((headerGroup) => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
@@ -380,6 +379,7 @@ export default function Student() {
               })}
             </tbody>
           </Table>
+          )}
         </div>
         {/* <div className="mt-4">
           <Table size="sm" className="table" striped>
