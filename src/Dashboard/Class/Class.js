@@ -5,10 +5,10 @@ import { Card, Col, Row } from "reactstrap";
 import edit from "../../images/edit.png";
 import dlt from "../../images/delete.png";
 import sum from "../../images/sum.png";
-import view from "../../images/view.png";
+// import view from "../../images/view.png";
 import student from "../../images/student.png";
 import { ToastContainer, toast } from "react-toastify";
-import book from "../../images/book.png";
+// import book from "../../images/book.png";
 import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
 export default function Classes() {
@@ -26,10 +26,10 @@ export default function Classes() {
   const toggle = () => {
     setOpen(!open);
   };
-  const [open1, setOpen1] = useState(false);
-  const toggle1 = () => {
-    setOpen1(!open1);
-  };
+  // const [open1, setOpen1] = useState(false);
+  // const toggle1 = () => {
+  //   setOpen1(!open1);
+  // };
   const [open2, setOpen2] = useState(false);
   const toggle2 = () => {
     setOpen2(!open2);

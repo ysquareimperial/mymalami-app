@@ -9,7 +9,7 @@ import report from "../images/report.png";
 import lb from "../images/sRecord-L&B.png";
 import record from "../images/record.png";
 import { useLocation } from "react-router-dom";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();

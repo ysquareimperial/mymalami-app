@@ -3,6 +3,7 @@ import { Card, Col, Row, Table } from "reactstrap";
 import {Search} from 'react-feather'
 import { tableHeading } from "./StudentsReports";
 import { students } from "./StudentsReports";
+import ReportCard from "./ReportCard";
 export default function Report() {
   return (
     <div>

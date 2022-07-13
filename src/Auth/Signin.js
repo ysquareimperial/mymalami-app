@@ -4,7 +4,7 @@ import { Row, Col, Card } from "reactstrap";
 // import { Mail, Unlock } from 'react-feather'
 import lb from "../images/sRecord-L&B.png";
 import { useNavigate } from "react-router-dom";
-import { AlertCircle } from "react-feather";
+// import { AlertCircle } from "react-feather";
 import Error from "./Error";
 export default function Signin() {
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, Col, Row } from "reactstrap";
 // import './student.css'
 import back from "../../images/back.png";
@@ -25,7 +25,7 @@ export default function EditStudent() {
     { value: "Englissh", id: 5 },
   ];
 
-  const [options] = useState(data);
+  // const [options] = useState(data);
   return (
     <div>
       <Card className="table-card shadow py-3 px-4 mt-3">

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Card, Col, Row, Table } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
 import dlt from "../../images/delete.png";
 
 export default function SubjectRecord() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [subject, setSubject] = useState()
   const subjects = [{
     subjectName: 'English Language'
@@ -119,6 +119,7 @@ export default function SubjectRecord() {
                   <td className="">
                     <img
                       src={dlt}
+                      alt=''
                       className="action-img"
                       style={{ float: 'right' }}
                       onClick={() => {

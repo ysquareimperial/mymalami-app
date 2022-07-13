@@ -3,7 +3,7 @@ import { Row, Col, Card } from "reactstrap";
 // import { Mail, Phone, Unlock, User } from 'react-feather'
 import { useNavigate } from "react-router-dom";
 import lb from "../images/sRecord-L&B.png";
-import { AlertCircle } from "react-feather";
+// import { AlertCircle } from "react-feather";
 import Error from "./Error";
 // import lb from '../images/s-white.png'
 

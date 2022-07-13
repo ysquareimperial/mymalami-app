@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowDownCircle, Circle, HelpCircle, Lock, Search, Settings } from "react-feather";
+import { ArrowDownCircle, HelpCircle, Lock, Settings } from "react-feather";
 import { useNavigate } from "react-router-dom";
 import {
   Col,
@@ -12,7 +12,7 @@ import {
 // import './Navbar.css'
 import ysquare from "../images/user.png";
 import logo from "../images/sReord.png";
-import Profile from "../Profile/Profile";
+// import Profile from "../Profile/Profile";
 import profileimage from '../images/ysquareimperial.png'
 export default function Navbar() {
   const [open, setOpen] = useState(false);

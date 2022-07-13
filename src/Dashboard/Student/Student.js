@@ -351,7 +351,7 @@ export default function Student() {
           </Col>
         </Row>
         <div className="mt-4">
-          <Table className="table" striped size="sm" {...getTableProps()} hover borderless responsive="sm" responsive='xs'>
+          <Table className="table" striped size="sm" {...getTableProps()} hover  borderless responsive="xs">
             <thead>
               {headerGroups.map((headerGroup) => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
@@ -442,7 +442,7 @@ export default function Student() {
       </Card>
       <Modal isOpen={open} toggle={toggle} className="dlt-modal">
         <ModalBody className="modal-body">
-          <img src={dlt} />
+          <img src={dlt} alt='' />
           <p className="dlt-warning">
             Are you sure you want to delete this Student?
           </p>
