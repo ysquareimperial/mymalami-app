@@ -1,19 +1,36 @@
-import React from "react";
-import { Card, Col, Row } from "reactstrap";
-// // import './record.css'
-// import edit from '../../images/edit.png'
-// import dlt from '../../images/delete.png'
-// import sum from '../../images/sum.png'
-import back from "../../images/back.png";
-// import view from '../../images/view.png'
-// import save from '../../images/save.png'
+import React, { useState } from "react";
+import { Card, Col, Row, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-
-import RecordTab from "./RecordTab";
 import { Search } from "react-feather";
+import dlt from "../../images/delete.png";
+
 export default function SubjectRecord() {
   const navigate = useNavigate();
+  const [subject, setSubject] = useState()
+  const subjects = [{
+    subjectName: 'English Language'
+  },
+  {
+    subjectName: 'Mathematics'
+  }, {
+    subjectName: 'Physics'
+  },
+  {
+    subjectName: 'Chemistry'
+  },
+  {
+    subjectName: 'Biology'
+  }
 
+  ]
+  console.log(subjects[0])
+  const students = [
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Ali Abdul' },
+    { studentName: 'Muhammad Ali' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+  ]
   return (
     <div>
       <div style={{ position: "relative" }}>
@@ -30,22 +47,11 @@ export default function SubjectRecord() {
         <Row>
           <Col md={6}>
             <Row>
-              <Col md={1} sm={1} xs={1}>
-                <span>
-                  <img
-                    className="action-img"
-                    alt=""
-                    src={back}
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                    title="back"
-                    akt=""
-                    onClick={() => navigate("/record")}
-                  />
-                </span>
+              <Col md={6} sm={6} xs={6}>
+                <h3>Records</h3>
               </Col>
-              <Col md={11} sm={11} xs={11}>
-                <p className="table-card-title">Create Subject Record</p>
+              <Col md={6} sm={6} xs={6}>
+
               </Col>
             </Row>
           </Col>
@@ -55,8 +61,64 @@ export default function SubjectRecord() {
             </div>
           </Col>
         </Row>
-        <RecordTab />
-        <div className="mt-4">
+        <div className="mt-4 records-div">
+          <div>
+            {subjects.map((item, index) => (
+              <button className='subject-btn' style={{ display: 'inline-block' }} onClick={() => setSubject(item.subjectName)}>{item.subjectName}</button>
+            ))}
+          </div>
+
+          <h4 className="mt-3">{subject}</h4>
+          <Table size="sm" borderless hover striped responsive='xs'>
+            <thead>
+              <tr>
+                <th>
+                  S/N
+                </th>
+                <th>
+                  Student Name
+                </th>
+                <th>
+                  {subject} CA
+                </th>
+                <th>
+                  {subject} Exam
+                </th>
+                <th style={{ float: 'right' }}>
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {students.map((item, index) => (
+
+                <tr>
+                  <th scope="row">
+                    {index + 1}
+                  </th>
+                  <td>
+                    {item.studentName}
+                  </td>
+                  <td>
+                    <input className="record-input" type="text" />
+                  </td>
+                  <td>
+                    <input className="record-input" type="text" />
+                  </td>
+                  <td className="">
+                    <img
+                      src={dlt}
+                      className="action-img"
+                      style={{ float: 'right' }}
+                      onClick={() => {
+                        // notify();
+                      }}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
           <div className="">
             <button className="action-btn">save</button>
           </div>

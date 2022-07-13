@@ -36,18 +36,18 @@ export default function Classes() {
   };
   const classs = [
     {
-      name: "Quavo Huncho",
-   
+      name: "Quavo Huncho fhasfsadfsd fasdfasdf fasdfasdf fasdfsda ffasd",
+
       students: "30",
     },
     {
       name: "Quavo Huncho",
-   
+
       students: "30",
     },
     {
       name: "Quavo Huncho",
-   
+
       students: "30",
     },
   ];
@@ -91,7 +91,14 @@ export default function Classes() {
           </Col>
         </Row>
         <div className="mt-4">
-          <Table size="sm" className="table" striped>
+          <Table
+            size="sm"
+            className="table"
+            striped
+            responsive
+            borderless
+            hover
+          >
             <thead>
               <tr>
                 <th>S/N</th>

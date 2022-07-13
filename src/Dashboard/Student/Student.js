@@ -351,7 +351,7 @@ export default function Student() {
           </Col>
         </Row>
         <div className="mt-4">
-          <Table className="table" striped size="sm" {...getTableProps()}>
+          <Table className="table" striped size="sm" {...getTableProps()} hover borderless responsive="sm" responsive='xs'>
             <thead>
               {headerGroups.map((headerGroup) => (
                 <tr {...headerGroup.getHeaderGroupProps()}>

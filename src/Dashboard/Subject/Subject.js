@@ -79,7 +79,7 @@ export default function Subject() {
           </Col>
         </Row>
         <div className="mt-4">
-          <Table size="sm" striped>
+          <Table size="sm" striped hover responsive borderless>
             <thead>
               <tr>
                 <th>S/N</th>

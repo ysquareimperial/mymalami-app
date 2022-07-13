@@ -405,8 +405,9 @@ input[type=search]:focus {
 }
 
 input.record-input {
-    width: 30%;
+    /* width: 30%; */
     height: 30px;
+    background-color: var(--secondaryColor);
     margin: 0;
 }
 
@@ -718,10 +719,12 @@ input.record-input {
     color: white;
     border-radius: 20px;
 }
+
 .settings-btn:hover {
     transition: 100ms;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2), 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
+
 .settings-dlt-btn {
     border: none;
 
@@ -734,12 +737,33 @@ input.record-input {
     color: white;
     border-radius: 20px;
 }
+
 .settings-dlt-btn:hover {
     transition: 100ms;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2), 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
-.profile-flex-container{
+
+.profile-flex-container {
     height: 60px;
     display: flex;
     align-items: center;
+}
+
+.records-div .subject-btn {
+    border: none;
+    margin-right: 5px;
+    margin-top:5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    background-color: var(--btnColor);
+    display: inline-block;
+    color: white;
+    border-radius: 20px;
+}
+.subject-btn:hover {
+    transition: 100ms;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2), 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
