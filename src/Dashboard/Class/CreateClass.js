@@ -30,6 +30,8 @@ export default function CreateClass() {
   // ]
   const [value, setValue] = useState();
   const [options, setOptions] = useState(subject);
+  const [subVal, setSubVal] = useState();
+  const [stuVal, setStuVal] = useState();
 
   const [data2, setData2] = useState([
     { value: "Adamu Abdullahi", label: "Adamu Abdullahi" },
@@ -41,13 +43,15 @@ export default function CreateClass() {
 
   const animatedComponents = makeAnimated();
 
-  const handleChange = useCallback((inputValue) => setValue(inputValue), []);
+  const handleChange = useCallback((inputValue) => setSubVal(inputValue), []);
+  const handleChange2 = useCallback((inputValue) => setStuVal(inputValue), []);
+
 
   const handleCreate = useCallback(
     (inputValue) => {
       const newValue = { value: inputValue.toLowerCase(), label: inputValue };
       setOptions([...subject, newValue]);
-      setValue(newValue);
+      setSubVal(newValue);
     },
     [subject]
   );
@@ -56,12 +60,14 @@ export default function CreateClass() {
     (inputValue) => {
       const newValue = { value: inputValue.toLowerCase(), label: inputValue };
       setData2([...data2, newValue]);
-      setValue(newValue);
+      setStuVal(newValue);
     },
     [subject]
   );
   return (
     <div>
+      {JSON.stringify(subVal)}
+      {JSON.stringify(stuVal)}
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
           <Col md={6}>
@@ -99,6 +105,7 @@ export default function CreateClass() {
               onChange={handleChange}
               onCreateOption={handleCreate}
               placeholder="Select Subjects"
+              value={subVal}
             />
             <br />
             <CreatableSelect
@@ -106,9 +113,10 @@ export default function CreateClass() {
               isMulti
               components={animatedComponents}
               closeMenuOnSelect={false}
-              onChange={handleChange}
+              onChange={handleChange2}
               onCreateOption={handleCreate2}
               placeholder="Select Students"
+              value={stuVal}
             />
             <div>
               <button
