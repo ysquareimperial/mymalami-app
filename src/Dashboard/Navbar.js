@@ -59,7 +59,7 @@ export default function Navbar() {
 
                 <div className="mobile-profile">
                   <div>
-                    <img src={profileimage} className='mobile-profile' alt="" />
+                    <img src={profileimage} className='mobile-profile shadow' alt="" />
                   </div>
                 </div>
               </DropdownItem>
