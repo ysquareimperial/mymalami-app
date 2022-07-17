@@ -8,6 +8,7 @@ import student from "../../images/student.png";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { Search } from "react-feather";
+import { subject } from "../Student/StudentList";
 
 export default function Subject() {
   const notify = () =>
@@ -28,23 +29,7 @@ export default function Subject() {
   const toggle1 = () => {
     setOpen1(!open1);
   };
-  const subject = [
-    {
-      name: "English Language",
-      teacherName: "Futre Pluto Hndrx",
-      students: "30",
-    },
-    {
-      name: "JS Language",
-      teacherName: "Futre Pluto Hndrx",
-      students: "30",
-    },
-    {
-      name: "HTM Language",
-      teacherName: "Futre Pluto Hndrx",
-      students: "30",
-    },
-  ];
+  
   const navigate = useNavigate();
 
   return (

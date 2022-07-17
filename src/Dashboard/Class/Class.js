@@ -11,6 +11,8 @@ import { ToastContainer, toast } from "react-toastify";
 // import book from "../../images/book.png";
 import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
+import { classs } from "../Student/StudentList";
+
 export default function Classes() {
   const notify = () =>
     toast.error(`Class deleted`, {
@@ -34,23 +36,7 @@ export default function Classes() {
   const toggle2 = () => {
     setOpen2(!open2);
   };
-  const classs = [
-    {
-      name: "Quavo Huncho fhasfsadfsd fasdfasdf fasdfasdf fasdfsda ffasd",
-
-      students: "30",
-    },
-    {
-      name: "Quavo Huncho",
-
-      students: "30",
-    },
-    {
-      name: "Quavo Huncho",
-
-      students: "30",
-    },
-  ];
+  
   const navigate = useNavigate();
   // let form = {
   //   contactName: "",
