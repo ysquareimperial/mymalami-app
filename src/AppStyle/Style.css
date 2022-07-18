@@ -521,19 +521,29 @@ input.record-input {
     height: 100vh;
 }
 
-.sign-left-col {}
+.sign-left-col {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.sign-right-col {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
 
 .sign-heading {
     color: var(--primaryColor);
     font-weight: bold;
-    font-size: 50px;
-    margin-left: 0;
+    font-size: 45px;
+    /* margin-left: 0; */
 }
 
 .sign-para {
     color: var(--primaryColor);
     font-weight: lighter;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .signin-btn {
@@ -560,7 +570,7 @@ input.record-input {
 }
 
 .signin-row {
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .login-btn {

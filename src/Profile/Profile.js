@@ -7,7 +7,7 @@ import iphone from "../images/iphone.png";
 import address from "../images/address.png";
 import pen from "../images/pen.png";
 import ysquare from "../images/ysquareimperial.png";
-import logo from "../images/sReord.png";
+import logo from "../images/sRecord.png";
 import motto from "../images/motto.png";
 import camera from "../images/camera.png";
 import { useNavigate } from "react-router-dom";

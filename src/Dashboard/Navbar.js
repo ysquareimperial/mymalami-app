@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 // import './Navbar.css'
 import ysquare from "../images/user.png";
-import logo from "../images/sReord.png";
+import logo from "../images/sRecord.png";
 // import Profile from "../Profile/Profile";
 import profileimage from '../images/ysquareimperial.png'
 export default function Navbar() {
