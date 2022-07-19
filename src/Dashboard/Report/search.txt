@@ -1,0 +1,63 @@
+import React, { useState } from 'react'
+
+function Search() {
+    const student = [{
+        fname: 'Yasir',
+        lname: 'Hassan'
+        ,
+    },
+    {
+        fname: 'Zaharaddin',
+        lname: 'wanka'
+    }
+    ]
+
+    const [result, setResult] = useState(student)
+    const [state, setSearch] = useState({
+        search: "",
+    });
+    const handleChanges = ({ target: { name, value } }) => {
+        setSearch({ [name]: value });
+    };
+    let rows = [];
+    result &&
+        result.forEach((item, index) => {
+            if (
+                item.fname.toLowerCase().indexOf(state.search.toLowerCase()) ===
+                -1
+            ) {
+                return;
+            }
+            rows.push(
+                <tr key={index}>
+                    <td>{item.fname}</td>
+                    <td>{item.lname}</td>
+                </tr>
+            );
+        });
+
+    return (
+        <div>
+            <input type='search' name='search' onChange={handleChanges} />
+            <table>
+                <thead>
+                    <tr>
+                        <th>f name</th>
+                        <th>l name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* {student.map((item, index) => (
+                        <tr>
+                            <td>{item.fname}</td>
+                            <td>{item.lname}</td>
+                        </tr>
+                    ))} */}
+                    {rows}
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+export default Search
