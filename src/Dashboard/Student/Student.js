@@ -8,12 +8,6 @@ import view from "../../images/view.png";
 import book from "../../images/book.png";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-// import {
-//   useTable,
-//   useFilters,
-//   useGlobalFilter,
-//   useAsyncDebounce,
-// } from "react-table";
 import { Search } from "react-feather";
 import { studentList } from "./StudentList";
 
@@ -31,7 +25,6 @@ export default function Student() {
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
-  // const [loading, setLoading] = useState(false)
   const toggle = () => {
     setOpen(!open);
   };
@@ -40,12 +33,6 @@ export default function Student() {
     setOpen1(!open1);
   };
 
-  // function GlobalFilter({
-  //   preGlobalFilteredRows,
-  //   globalFilter,
-  //   setGlobalFilter,
-  // }) {
-  //   const count = preGlobalFilteredRows.length;
     const [value, setValue] = useState('');
     const handleChange = (e) => setValue(e.target.value)
     const [student, setStudent] = useState(studentList)
@@ -53,8 +40,8 @@ export default function Student() {
 
     useEffect(() => {
       setRows(
-        <tbody>
-      {student.map((item, index) => (
+          <tbody>
+        {student.map((item, index) => (
         <tr>
           <td className="" scope="row">
             {index + 1}
@@ -98,244 +85,67 @@ export default function Student() {
       ))} 
       </tbody>)
     }, [])
-  //   const onChange = useAsyncDebounce((value) => {
-  //     setLoading(true)
-  //     setGlobalFilter(value || undefined)
-  //     setLoading(false);
-  //   }, 2000);
 
-  //   return (
-      
-  //   );
-  // }
-
-  // const columns = React.useMemo(
-  //   () => [
-  //     {
-  //       Header: "S/N",
-  //       accessor: "col1",
-  //     },
-  //     {
-  //       Header: "Student Name",
-  //       accessor: "col2",
-  //     },
-  //     {
-  //       Header: "Class",
-  //       accessor: "col3",
-  //     },
-  //     {
-  //       Header: "Subjects",
-  //       accessor: "col4",
-  //     },
-  //     {
-  //       Header: <p style={{ margin: 0, float: "right" }}>Action</p>,
-  //       accessor: "col5",
-  //     },
-  //   ],
-  //   []
-  // );
-
-  // const data = React.useMemo(
-  //   () => [
-  //     {
-  //       col1: "1",
-  //       col2: "AdamuAbddddddddfs",
-  //       col3: "JSS 1A",
-  //       col4: (
-  //         <img
-  //           src={view}
-  //           alt=""
-  //           className="action-img"
-  //           data-toggle="tooltip"
-  //           data-placement="bottom"
-  //           title="view subjects/courses"
-  //           onClick={toggle1}
-  //         />
-  //       ),
-  //       col5: (
-  //         <div style={{ float: "right" }}>
-  //           <img
-  //             className="action-img"
-  //             data-toggle="tooltip"
-  //             data-placement="bottom"
-  //             title="edit student"
-  //             src={edit}
-  //             alt="s"
-  //             onClick={() => navigate("/student/edit-student")}
-  //           />
-  //           <img
-  //             className="action-img"
-  //             data-toggle="tooltip"
-  //             data-placement="bottom"
-  //             title="delete student"
-  //             src={dlt}
-  //             alt="s"
-  //             onClick={toggle}
-  //           />
-  //         </div>
-  //       ),
-  //     },
-  //     {
-  //       col1: "2",
-  //       col2: "Aisha Hassan",
-  //       col3: "JSS 1A",
-  //       col4: (
-  //         <img
-  //           src={view}
-  //           alt=""
-  //           className="action-img"
-  //           data-toggle="tooltip"
-  //           data-placement="bottom"
-  //           title="view subjects/courses"
-  //           onClick={toggle1}
-  //         />
-  //       ),
-  //       col5: (
-  //         <div style={{ float: "right" }}>
-  //           <img
-  //             className="action-img"
-  //             data-toggle="tooltip"
-  //             data-placement="bottom"
-  //             title="edit student"
-  //             src={edit}
-  //             alt="s"
-  //             onClick={() => navigate("/edit-student")}
-  //           />
-  //           <img
-  //             className="action-img"
-  //             data-toggle="tooltip"
-  //             data-placement="bottom"
-  //             title="delete student"
-  //             src={dlt}
-  //             alt="s"
-  //             onClick={toggle}
-  //           />
-  //         </div>
-  //       ),
-  //     },
-  //     {
-  //       col1: "3",
-  //       col2: "Bob Javobs",
-  //       col3: "JSS 1A",
-  //       col4: (
-  //         <img
-  //           src={view}
-  //           alt=""
-  //           className="action-img"
-  //           data-toggle="tooltip"
-  //           data-placement="bottom"
-  //           title="view subjects/courses"
-  //           onClick={toggle1}
-  //         />
-  //       ),
-  //       col5: (
-  //         <div style={{ float: "right" }}>
-  //           <img
-  //             className="action-img"
-  //             data-toggle="tooltip"
-  //             data-placement="bottom"
-  //             title="edit student"
-  //             src={edit}
-  //             alt="s"
-  //             onClick={() => navigate("/edit-student")}
-  //           />
-  //           <img
-  //             className="action-img"
-  //             data-toggle="tooltip"
-  //             data-placement="bottom"
-  //             title="delete student"
-  //             src={dlt}
-  //             alt="s"
-  //             onClick={toggle}
-  //           />
-  //         </div>
-  //       ),
-  //     },
-  //     {
-  //       col1: "4",
-  //       col2: "Malam Malam",
-  //       col3: "JSS 1A",
-  //       col4: (
-  //         <img
-  //           src={view}
-  //           alt=""
-  //           className="action-img"
-  //           data-toggle="tooltip"
-  //           data-placement="bottom"
-  //           title="view subjects/courses"
-  //           onClick={toggle1}
-  //         />
-  //       ),
-  //       col5: (
-  //         <div style={{ float: "right" }}>
-  //           <img
-  //             className="action-img"
-  //             data-toggle="tooltip"
-  //             data-placement="bottom"
-  //             title="edit student"
-  //             src={edit}
-  //             alt="s"
-  //             onClick={() => navigate("/edit-student")}
-  //           />
-  //           <img
-  //             className="action-img"
-  //             data-toggle="tooltip"
-  //             data-placement="bottom"
-  //             title="delete student"
-  //             src={dlt}
-  //             alt="s"
-  //             onClick={() => {
-  //               toggle();
-  //             }}
-  //           />
-  //         </div>
-  //       ),
-  //     },
-  //   ],
-  //   []
-  // );
-
-  // function DefaultColumnFilter({
-  //   column: { filterValue, preFilteredRows, setFilter },
-  // }) {
-  //   const count = preFilteredRows.length;
-
-  //   return (
-  //     <input
-  //       className="form-control"
-  //       value={filterValue || ""}
-  //       onChange={(e) => {
-  //         setFilter(e.target.value || undefined);
-  //       }}
-  //       placeholder={`Search ${count} records...`}
-  //     />
-  //   );
-  // }
-  // const defaultColumn = React.useMemo(
-  //   () => ({
-  //     // Default Filter UI
-  //     Filter: DefaultColumnFilter,
-  //   }),
-  //   []
-  // );
-
-  // const {
-  //   getTableProps,
-  //   getTableBodyProps,
-  //   headerGroups,
-  //   rows,
-  //   prepareRow,
-  //   state,
-  //   preGlobalFilteredRows,
-  //   setGlobalFilter,
-  // } = useTable({ columns, data, defaultColumn }, useGlobalFilter);
-
-  // const handleDeleteModal = () => {
-  //   toggle();
-  // };
+    function filterList(e) {
+      console.log('clicked')
+//       rows.forEach((item, index) => {
+//         if (
+//           item.toLowerCase().indexOf(value.toLowerCase()) === -1
+//         ) {
+//           return;
+//         }
+//         setRows(
+//           <tbody>
+//         {student.map((item, index, value) => (
+//         <tr>
+//           <td className="" scope="row">
+//             {index + 1}
+//           </td>
+//           <td className="">{item.name}</td>
+//           <td className="">{item.class}</td>
+// <td className=''>{item.teacherName}</td>
+// <td className="">
+//             <img
+//               src={view}
+//               alt=""
+//               className="action-img"
+//               data-toggle="tooltip"
+//               data-placement="bottom"
+//               title="view subjects/courses"
+//               onClick={toggle1}
+//             />
+//           </td>
+//  <td className=''>20</td>
+//  <td className="d-flex justify-content-end">
+//             <img
+//               className="action-img"
+//               data-toggle="tooltip"
+//               data-placement="bottom"
+//               title="edit student"
+//               src={edit}
+//               alt="s"
+//               onClick={() => navigate("/edit-student")}
+//             />
+//             <img
+//               className="action-img"
+//               data-toggle="tooltip"
+//               data-placement="bottom"
+//               title="delete student"
+//               src={dlt}
+//               alt="s"
+//               onClick={toggle}
+//             />
+//           </td>
+//         </tr>        
+//       ))} 
+//       </tbody>
+//         )
+//       })
+    }
 
   return (
     <div>
+      {JSON.stringify(value)}
       <span>
         <div style={{ position: "relative" }}>
           <Search
@@ -353,14 +163,11 @@ export default function Student() {
             placeholder={`search students`}
             type="search"
             style={{ paddingLeft: 45 }}
-          />
+          /><br/>
         </div>
+        <div><button onClick={filterList}>SEARCH</button></div>
       </span>
-      {/* <GlobalFilter
-        preGlobalFilteredRows={preGlobalFilteredRows}
-        globalFilter={state.globalFilter}
-        setGlobalFilter={setGlobalFilter}
-      /> */}
+
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
           <Col md={6} sm={6} xs={6}>
@@ -380,58 +187,6 @@ export default function Student() {
             </div>
           </Col>
         </Row>
-        {/* <div className="mt-4"> */}
-          {/* {loading ? (
-            <Table className="table" striped size="sm" {...getTableProps()}>
-                <thead>
-              {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map((column) => (
-                    <th {...column.getHeaderProps()}>
-                      {column.render("Header")}
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody>
-              <tr>Loading data...</tr>
-            </tbody>
-            </Table>
-          ) : (
-
-          <Table className="table" striped size="sm" {...getTableProps()}>
-            <thead>
-              {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map((column) => (
-                    <th {...column.getHeaderProps()}>
-                      {column.render("Header")}
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody {...getTableBodyProps()}>
-              {rows.map((row) => {
-                prepareRow(row);
-                return (
-                  <tr {...row.getRowProps()}>
-                    {row.cells.map((cell) => {
-                      return (
-                        <td {...cell.getCellProps()} className="table-data">
-                          {cell.render("Cell")}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </Table>
-          )} */}
-          {/* <h4>TABLE GOES HERE</h4>
-        </div> */}
         <div className="mt-4">
           <Table size="sm" className="table" striped hover responsive borderless>
             <thead>
@@ -439,55 +194,10 @@ export default function Student() {
                 <th>S/N</th>
                 <th>Student Name</th>
                 <th>Class</th>
-                {/* <th>Class Teacher Name</th> */}
         <th>Subjects</th>
         <th className="d-flex justify-content-end">Actions</th>
               </tr>
             </thead>
-            {/* <tbody>
-              {student.map((item, index) => (
-                <tr>
-                  <td className="" scope="row">
-                    {index + 1}
-                  </td>
-                  <td className="">{item.name}</td>
-                  <td className="">{item.class}</td>
-        <td className=''>{item.teacherName}</td>
-        <td className="">
-                    <img
-                      src={view}
-                      alt=""
-                      className="action-img"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="view subjects/courses"
-                      onClick={toggle1}
-                    />
-                  </td>
-         <td className=''>20</td>
-         <td className="d-flex justify-content-end">
-                    <img
-                      className="action-img"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="edit student"
-                      src={edit}
-                      alt="s"
-                      onClick={() => navigate("/edit-student")}
-                    />
-                    <img
-                      className="action-img"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="delete student"
-                      src={dlt}
-                      alt="s"
-                      onClick={toggle}
-                    />
-                  </td>
-                </tr>                
-              ))} 
-            </tbody> */}
             {rows}
           </Table>
         </div>
