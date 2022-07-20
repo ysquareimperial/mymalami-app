@@ -24,7 +24,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import ForgotPassword from "../Auth/ForgotPassword";
 import EmailSent from "../Auth/EmailSent";
 import CreateNewPassword from "../Auth/CreateNewPassword";
-import ReportCard from "../Dashboard/Report/ReportCard";
+// import ReportCard from "../Dashboard/Report/ReportCard";
 import ViewReportCard from "../Dashboard/Report/ViewReportCard";
 
 function AppNavigation() {

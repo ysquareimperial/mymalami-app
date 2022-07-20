@@ -67,7 +67,7 @@ export default function Subject() {
           <Table size="sm" striped hover responsive borderless>
             <thead>
               <tr>
-                <th>S/N</th>
+                <th>S/N</th>  
                 <th>Subject Name</th>
                 {/* <th>Teacher Name</th> */}
                 <th>No of Students</th>

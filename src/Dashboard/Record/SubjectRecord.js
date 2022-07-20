@@ -102,7 +102,6 @@ export default function SubjectRecord() {
             </thead>
             <tbody>
               {students.map((item, index) => (
-
                 <tr>
                   <th scope="row">
                     {index + 1}
