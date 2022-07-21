@@ -62,7 +62,7 @@ export default function LSection2() {
             </div>
             <h3 className="f-title">Generate Reports</h3>
             <p className="f-p">
-              Reports are generated for every automatically student.
+              Reports are automatically generated for every student.
             </p>
           </Card>
         </Col>
