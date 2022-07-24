@@ -35,13 +35,15 @@ export default function Student() {
 
     const [value, setValue] = useState('');
     const handleChange = (e) => setValue(e.target.value)
-    const [student, setStudent] = useState(studentList)
+    // const [student, setStudent] = useState(studentList)
+    // const [search, setSearch] = useState({ find: ""})
     const [rows, setRows] = useState([])
+    const [newList, setNewList] = useState([])
 
     useEffect(() => {
       setRows(
           <tbody>
-        {student.map((item, index) => (
+        {studentList.map((item, index) => (
         <tr>
           <td className="" scope="row">
             {index + 1}
@@ -86,62 +88,48 @@ export default function Student() {
       </tbody>)
     }, [])
 
-    function filterList(e) {
-      console.log('clicked')
-//       rows.forEach((item, index) => {
-//         if (
-//           item.toLowerCase().indexOf(value.toLowerCase()) === -1
-//         ) {
-//           return;
-//         }
-//         setRows(
-//           <tbody>
-//         {student.map((item, index, value) => (
-//         <tr>
-//           <td className="" scope="row">
-//             {index + 1}
-//           </td>
-//           <td className="">{item.name}</td>
-//           <td className="">{item.class}</td>
-// <td className=''>{item.teacherName}</td>
-// <td className="">
-//             <img
-//               src={view}
-//               alt=""
-//               className="action-img"
-//               data-toggle="tooltip"
-//               data-placement="bottom"
-//               title="view subjects/courses"
-//               onClick={toggle1}
-//             />
-//           </td>
-//  <td className=''>20</td>
-//  <td className="d-flex justify-content-end">
-//             <img
-//               className="action-img"
-//               data-toggle="tooltip"
-//               data-placement="bottom"
-//               title="edit student"
-//               src={edit}
-//               alt="s"
-//               onClick={() => navigate("/edit-student")}
-//             />
-//             <img
-//               className="action-img"
-//               data-toggle="tooltip"
-//               data-placement="bottom"
-//               title="delete student"
-//               src={dlt}
-//               alt="s"
-//               onClick={toggle}
-//             />
-//           </td>
-//         </tr>        
-//       ))} 
-//       </tbody>
-//         )
-//       })
+
+    function filterList() {
+        studentList.forEach((item, index) => {
+          if (
+            item.name.toLowerCase().indexOf(value.toLowerCase()) ===
+            -1
+          ) {
+            return 
+          }
+          setRows(
+            <tbody>
+            {/* {newList.map((item, index) => ( */}
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{item.name}</td>
+              <td>{item.class}</td>
+              <td>20</td>
+              <td className="d-flex justify-content-end"><img
+                  className="action-img"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="edit student"
+                  src={edit}
+                  alt="s"
+                  onClick={() => navigate("/edit-student")}
+                />
+                <img
+                  className="action-img"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="delete student"
+                  src={dlt}
+                  alt="s"
+                  onClick={toggle}
+                /></td>
+            </tr>
+            {/* ))}  */}
+            </tbody>
+          )
+        })
     }
+
 
   return (
     <div>
@@ -198,7 +186,7 @@ export default function Student() {
         <th className="d-flex justify-content-end">Actions</th>
               </tr>
             </thead>
-            {rows}
+              {rows}            
           </Table>
         </div>
       </Card>
