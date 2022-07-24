@@ -29,20 +29,7 @@ export default function Subject() {
   const toggle1 = () => {
     setOpen1(!open1);
   };
-  const subject = [
-    {
-      name: "English Language",
-      students: "30",
-    },
-    {
-      name: "JS Language",
-      students: "40",
-    },
-    {
-      name: "HTM Language",
-      students: "50",
-    },
-  ];
+  
   const navigate = useNavigate();
 
   const [result, setResult] = useState(subject)

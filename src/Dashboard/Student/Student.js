@@ -33,107 +33,60 @@ export default function Student() {
     setOpen1(!open1);
   };
 
-    const [value, setValue] = useState('');
-    const handleChange = (e) => setValue(e.target.value)
-    // const [student, setStudent] = useState(studentList)
-    // const [search, setSearch] = useState({ find: ""})
-    const [rows, setRows] = useState([])
-    const [newList, setNewList] = useState([])
+  const [result, setResult] = useState(studentList)
+  const [state, setSearch] = useState({
+    search: "",
+  });
+  const handleChanges = ({ target: { name, value } }) => {
+    setSearch({ [name]: value });
+  };
+  let rows = [];
+  result &&
+    result.forEach((item, index) => {
+      if (
+        item.name.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        -1 && item.class.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        -1
+      ) {
 
-    useEffect(() => {
-      setRows(
-          <tbody>
-        {studentList.map((item, index) => (
-        <tr>
-          <td className="" scope="row">
+        return;
+      }
+      rows.push(
+        <tr key={index}>
+          <th className="" scope="row">
             {index + 1}
-          </td>
+          </th>
           <td className="">{item.name}</td>
           <td className="">{item.class}</td>
-<td className=''>{item.teacherName}</td>
-<td className="">
-            <img
-              src={view}
-              alt=""
-              className="action-img"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="view subjects/courses"
-              onClick={toggle1}
-            />
-          </td>
- <td className=''>20</td>
- <td className="d-flex justify-content-end">
+          <td className=''>20</td>
+          <td className="d-flex justify-content-end">
             <img
               className="action-img"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="edit student"
+              title="edit subject"
               src={edit}
               alt="s"
-              onClick={() => navigate("/edit-student")}
+              onClick={() => navigate("/subject/edit-subject")}
             />
             <img
               className="action-img"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="delete student"
+              title="delete subject"
               src={dlt}
               alt="s"
               onClick={toggle}
             />
           </td>
-        </tr>        
-      ))} 
-      </tbody>)
-    }, [])
-
-
-    function filterList() {
-        studentList.forEach((item, index) => {
-          if (
-            item.name.toLowerCase().indexOf(value.toLowerCase()) ===
-            -1
-          ) {
-            return 
-          }
-          setRows(
-            <tbody>
-            {/* {newList.map((item, index) => ( */}
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{item.name}</td>
-              <td>{item.class}</td>
-              <td>20</td>
-              <td className="d-flex justify-content-end"><img
-                  className="action-img"
-                  data-toggle="tooltip"
-                  data-placement="bottom"
-                  title="edit student"
-                  src={edit}
-                  alt="s"
-                  onClick={() => navigate("/edit-student")}
-                />
-                <img
-                  className="action-img"
-                  data-toggle="tooltip"
-                  data-placement="bottom"
-                  title="delete student"
-                  src={dlt}
-                  alt="s"
-                  onClick={toggle}
-                /></td>
-            </tr>
-            {/* ))}  */}
-            </tbody>
-          )
-        })
-    }
+        </tr>
+      );
+    });
 
 
   return (
     <div>
-      {JSON.stringify(value)}
+      {/* {JSON.stringify(value)} */}
       <span>
         <div style={{ position: "relative" }}>
           <Search
@@ -146,14 +99,14 @@ export default function Student() {
           />
           <input
             className=""
-            value={value}
-            onChange={handleChange} 
+            name="search"
+            onChange={handleChanges} 
             placeholder={`search students`}
             type="search"
             style={{ paddingLeft: 45 }}
           /><br/>
         </div>
-        <div><button onClick={filterList}>SEARCH</button></div>
+        {/* <div><button onClick={filterList}>SEARCH</button></div> */}
       </span>
 
       <Card className="table-card shadow py-3 px-4 mt-3">
@@ -186,8 +139,11 @@ export default function Student() {
         <th className="d-flex justify-content-end">Actions</th>
               </tr>
             </thead>
-              {rows}            
+            <tbody>
+               {rows}  
+            </tbody>            
           </Table>
+          {rows.length === 0 ? <p className="text-center mt-5">No results found for "{state.search}"</p> : null}
         </div>
       </Card>
       <Modal isOpen={open} toggle={toggle} className="dlt-modal">
