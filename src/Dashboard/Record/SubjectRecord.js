@@ -3,10 +3,54 @@ import { Card, Col, Row, Table } from "reactstrap";
 // import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
 import dlt from "../../images/delete.png";
+import { students } from "../Student/StudentList";
 
 export default function SubjectRecord() {
   // const navigate = useNavigate();
   const [subject, setSubject] = useState()
+  const [result, setResult] = useState(students)
+  const [state, setSearch] = useState({
+    search: "",
+  });
+  const handleChanges = ({ target: { name, value } }) => {
+    setSearch({ [name]: value });
+  };
+  let rows = [];
+  result &&
+    result.forEach((item, index) => {
+      if (
+        item.studentName.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        -1 
+      ) {
+
+        return;
+      }
+      rows.push(
+        <tr key={index}>
+          <th className="" scope="row">
+            {index + 1}
+          </th>
+          <td className="">{item.studentName}</td>
+          <td>
+            <input className="record-input" type="text" />
+          </td>
+          <td>
+            <input className="record-input" type="text" />
+          </td>
+         <td className="">
+           <img
+              src={dlt}
+              alt=''
+              className="action-img"
+              style={{ float: 'right' }}
+              onClick={() => {
+              // notify();
+                }}/>
+          </td>
+        </tr>
+      );
+    });
+
   const subjects = [{
     subjectName: 'English Language'
   },
@@ -24,33 +68,16 @@ export default function SubjectRecord() {
 
   ]
   console.log(subjects[0])
-  const students = [
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Ali Abdul' },
-    { studentName: 'Muhammad Ali' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-    { studentName: 'Muhammad Abdul' },
-  ]
+
   return (
     <div>
       <div style={{ position: "relative" }}>
         <Search
           style={{ position: "absolute", bottom: 10, left: 10, color: "grey" }}
         />
-        <input
+        <input name='search' onChange={handleChanges}
           type="search"
-          placeholder="search students"
+          placeholder="search records"
           style={{ paddingLeft: 45 }}
         />
       </div>
@@ -80,7 +107,13 @@ export default function SubjectRecord() {
           </div>
 
           <h4 className="mt-3">{subject}</h4>
-          <Table size="sm" borderless hover striped responsive='xs'>
+          <Table size="sm" 
+            className="table"
+            striped
+            responsive
+            borderless
+            hover
+          >
             <thead>
               <tr>
                 <th>
@@ -90,10 +123,12 @@ export default function SubjectRecord() {
                   Student Name
                 </th>
                 <th>
-                  {subject} CA
+                  {/* {subject} */}
+                   CA
                 </th>
                 <th>
-                  {subject} Exam
+                  {/* {subject} */}
+                   Exam
                 </th>
                 <th style={{ float: 'right' }}>
                   Action
@@ -101,35 +136,10 @@ export default function SubjectRecord() {
               </tr>
             </thead>
             <tbody>
-              {students.map((item, index) => (
-                <tr>
-                  <th scope="row">
-                    {index + 1}
-                  </th>
-                  <td>
-                    {item.studentName}
-                  </td>
-                  <td>
-                    <input className="record-input" type="text" />
-                  </td>
-                  <td>
-                    <input className="record-input" type="text" />
-                  </td>
-                  <td className="">
-                    <img
-                      src={dlt}
-                      alt=''
-                      className="action-img"
-                      style={{ float: 'right' }}
-                      onClick={() => {
-                        // notify();
-                      }}
-                    />
-                  </td>
-                </tr>
-              ))}
+              {rows}
             </tbody>
           </Table>
+          {rows.length === 0 ? <p className="text-center mt-5">No results found for "{state.search}"</p> : null}
           <div className="">
             <button className="action-btn">save</button>
           </div>

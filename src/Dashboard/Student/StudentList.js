@@ -56,3 +56,22 @@ export const subject = [
       students: "30",
     },
   ];
+
+  export const students = [
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Ali Abdul' },
+    { studentName: 'Muhammad Ali' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+  ]
