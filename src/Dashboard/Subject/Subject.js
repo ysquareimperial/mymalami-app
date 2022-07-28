@@ -30,7 +30,10 @@ export default function Subject() {
   };
   const subject = [
     {
-      name: "English Language",
+      name: "English Languagee",
+      students: "30",
+    }, {
+      name: "English Languagee",
       students: "30",
     },
     {
