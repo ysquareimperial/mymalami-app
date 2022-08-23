@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card, Col, Modal, ModalBody, Row, Table } from "reactstrap";
+import nosearch from "../../images/search.svg";
 // import './subject.css'
 import edit from "../../images/edit.png";
 import dlt from "../../images/delete.png";
@@ -8,6 +9,7 @@ import student from "../../images/student.png";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { Search } from "react-feather";
+import { subject } from "../Student/StudentList";
 
 export default function Subject() {
   const notify = () =>
@@ -28,26 +30,10 @@ export default function Subject() {
   const toggle1 = () => {
     setOpen1(!open1);
   };
-  const subject = [
-    {
-      name: "English Languagee",
-      students: "30",
-    }, {
-      name: "English Languagee",
-      students: "30",
-    },
-    {
-      name: "JS Language",
-      students: "40",
-    },
-    {
-      name: "HTM Language",
-      students: "50",
-    },
-  ];
+  
   const navigate = useNavigate();
 
-  const [result, setResult] = useState(subject)
+  const [result] = useState(subject)
   const [state, setSearch] = useState({
     search: "",
   });
@@ -150,12 +136,17 @@ export default function Subject() {
               {rows}
             </tbody>
           </Table>
-          {rows.length === 0 ? <p className="text-center mt-5">No results found for "{state.search}"</p> : null}
+          {rows.length === 0 ?
+            <div className="text-center mt-5">
+              <img src={nosearch} style={{ width: 100 }} alt='' />
+              <p className="">No results found for "{state.search}"</p>
+            </div>
+            : null}
         </div>
       </Card>
       <Modal isOpen={open} toggle={toggle} className="dlt-modal">
         <ModalBody className="modal-body">
-          <img src={dlt} />
+          <img src={dlt} alt=''/>
           <p className="dlt-warning">
             Are you sure you want to delete this Subject/Course?
           </p>
@@ -185,7 +176,7 @@ export default function Subject() {
       </Modal>
       <Modal isOpen={open1} toggle={toggle1} className="dlt-modal">
         <ModalBody className="modal-body">
-          <img src={student} />
+          <img src={student} alt=''/>
           <p className="students">Students</p>
           <div>
             <p className="std-details">

@@ -1,14 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Row, Table } from "reactstrap";
 import { Search } from 'react-feather'
 import { tableHeading } from "./StudentsReports";
 import { students } from "./StudentsReports";
 import { PDFDownloadLink } from '@react-pdf/renderer'
+import nosearch from "../../images/search.svg";
 import ReportCard from "./ReportCard";
 // import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 export default function Report() {
   const navigate = useNavigate()
+
+  const [result] = useState(students)
+  const [state, setSearch] = useState({
+    search: "",
+  });
+  const handleChanges = ({ target: { name, value } }) => {
+    setSearch({ [name]: value });
+  };
+  let rows = [];
+  result &&
+    result.forEach((item, index) => {
+      if (
+        item.studentName.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        -1 
+      ) {
+
+        return;
+      }
+      rows.push(
+        <tr key={index}>
+          <th className="" scope="row">
+            {index + 1}
+          </th>
+          <td className="">{item.studentName}</td>
+          <td className="">{item.class}</td>
+          <td className="">{item.subject1}</td>
+                  <td className="">{item.subject2}</td>
+                  <td className="">{item.subject3}</td>
+                  <td className="">{item.subject4}</td>
+                  <td className="">{item.subject5}</td>
+                  <td className="">{item.subject6}</td>
+                  <td className="">{item.subject7}</td>
+                  <td className="">{item.subject8}</td>
+                  <td className="">{item.subject9}</td>
+                  <td className="">{item.subject10}</td>
+                  <td className="">{item.subject11}</td>
+                  <td className="">{item.subject12}</td>
+                  <td className="">{item.total}</td>
+        </tr>
+      );
+    });
   return (
     <div>
       <div style={{ position: "relative" }}>
@@ -16,6 +58,8 @@ export default function Report() {
           style={{ position: "absolute", bottom: 10, left: 10, color: "grey" }}
         />
         <input
+          name="search"
+          onChange={handleChanges}
           type="search"
           placeholder="search student reports"
           style={{ paddingLeft: 45 }}
@@ -29,7 +73,7 @@ export default function Report() {
           Reports
         </h3>
         <div className="t-d">
-          <Table striped className="" size="sm">
+          <Table size="sm" className="table" striped hover responsive borderless>
             {tableHeading.map((item, index) => (
               <thead>
                 <tr>
@@ -54,30 +98,15 @@ export default function Report() {
               </thead>
             ))}
             <tbody>
-              {students.map((item, index) => (
-                <tr>
-                  <td className="">{index + 1}</td>
-                  <td className="">
-                    <div style={{ width: 220 }}>{item.studentName}</div>
-                  </td>
-                  <td className="">{item.subject1}</td>
-                  <td className="">{item.subject2}</td>
-                  <td className="">{item.subject3}</td>
-                  <td className="">{item.subject4}</td>
-                  <td className="">{item.subject5}</td>
-                  <td className="">{item.subject6}</td>
-                  <td className="">{item.subject7}</td>
-                  <td className="">{item.subject8}</td>
-                  <td className="">{item.subject9}</td>
-                  <td className="">{item.subject10}</td>
-                  <td className="">{item.subject11}</td>
-                  <td className="">{item.subject12}</td>
-                  <td className="">{item.total}</td>
-                  {/* <td className=''>{(item.subject1) + (item.subject2) + (item.subject3)}</td> */}
-                </tr>
-              ))}
+              {rows}
             </tbody>
           </Table>
+          {rows.length === 0 ?
+            <div className="text-center mt-5">
+              <img src={nosearch} style={{ width: 100 }} alt='' />
+              <p className="">No results found for "{state.search}"</p>
+            </div>
+            : null}
         </div>
         <Row>
           <Col md={6}></Col>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Col, Row } from "reactstrap";
-import profile from "../images/profile.png";
+// import profile from "../images/profile.png";
 // import user from '../images/user.png'
 import email from "../images/email.png";
 import iphone from "../images/iphone.png";
@@ -9,7 +9,7 @@ import pen from "../images/pen.png";
 import ysquare from "../images/ysquareimperial.png";
 import logo from "../images/sRecord.png";
 import motto from "../images/motto.png";
-import camera from "../images/camera.png";
+// import camera from "../images/camera.png";
 import { useNavigate } from "react-router-dom";
 // import './profile.css'
 export default function Profile() {
@@ -146,7 +146,24 @@ export default function Profile() {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="profile-card shadow py-3 px-4 mt-3"></Card>
+          <Card className="profile-card shadow py-3 px-4 mt-3">
+          <Row>
+              <Col md={10} sm={10} xs={10} lg={10}>
+                <h5>Report Card Details</h5>
+              </Col>
+              <Col md={2} sm={2} xs={2} lg={2}>
+                <img
+                  src={pen}
+                  alt=""
+                  className="profile-pen"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="edit school info"
+                  onClick={() => navigate("/edit-school-info")}
+                />
+              </Col>
+            </Row>
+          </Card>
         </Col>
       </Row>
     </div>

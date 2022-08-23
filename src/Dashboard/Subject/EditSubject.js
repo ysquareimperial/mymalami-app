@@ -29,7 +29,7 @@ export default function EditSubject() {
                     data-toggle="tooltip"
                     data-placement="bottom"
                     title="back"
-                    akt=""
+                    alt=""
                     onClick={() => navigate("/subject")}
                   />
                 </span>

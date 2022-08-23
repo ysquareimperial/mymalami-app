@@ -7,7 +7,7 @@ import CreatableSelect from "react-select/creatable";
 import makeAnimated from "react-select/animated";
 import subject from "./ClassSubjects";
 import { ToastContainer, toast } from "react-toastify";
-import Subject from "./Subject";
+// import Subject from "./Subject";
 
 export default function CreateSubject() {
   const [value, setValue] = useState();
@@ -24,10 +24,10 @@ export default function CreateSubject() {
       setOptions([...subject, newValue]);
       setValue(newValue);
     },
-    [subject]
+    []
   );
 
-    
+
   const notify = () =>
     toast.success(`Subject(s) created`, {
       position: "bottom-center",
@@ -39,12 +39,12 @@ export default function CreateSubject() {
       progress: undefined,
     });
 
-    console.log(value)
+  console.log(value)
 
 
   return (
-    <div><br/>
-      {JSON.stringify(value)}
+    <div><br />
+      {/* {JSON.stringify(value)} */}
       <Card className="table-card shadow py-3 px-4 mt-3">
         <Row>
           <Col md={6}>
@@ -57,7 +57,7 @@ export default function CreateSubject() {
                     data-toggle="tooltip"
                     data-placement="bottom"
                     title="back"
-                    akt=""
+                    alt=""
                     onClick={() => navigate("/subject")}
                   />
                 </span>

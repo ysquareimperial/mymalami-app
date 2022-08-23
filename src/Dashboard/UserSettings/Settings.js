@@ -8,7 +8,7 @@ import {
   ModalBody,
   Row,
 } from "reactstrap";
-import settings from "../../images/settings.png";
+// import settings from "../../images/settings.png";
 // import './settings.css'
 import email from "../../images/email.png";
 import password from "../../images/password.png";
@@ -119,7 +119,7 @@ export default function Settings() {
         <ModalBody className="modal-body">
           <Row>
             <Col lg={1} md={1} sm={1} xs={1}>
-              <img src={dlt} alt="profile-picture" className="" style={{ width: '250%' }} />
+              <img src={dlt} alt="profile-pic" className="" style={{ width: '250%' }} />
             </Col>
             <Col lg={11} md={11} sm={11} xs={11}>
               <p className='mt-2'>Are you sure you want to delete your account?</p>

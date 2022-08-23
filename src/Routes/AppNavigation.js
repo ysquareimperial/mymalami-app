@@ -111,7 +111,7 @@ function AppNavigation() {
           element: <ViewReportCard />,
         },
       ],
-    },
+    },  
     {
       path: "/sign-in",
       element: <Signin />,

@@ -1,12 +1,12 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppNavigation from "./Routes/AppNavigation";
-import { ToastContainer, toast } from "react-toastify";
-import Navbar from "./Dashboard/Navbar.js";
+import { ToastContainer } from "react-toastify";
+// import Navbar from "./Dashboard/Navbar.js";
 import "react-toastify/dist/ReactToastify.css";
-import { PDFDownloadLink } from '@react-pdf/renderer'
-import ReportCard from "./Dashboard/Report/ReportCard";
-import { PDFViewer } from '@react-pdf/renderer';
+// import { PDFDownloadLink } from '@react-pdf/renderer'
+// import ReportCard from "./Dashboard/Report/ReportCard";
+// import { PDFViewer } from '@react-pdf/renderer';
 function App() {
   return (
     <div>

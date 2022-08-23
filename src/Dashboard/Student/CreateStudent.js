@@ -72,7 +72,7 @@ export default function CreateStudent() {
 
   return (
     <div>
-      {JSON.stringify(studentArray)}
+      {/* {JSON.stringify(studentArray)} */}
       <Card className="table-card shadow py-3 px-4 mt-3" style={{}}>
         <Row>
           <Col md={6}>

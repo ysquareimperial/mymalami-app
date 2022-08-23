@@ -1,7 +1,6 @@
 import React from 'react'
 import { Page, Text, Image, Document, StyleSheet, View, Font } from '@react-pdf/renderer'
 import schoolLogo from '../../images/sRecord.png'
-import { Col, Row } from 'reactstrap'
 import oswald from '../../Oswald/oswald.ttf'
 Font.register({ family: 'oswald', src: oswald });
 const styles = StyleSheet.create({
@@ -10,11 +9,11 @@ const styles = StyleSheet.create({
         paddingBottom: 65,
         paddingHorizontal: 35
     },
-    title: {
-        fontSize: 24,
-        fontWeight: 900,
-        textAlign: 'center',
-    },
+    // title: {
+    //     fontSize: 24,
+    //     fontWeight: 900,
+    //     textAlign: 'center',
+    // },
     text: {
         maargin: 12,
         fontSize: 14,

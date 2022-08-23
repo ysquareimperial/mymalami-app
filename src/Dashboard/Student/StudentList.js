@@ -1,22 +1,77 @@
 export const studentList = [
           {
-            id: 1,
-            name: 'Adamu Abdullahi'
+            name: 'Adamu Abdullahi',
+            class: 'JSS 1A'
           },
           {
-            id: 2,
-            name: 'Aisha Hassan'
+            name: 'Aisha Hassan',
+            class: 'JSS 1A'
           },
           {
-            id: 3,
-            name: 'Garba Shehu'
+            name: 'Garba Shehu',
+            class: 'JSS 1A'
           },
           {
-            id: 4,
-            name: 'Mohseen Musa'
+            name: 'Mohseen Musa',
+            class: 'JSS 1A'
           },
           {
-            id: 5,
-            name: 'Hadiza Adamu'
+            name: 'Hadiza Adamu',
+            class: 'JSS 1A'
           }
   ];
+
+export const subject = [
+    {
+      name: "English Language",
+      teacherName: "Futre Pluto Hndrx",
+      students: "30",
+    },
+    {
+      name: "JS Language",
+      teacherName: "Futre Pluto Hndrx",
+      students: "30",
+    },
+    {
+      name: "HTM Language",
+      teacherName: "Futre Pluto Hndrx",
+      students: "30",
+    },
+  ];
+
+  export const classs = [
+    {
+      name: "Quavo Huncho fhasfsadfsd fasdfasdf fasdfasdf fasdfsda ffasd",
+
+      students: "30",
+    },
+    {
+      name: "Quavo Huncho",
+
+      students: "30",
+    },
+    {
+      name: "Quavo Huncho",
+
+      students: "30",
+    },
+  ];
+
+  export const students = [
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Ali Abdul' },
+    { studentName: 'Muhammad Ali' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+    { studentName: 'Muhammad Abdul' },
+  ]

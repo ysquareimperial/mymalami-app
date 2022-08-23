@@ -19,7 +19,7 @@ export default function ViewReportCard() {
                                     data-toggle="tooltip"
                                     data-placement="bottom"
                                     title="back"
-                                    akt=""
+                                    alt=""
                                     onClick={() => navigate("/report")}
                                 />
                             </span>

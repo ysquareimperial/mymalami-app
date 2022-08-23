@@ -20,6 +20,7 @@ export default function CreateClass() {
       draggable: true,
       progress: undefined,
     });
+
   const navigate = useNavigate();
   // const data = [
   //     { value: 'Mathematics', id: 1 },
@@ -28,7 +29,7 @@ export default function CreateClass() {
   //     { value: 'Mathesmatics', id: 4 },
   //     { value: 'Englissh', id: 5 }
   // ]
-  const [value, setValue] = useState();
+  // const [value, setValue] = useState();
   const [options, setOptions] = useState(subject);
   const [subVal, setSubVal] = useState();
   const [stuVal, setStuVal] = useState();
@@ -53,7 +54,7 @@ export default function CreateClass() {
       setOptions([...subject, newValue]);
       setSubVal(newValue);
     },
-    [subject]
+    []
   );
 
   const handleCreate2 = useCallback(
@@ -62,7 +63,7 @@ export default function CreateClass() {
       setData2([...data2, newValue]);
       setStuVal(newValue);
     },
-    [subject]
+    [data2]
   );
   return (
     <div>
@@ -80,7 +81,7 @@ export default function CreateClass() {
                     data-toggle="tooltip"
                     data-placement="bottom"
                     title="back"
-                    akt=""
+                    alt=""
                     onClick={() => navigate("/class")}
                   />
                 </span>

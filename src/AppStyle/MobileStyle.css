@@ -15,8 +15,10 @@
         left: 0;
         width: 100%;
         border-top: 1px solid var(--hoverColor);
+        border-bottom: 1px solid var(--hoverColor);
         background-color: white;
         padding: 10px;
+        /* margin-bottom: 500px; */
     }
 
     .mobile-footer-icon {
@@ -39,24 +41,31 @@
         height: 100vh;
     }
 
+    /* [input type=search] {} */
+
     .table-card-title {
         margin-left: 10px;
-    }
+    }   
 
     .mobile-profile {
         width: 65%;
         border-radius: 50%;
     }
 
-    .brand-d{
+    .brand-d {
         text-align: center;
         color: white;
         font-size: 13px;
         margin-top: 20px;
     }
-    .brand-info{
+
+    .brand-info {
         margin: 0;
     }
+    /* .index-container {
+    padding-top: 50px;
+    } */
+    
 
 }
 
@@ -68,7 +77,8 @@
     .mobile-profile {
         display: none;
     }
-    .brand-d{
+
+    .brand-d {
         display: none;
     }
 }

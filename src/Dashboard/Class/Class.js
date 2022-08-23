@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Card, Col, Row } from "reactstrap";
 // import './class.css'
 import edit from "../../images/edit.png";
+import nosearch from "../../images/search.svg";
 import dlt from "../../images/delete.png";
 import sum from "../../images/sum.png";
 // import view from "../../images/view.png";
@@ -11,6 +12,8 @@ import { ToastContainer, toast } from "react-toastify";
 // import book from "../../images/book.png";
 import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
+import { classs } from "../Student/StudentList";
+
 export default function Classes() {
   const notify = () =>
     toast.error(`Class deleted`, {
@@ -34,23 +37,7 @@ export default function Classes() {
   const toggle2 = () => {
     setOpen2(!open2);
   };
-  const classs = [
-    {
-      name: "Quavo Huncho fhasfsadfsd fasdfasdf fasdfasdf fasdfsda ffasd",
 
-      students: "30",
-    },
-    {
-      name: "Quavo Huncho",
-
-      students: "30",
-    },
-    {
-      name: "Quavo Huncho",
-
-      students: "30",
-    },
-  ];
   const navigate = useNavigate();
   // let form = {
   //   contactName: "",
@@ -59,13 +46,71 @@ export default function Classes() {
   //   contactDescription: "",
   // }
 
+  const [result] = useState(classs)
+  const [state, setSearch] = useState({
+    search: "",
+  });
+  const handleChanges = ({ target: { name, value } }) => {
+    setSearch({ [name]: value });
+  };
+  let rows = [];
+  result &&
+    result.forEach((item, index) => {
+      if (
+        item.name.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        -1 && item.students.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        -1
+      ) {
+
+        return;
+      }
+      rows.push(
+        <tr key={index}>
+          <th className="" scope="row">
+            {index + 1}
+          </th>
+          <td className="">{item.name}</td>
+          <td
+            className=""
+            ata-toggle="tooltip"
+            data-placement="bottom"
+            title="click to view students"
+          >
+            <span className="students-total" onClick={toggle2}>
+              {item.students}
+            </span>
+          </td>
+          <td className="d-flex justify-content-end">
+            <img
+              className="action-img"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="edit subject"
+              src={edit}
+              alt="s"
+              onClick={() => navigate("/subject/edit-subject")}
+            />
+            <img
+              className="action-img"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="delete subject"
+              src={dlt}
+              alt="s"
+              onClick={toggle}
+            />
+          </td>
+        </tr>
+      );
+    });
+
   return (
     <div className="col-md-12 col-sm-12 col-xs-12 col-lg-12">
       <div style={{ position: "relative" }}>
         <Search
           style={{ position: "absolute", bottom: 10, left: 10, color: "grey" }}
         />
-        <input
+        <input name='search' onChange={handleChanges}
           type="search"
           placeholder="search classes"
           style={{ paddingLeft: 45 }}
@@ -110,50 +155,15 @@ export default function Classes() {
               </tr>
             </thead>
             <tbody>
-              {classs.map((item, index) => (
-                <tr>
-                  <th className="" scope="row">
-                    {index + 1}
-                  </th>
-                  <td className="">{item.name}</td>
-                  {/* <td className="">{item.teacherName}</td> */}
-                  {/* <td className=''><img src={view} alt='' className='action-img-1' data-toggle="tooltip" data-placement="bottom" title="view subjects/courses" style={{ width: 35, height: 35 }} onClick={toggle1}/></td> */}
-                  {/* <td className=''>{item.students}</td> */}
-                  <td
-                    className=""
-                    ata-toggle="tooltip"
-                    data-placement="bottom"
-                    title="click to view students"
-                  >
-                    <span className="students-total" onClick={toggle2}>
-                      {item.students}
-                    </span>
-                  </td>
-
-                  <td className="d-flex justify-content-end">
-                    <img
-                      className="action-img"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="edit class"
-                      src={edit}
-                      alt="s"
-                      onClick={() => navigate("/class/edit-class")}
-                    />
-                    <img
-                      className="action-img"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="delete class"
-                      src={dlt}
-                      alt="s"
-                      onClick={toggle}
-                    />
-                  </td>
-                </tr>
-              ))}
+              {rows}
             </tbody>
           </Table>
+          {rows.length === 0 ?
+            <div className="text-center mt-5">
+              <img src={nosearch} style={{ width: 100 }} alt='' />
+              <p className="">No results found for "{state.search}"</p>
+            </div>
+            : null}
         </div>
       </Card>
       <Modal isOpen={open} toggle={toggle} className="dlt-modal">

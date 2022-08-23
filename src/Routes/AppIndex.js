@@ -19,7 +19,7 @@ export default function AppIndex() {
           <Sidebar />
         </Col>
         <Col lg={10} md={10} sm={12} xs={12} className="index-container">
-          <Outlet />
+          <Outlet className='mt-5'/>
         </Col>
       </Row>
     </div>
