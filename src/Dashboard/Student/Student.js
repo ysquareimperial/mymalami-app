@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { Card, Col, Modal, ModalBody, Row, Table } from "reactstrap";
 // import './student.css'
 import edit from "../../images/edit.png";
 import dlt from "../../images/delete.png";
 import sum from "../../images/sum.png";
 import nosearch from "../../images/search.svg";
-import view from "../../images/view.png";
+// import view from "../../images/view.png";
 import book from "../../images/book.png";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -34,7 +34,7 @@ export default function Student() {
     setOpen1(!open1);
   };
 
-  const [result, setResult] = useState(studentList)
+  const [result] = useState(studentList)
   const [state, setSearch] = useState({
     search: "",
   });
