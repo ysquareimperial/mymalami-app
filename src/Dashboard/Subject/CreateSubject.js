@@ -50,6 +50,7 @@ export default function CreateSubject() {
           <Col md={6}>
             <Row>
               <Col md={1} sm={1} xs={1}>
+                {/* <h1></h1> */}
                 <span>
                   <img
                     className="action-img"
