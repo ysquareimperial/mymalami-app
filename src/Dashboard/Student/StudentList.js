@@ -1,6 +1,6 @@
 export const studentList = [
           {
-            name: 'Adamu Abdullahi',
+            name: 'Adamu Abdullahi dsdsdds',
             class: 'JSS 1A'
           },
           {
@@ -23,7 +23,7 @@ export const studentList = [
 
 export const subject = [
     {
-      name: "English Language",
+      name: "nglish Language Language",
       teacherName: "Futre Pluto Hndrx",
       students: "30",
     },

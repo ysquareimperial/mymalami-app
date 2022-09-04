@@ -1,6 +1,7 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { Card, Col, Modal, ModalBody, Row, Table } from "reactstrap";
 // import './student.css'
+import '../../AppStyle/MobileStyle.css'
 import edit from "../../images/edit.png";
 import dlt from "../../images/delete.png";
 import sum from "../../images/sum.png";
@@ -57,9 +58,9 @@ export default function Student() {
           <th className="" scope="row">
             {index + 1}
           </th>
-          <td className="">{item.name}</td>
+          <td className="">{item.name.length > 20 ? `${item.name.substring(0, 20)}...` : item.name}</td>
           <td className="">{item.class}</td>
-          <td className=''>20</td>
+          {/* <td className=''>20</td> */}
           <td className="d-flex justify-content-end">
             <img
               className="action-img"
@@ -130,13 +131,13 @@ export default function Student() {
           </Col>
         </Row>
         <div className="mt-4">
-          <Table size="sm" className="table" striped hover responsive borderless>
+          <Table size="sm" className="table table-headd" striped hover responsive borderless >
             <thead>
-              <tr>
+              <tr className="table-headd">
                 <th>S/N</th>
                 <th>Student Name</th>
                 <th>Class</th>
-                <th>Subjects</th>
+                {/* <th>Subjects</th> */}
                 <th className="d-flex justify-content-end">Actions</th>
               </tr>
             </thead>

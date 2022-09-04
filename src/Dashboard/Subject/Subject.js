@@ -56,7 +56,7 @@ export default function Subject() {
           <th className="" scope="row">
             {index + 1}
           </th>
-          <td className="">{item.name}</td>
+          <td className="">{item.name.length > 19 ? `${item.name.substring(0, 19)}...` : item.name}</td>
           <td
             className=""
             ata-toggle="tooltip"
@@ -122,13 +122,13 @@ export default function Subject() {
           </Col>
         </Row>
         <div className="mt-4">
-          <Table size="sm" striped hover responsive borderless>
+          <Table size="sm" striped hover responsive borderless className="table-headd">
             <thead>
               <tr>
                 <th>S/N</th>
                 <th>Subject Name</th>
                 {/* <th>Teacher Name</th> */}
-                <th>No of Students</th>
+                <th>Students</th>
                 <th className="d-flex justify-content-end">Actions</th>
               </tr>
             </thead>

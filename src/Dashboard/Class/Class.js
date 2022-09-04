@@ -69,7 +69,7 @@ export default function Classes() {
           <th className="" scope="row">
             {index + 1}
           </th>
-          <td className="">{item.name}</td>
+          <td className="">{item.name.length > 19 ? `${item.name.substring(0, 19)}...` : item.name}</td>
           <td
             className=""
             ata-toggle="tooltip"
@@ -138,7 +138,7 @@ export default function Classes() {
         <div className="mt-4">
           <Table
             size="sm"
-            className="table"
+            className="table table-headd"
             striped
             responsive
             borderless

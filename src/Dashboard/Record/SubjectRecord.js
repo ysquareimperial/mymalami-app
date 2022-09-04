@@ -21,7 +21,7 @@ export default function SubjectRecord() {
     result.forEach((item, index) => {
       if (
         item.studentName.toLowerCase().indexOf(state.search.toLowerCase()) ===
-        -1 
+        -1
       ) {
 
         return;
@@ -31,22 +31,22 @@ export default function SubjectRecord() {
           <th className="" scope="row">
             {index + 1}
           </th>
-          <td className="">{item.studentName}</td>
+          <td className="">{item.studentName.length > 10 ? `${item.studentName.substring(0, 10)}...` : item.studentName}</td>
           <td>
-            <input className="record-input" type="text" />
+            <input className="record-input fffff" type="text" />
           </td>
           <td>
-            <input className="record-input" type="text" />
+            <input className="record-input fffff" type="text" />
           </td>
-         <td className="">
-           <img
+          <td className="">
+            <img
               src={dlt}
               alt=''
               className="action-img"
               style={{ float: 'right' }}
               onClick={() => {
-              // notify();
-                }}/>
+                // notify();
+              }} />
           </td>
         </tr>
       );
@@ -108,8 +108,8 @@ export default function SubjectRecord() {
           </div>
 
           <h4 className="mt-3">{subject}</h4>
-          <Table size="sm" 
-            className="table"
+          <Table size="sm"
+            className="table table-headd"
             striped
             responsive
             borderless
@@ -121,15 +121,15 @@ export default function SubjectRecord() {
                   S/N
                 </th>
                 <th>
-                  Student Name
+                  St/Name
                 </th>
                 <th>
                   {/* {subject} */}
-                   CA
+                  CA
                 </th>
                 <th>
                   {/* {subject} */}
-                   Exam
+                  Exam
                 </th>
                 <th style={{ float: 'right' }}>
                   Action
