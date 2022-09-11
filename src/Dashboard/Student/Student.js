@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Col, Modal, ModalBody, Row, Table } from "reactstrap";
 // import './student.css'
 import '../../AppStyle/MobileStyle.css'
@@ -12,8 +12,29 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
 import { studentList } from "./StudentList";
+import _fetchApi from "../api";
 
 export default function Student() {
+  const handleFetch = () => {
+    _fetchApi(
+      `http://localhost:45459/students/get`,
+      (data) => {
+        if (data.results && data.results.length) {
+          setResult1(data.results[0])
+        }
+        // console.log(data.results)
+      }
+    )
+
+
+  }
+  // console.log(Object.keys(result1));
+
+  useEffect(() => {
+    handleFetch()
+  }, [0])
+
+  
   const notify = () =>
     toast.error(`1 student(s) deleted`, {
       position: "bottom-center",
@@ -34,7 +55,7 @@ export default function Student() {
   const toggle1 = () => {
     setOpen1(!open1);
   };
-
+  const [result1, setResult1] = useState([])
   const [result] = useState(studentList)
   const [state, setSearch] = useState({
     search: "",
@@ -43,11 +64,11 @@ export default function Student() {
     setSearch({ [name]: value });
   };
   let rows = [];
-  result &&
-    result.forEach((item, index) => {
+  result1 &&
+    result1.forEach((item, index) => {
       if (
-        item.name.toLowerCase().indexOf(state.search.toLowerCase()) ===
-        -1 && item.class.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        item.first_name.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        -1 && item.s_class.toLowerCase().indexOf(state.search.toLowerCase()) ===
         -1
       ) {
 
@@ -58,8 +79,8 @@ export default function Student() {
           <th className="" scope="row">
             {index + 1}
           </th>
-          <td className="">{item.name.length > 20 ? `${item.name.substring(0, 20)}...` : item.name}</td>
-          <td className="">{item.class}</td>
+          <td className="">{item.first_name}{' '}{item.last_name}{" "}{item.otherr_name}</td>
+          <td className="">{item.s_class}</td>
           {/* <td className=''>20</td> */}
           <td className="d-flex justify-content-end">
             <img
@@ -88,7 +109,7 @@ export default function Student() {
 
   return (
     <div>
-      {/* {JSON.stringify(value)} */}
+      {/* {JSON.stringify(result1)} */}
       <span>
         <div style={{ position: "relative" }}>
           <Search
@@ -117,7 +138,7 @@ export default function Student() {
             <h3>Students</h3>
           </Col>
           <Col md={6} sm={6} xs={6}>
-            <div className="d-flex justify-content-end">
+            <div className="d-flex justify-content-end"> 
               <img
                 className="action-img"
                 data-toggle="tooltip"
@@ -141,8 +162,8 @@ export default function Student() {
                 <th className="d-flex justify-content-end">Actions</th>
               </tr>
             </thead>
-            <tbody>
               {rows}
+            <tbody>
             </tbody>
           </Table>
           {rows.length === 0 ?

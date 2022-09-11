@@ -8,9 +8,29 @@ import makeAnimated from "react-select/animated";
 import subject from "./ClassSubjects";
 import { ToastContainer, toast } from "react-toastify";
 // import Subject from "./Subject";
+import { _postApi } from "../../apiCall";
 
 export default function CreateSubject() {
-  const [value, setValue] = useState();
+  const _form = {
+    subject_name: "",
+  };
+  const [form, setForm] = useState(_form)
+  const [data, setData] = useState([])
+
+  // const handleSubmit = () => {
+  //   let stdStr = studentName.first_name.split(' ')
+  //   studentName.first_name = stdStr[0]
+  //   studentName.last_name = stdStr.length >= 2 ? stdStr[1] : ""
+  //   studentName.otherr_name = stdStr.length >= 3 ? stdStr.slice(2).join(' ') : ""
+  //  _postApi("subject", form, () => {
+  //   setForm(_form)
+  //   // navigate('/student')
+  //  },
+  //  (err) => console.log(err)
+  //  )
+   
+  // };
+  const [value, setValue] = useState(_form);
   const [options, setOptions] = useState(subject);
 
   const navigate = useNavigate();
@@ -39,7 +59,19 @@ export default function CreateSubject() {
       progress: undefined,
     });
 
-  console.log(value)
+    const handleSubmit = () => {
+    //   let stdStr = studentName.first_name.split(' ')
+    // studentName.first_name = stdStr[0]
+    // studentName.last_name = stdStr.length >= 2 ? stdStr[1] : ""
+    // studentName.otherr_name = stdStr.length >= 3 ? stdStr.slice(2).join(' ') : ""
+   _postApi("subject", value, () => {
+    setForm(_form)
+    // navigate('/student')
+   },
+   (err) => console.log(err)
+   )
+      console.log(value)
+    }
 
 
   return (
@@ -83,6 +115,8 @@ export default function CreateSubject() {
               onChange={handleChange}
               onCreateOption={handleCreate}
               placeholder="Select Subjects"
+              name="  "
+              // value={form.subject_name}
               value={value}
             />
             {/* // options={subject} displayValue='value' showCheckbox={true} placeholder='Select subjects' avoidHighlightFirstOption={true} /> */}
@@ -92,7 +126,7 @@ export default function CreateSubject() {
                 onClick={() => {
                   notify();
                   setTimeout(() => {
-                    // handleSubmit();
+                    handleSubmit();
                     navigate("/subject");
                   }, 1000);
                 }}

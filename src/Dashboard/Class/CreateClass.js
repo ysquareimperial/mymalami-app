@@ -8,8 +8,34 @@ import CreatableSelect from "react-select/creatable";
 import makeAnimated from "react-select/animated";
 import subject from "../Subject/ClassSubjects";
 import { ToastContainer, toast } from "react-toastify";
+import _fetchApi from "../api";
+import { _postApi } from "../../apiCall";
 
 export default function CreateClass() {
+const _form = {
+  class_name: "",
+}
+
+const [form, setForm] = useState(_form)
+const [data, setData] = useState([])
+
+const handleChange = ({ target: { name, value } }) => {
+  setForm((p) => ({ ...p, [name]: value }));
+}
+
+const handleAdd = () => {
+  //   let stdStr = studentName.first_name.split(' ')
+  // studentName.first_name = stdStr[0]
+  // studentName.last_name = stdStr.length >= 2 ? stdStr[1] : ""
+  // studentName.otherr_name = stdStr.length >= 3 ? stdStr.slice(2).join(' ') : ""
+ _postApi("classes", form, () => {
+  setForm(_form)
+  // navigate('/student')
+ },
+ (err) => console.log(err)
+ )
+    console.log(_form)
+  }
   const notify = () =>
     toast.success(`Class created`, {
       position: "bottom-center",
@@ -26,6 +52,7 @@ export default function CreateClass() {
   //     { value: 'Mathematics', id: 1 },
   //     { value: 'English', id: 2 },
   //     { value: 'Civic Education', id: 3 },
+  //     { value: 'Mathesmatics', id: 4 },
   //     { value: 'Mathesmatics', id: 4 },
   //     { value: 'Englissh', id: 5 }
   // ]
@@ -44,7 +71,7 @@ export default function CreateClass() {
 
   const animatedComponents = makeAnimated();
 
-  const handleChange = useCallback((inputValue) => setSubVal(inputValue), []);
+  const handleChange1 = useCallback((inputValue) => setSubVal(inputValue), []);
   const handleChange2 = useCallback((inputValue) => setStuVal(inputValue), []);
 
 
@@ -95,7 +122,10 @@ export default function CreateClass() {
         </Row>
         <Row>
           <Col md={6} className="mt-3">
-            <input placeholder="Class Name" type="text" />
+            <input placeholder="Class Name" type="text" 
+            name="class_name" value={form.class_name}
+            onChange={handleChange}
+            />
 
             <br></br>
             <CreatableSelect
@@ -124,8 +154,8 @@ export default function CreateClass() {
                 className="action-btn"
                 onClick={() => {
                   notify();
+                  handleAdd();
                   setTimeout(() => {
-                    // handleSubmit();
                     navigate("/class");
                   }, 1000);
                 }}

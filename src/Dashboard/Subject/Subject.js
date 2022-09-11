@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Col, Modal, ModalBody, Row, Table } from "reactstrap";
 import nosearch from "../../images/search.svg";
 // import './subject.css'
@@ -10,8 +10,28 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { Search } from "react-feather";
 import { subject } from "../Student/StudentList";
+import _fetchApi from "../api";
 
 export default function Subject() {
+  const [result, setResult] = useState([])
+  const handleFetch = () => {
+    _fetchApi(
+      `http://localhost:45459/subject/get`,
+      (data) => {
+        if (data.results && data.results.length) {
+          setResult(data.results[0])
+        }
+        console.log(data.results[0])
+      }
+    )
+
+
+  }
+    // console.log(Object.keys(result));
+
+    useEffect(() => {
+      handleFetch()
+    }, [0])
   const notify = () =>
     toast.error(`Subject(s) deleted`, {
       position: "bottom-center",
@@ -33,7 +53,6 @@ export default function Subject() {
   
   const navigate = useNavigate();
 
-  const [result] = useState(subject)
   const [state, setSearch] = useState({
     search: "",
   });
@@ -41,12 +60,12 @@ export default function Subject() {
     setSearch({ [name]: value });
   };
   let rows = [];
-  result &&
-    result.forEach((item, index) => {
+  if(result.length) 
+  result.forEach((item, index) => {
       if (
-        item.name.toLowerCase().indexOf(state.search.toLowerCase()) ===
-        -1 && item.students.toLowerCase().indexOf(state.search.toLowerCase()) ===
-        -1
+        item.subject_name.toLowerCase().indexOf(state.search.toLowerCase()) === -1
+        // -1 && item.students.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        
       ) {
 
         return;
@@ -56,7 +75,7 @@ export default function Subject() {
           <th className="" scope="row">
             {index + 1}
           </th>
-          <td className="">{item.name.length > 19 ? `${item.name.substring(0, 19)}...` : item.name}</td>
+          <td className="">{item.subject_name.length > 19 ? `${item.subject_name.substring(0, 19)}...` : item.subject_name}</td>
           <td
             className=""
             ata-toggle="tooltip"

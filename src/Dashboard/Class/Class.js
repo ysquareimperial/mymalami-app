@@ -13,8 +13,31 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
 import { classs } from "../Student/StudentList";
+import _fetchApi from "../api";
+import { useEffect } from "react";
 
 export default function Classes() {
+
+  const [result1, setResult1] = useState([])
+  const handleFetch = () => {
+    _fetchApi(
+      `http://localhost:45459/classes/get`,
+      (data) => {
+        if (data.results && data.results.length) {
+          setResult1(data.results[0])
+        }
+        // console.log(data.results)
+      }
+    )
+
+
+  }
+  // console.log(Object.keys(result1));
+
+  useEffect(() => {
+    handleFetch()
+  }, [])
+
   const notify = () =>
     toast.error(`Class deleted`, {
       position: "bottom-center",
@@ -54,11 +77,11 @@ export default function Classes() {
     setSearch({ [name]: value });
   };
   let rows = [];
-  result &&
-    result.forEach((item, index) => {
+  result1 &&
+    result1.forEach((item, index) => {
       if (
-        item.name.toLowerCase().indexOf(state.search.toLowerCase()) ===
-        -1 && item.students.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        item.class_name.toLowerCase().indexOf(state.search.toLowerCase()) ===
+        // -1 && item.students.toLowerCase().indexOf(state.search.toLowerCase()) ===
         -1
       ) {
 
@@ -69,7 +92,7 @@ export default function Classes() {
           <th className="" scope="row">
             {index + 1}
           </th>
-          <td className="">{item.name.length > 19 ? `${item.name.substring(0, 19)}...` : item.name}</td>
+          <td className="">{item.class_name.length > 19 ? `${item.class_name.substring(0, 19)}...` : item.class_name}</td>
           <td
             className=""
             ata-toggle="tooltip"
@@ -77,7 +100,7 @@ export default function Classes() {
             title="click to view students"
           >
             <span className="students-total" onClick={toggle2}>
-              {item.students}
+              {item.create_by}
             </span>
           </td>
           <td className="d-flex justify-content-end">
@@ -117,6 +140,7 @@ export default function Classes() {
         />
       </div>
       <Card className="table-card shadow py-3 px-4 mt-3">
+        {/* {JSON.stringify(result1)} */}
         <Row>
           <Col md={6} sm={6} xs={6}>
             <h3>Classes</h3>
@@ -153,9 +177,9 @@ export default function Classes() {
                 <th>Students</th>
                 <th className="d-flex justify-content-end">Actions</th>
               </tr>
-            </thead>
+            </thead> 
             <tbody>
-              {rows}
+               {rows}
             </tbody>
           </Table>
           {rows.length === 0 ?

@@ -23,7 +23,7 @@ export const studentList = [
 
 export const subject = [
     {
-      name: "nglish Language Language",
+      name: "English Language Language",
       teacherName: "Futre Pluto Hndrx",
       students: "30",
     },

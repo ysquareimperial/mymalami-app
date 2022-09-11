@@ -6,13 +6,15 @@ import sum from "../../images/sum.png";
 import { ToastContainer, toast } from "react-toastify";
 import dlt from "../../images/delete.png";
 import Error from "../../Auth/Error";
+import { _postApi } from "../../apiCall";
 export default function CreateStudent() {
   const navigate = useNavigate();
 
   let _form = {
-    student: "",
+    first_name: "",
   };
   const [studentName, setStudentName] = useState(_form);
+  const [form, setForm] = useState ()
 
   const [studentArray, setStudentArray] = useState([]);
   const [formError, setFormError] = useState({});
@@ -40,11 +42,18 @@ export default function CreateStudent() {
   const handleChange = ({ target: { name, value } }) => {
     setStudentName((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = (e) => {
-    console.log(studentArray);
-    // e.preventDefault()
-      // notify()
-      navigate('/student')
+  const handleSubmit = () => {
+    let stdStr = studentName.first_name.split(' ')
+    studentName.first_name = stdStr[0]
+    studentName.last_name = stdStr.length >= 2 ? stdStr[1] : ""
+    studentName.otherr_name = stdStr.length >= 3 ? stdStr.slice(2).join(' ') : ""
+   _postApi("students", studentName, () => {
+    setForm(_form)
+    navigate('/student')
+   },
+   (err) => console.log(err)
+   )
+   
   };
   const notify = () =>
     toast.success(`${studentArray.length} student(s) created`, {
@@ -69,6 +78,8 @@ export default function CreateStudent() {
   //     ...studentName.slice(index + 1, studentName.length),
   //   ]);
   // };
+
+  
 
   return (
     <div>
@@ -103,8 +114,8 @@ export default function CreateStudent() {
                       placeholder="Student Name"
                       className="mt-3"
                       type="text"
-                      name="student"
-                      value={studentName.student}
+                      name="first_name"
+                      value={studentName.first_name}
                       onChange={handleChange}
                     />
                     {formError.student && (
