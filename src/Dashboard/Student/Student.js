@@ -83,14 +83,14 @@ export default function Student() {
           <td className="">{item.s_class}</td>
           {/* <td className=''>20</td> */}
           <td className="d-flex justify-content-end">
-            <img
+            <img 
               className="action-img"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="edit subject"
+              title="edit student"
               src={edit}
               alt="s"
-              onClick={() => navigate("/subject/edit-subject")}
+              onClick={() => navigate("/student/edit-student")}
             />
             <img
               className="action-img"
@@ -138,7 +138,7 @@ export default function Student() {
             <h3>Students</h3>
           </Col>
           <Col md={6} sm={6} xs={6}>
-            <div className="d-flex justify-content-end"> 
+            <div className="d-flex justify-content-end">
               <img
                 className="action-img"
                 data-toggle="tooltip"

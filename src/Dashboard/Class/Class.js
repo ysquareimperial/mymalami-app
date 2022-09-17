@@ -1,4 +1,4 @@
-import { Modal, ModalBody, Table } from "reactstrap";
+import { Button, Modal, ModalBody, Table } from "reactstrap";
 import React, { useState } from "react";
 import { Card, Col, Row } from "reactstrap";
 // import './class.css'
@@ -104,6 +104,10 @@ export default function Classes() {
             </span>
           </td>
           <td className="d-flex justify-content-end">
+            <button className="action-btn mt-1"  style={{marginRight: "1rem"}}
+            onClick={() => navigate("/subject/edit-subject")}
+            >Add Subjects</button>
+            <button className="action-btn mt-1">Add </button>
             <img
               className="action-img"
               data-toggle="tooltip"
@@ -177,9 +181,9 @@ export default function Classes() {
                 <th>Students</th>
                 <th className="d-flex justify-content-end">Actions</th>
               </tr>
-            </thead> 
+            </thead>
             <tbody>
-               {rows}
+              {rows}
             </tbody>
           </Table>
           {rows.length === 0 ?
@@ -191,7 +195,7 @@ export default function Classes() {
         </div>
       </Card>
       <Modal isOpen={open} toggle={toggle} className="dlt-modal">
-        <ModalBody className="modal-body">
+        <ModalBody className="modal-body"> 
           <img src={dlt} alt="" />
           <p className="dlt-warning">
             Are you sure you want to delete this class?

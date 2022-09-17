@@ -166,7 +166,7 @@ export default function CreateStudent() {
                 </tbody>
               </Table>
               <button
-                className="action-btn mt-1"
+                className="action-btn "
                 onClick={() => {
                   notify();
                   setTimeout(() => {
